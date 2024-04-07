@@ -22,6 +22,15 @@
     };
   };
 
+	environment.systemPackages = with pkgs; [
+	  mergerfs
+	];
+	fileSystems."/data" = {
+	  fsType = "fuse.mergerfs";
+	  device = "/mnt/drive*";
+	  options = ["cache.files=partial" "dropcacheonclose=true" "category.create=mfs"];
+	};
+
   nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
 
   nix.nixPath = ["/etc/nix/path"];
