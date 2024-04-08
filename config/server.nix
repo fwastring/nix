@@ -92,6 +92,7 @@
   home.username = "fw";
   home.homeDirectory = "/home/fw";
 
+
   home.stateVersion = "23.11"; # Did you read the comment?
 
   systemd.user.startServices = "sd-switch";

@@ -11,6 +11,7 @@
 	imports = [
 		./hardware-configuration.nix
 		../../config/users.nix
+		../../moduler/common/nginx.nix
 	];
 
 	networking.hostName = "server";
