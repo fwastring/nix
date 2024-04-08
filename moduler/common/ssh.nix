@@ -13,7 +13,7 @@
         hostname = "wastring.com";
         port = 55502;
         user = "fw";
-        identityFile = "/home/fw/.ssh/id_ed25519";
+        identityFile = "/home/fw/.ssh/id_rsa";
       };
     };
   };
