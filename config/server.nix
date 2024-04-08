@@ -1,5 +1,5 @@
 # This is your home-manager configuration fileserver
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
+# Use this to configure your home environment (it replaces ~/.config/nixnix)
 {
   inputs,
   lib,
@@ -28,66 +28,65 @@
     };
   };
 
-  home.packages =  [
+  home.packages = with pkgs; [
 	# System
-	pkgs.arion
-    pkgs.wget
-    pkgs.killall
-    pkgs.gcc
-    pkgs.gnumake
-    pkgs.htop
-    pkgs.openssh
-    pkgs.xsel
-    pkgs.unzip
-    pkgs.nixops_unstable
-	pkgs.cmake
-    pkgs.networkmanager
-	pkgs.fd
-	pkgs.bat
-	unstable.lego
+	arion
+    wget
+    killall
+    gcc
+    gnumake
+    htop
+    openssh
+    xsel
+    unzip
+    nixops_unstable
+	cmake
+    networkmanager
+	fd
+	bat
 
 	#Terminal	
-    pkgs.git
-    pkgs.yt-dlp
-	pkgs.fzf
-	pkgs.ripgrep
+    git
+    yt-dlp
+	fzf
+	ripgrep
 
 	#Desktop
-    pkgs.neovim
-    pkgs.lazygit
+    neovim
+    lazygit
 
 	#Dev
-    pkgs.python3
-    pkgs.python311Packages.pip
-	pkgs.ranger
-	pkgs.python311Packages.pynvim
-	pkgs.ueberzugpp
+    python3
+    python311Packages.pip
+	ranger
+	python311Packages.pynvim
+	ueberzugpp
 
 	#LSP
-    pkgs.nil
-	pkgs.python311Packages.python-lsp-server
-	pkgs.marksman
-    pkgs.clojure-lsp
-    pkgs.omnisharp-roslyn
-    pkgs.haskell-language-server
-	pkgs.java-language-server
-	pkgs.nodePackages_latest.bash-language-server
-	pkgs.dockerfile-language-server-nodejs
-	pkgs.yaml-language-server
-	pkgs.ansible-language-server
-	pkgs.lua-language-server
-	pkgs.tree-sitter
-	pkgs.nodejs_21
-	pkgs.nodePackages_latest.vls
-	pkgs.nodePackages_latest.volar
-	pkgs.vscode-langservers-extracted
+    nil
+	python311Packages.python-lsp-server
+	marksman
+    clojure-lsp
+    omnisharp-roslyn
+    haskell-language-server
+	java-language-server
+	nodePackages_latest.bash-language-server
+	dockerfile-language-server-nodejs
+	yaml-language-server
+	ansible-language-server
+	lua-language-server
+	tree-sitter
+	nodejs_21
+	nodePackages_latest.vls
+	nodePackages_latest.volar
+	vscode-langservers-extracted
 
     #VPN
-    pkgs.openvpn
-    pkgs.networkmanagerapplet
-    pkgs.networkmanager-l2tp
-    pkgs.strongswan
-    pkgs.ansible
+    openvpn
+    networkmanagerapplet
+    networkmanager-l2tp
+    strongswan
+    ansible
   ];
   programs.home-manager.enable = true;
 

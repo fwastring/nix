@@ -25,6 +25,7 @@
 
 	environment.systemPackages = with pkgs; [
 	  mergerfs
+		unstable.lego
 	];
 	fileSystems."/data" = {
 	  fsType = "fuse.mergerfs";

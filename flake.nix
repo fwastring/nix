@@ -3,8 +3,8 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+	nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-23.11";
@@ -18,11 +18,18 @@
   outputs = {
     self,
     nixpkgs,
-    unstable,
     home-manager,
+	nixpkgs-unstable,
     ...
   } @ inputs: let
     inherit (self) outputs;
+	system = "x86_64-linux";
+	overlay-unstable = final: prev: {
+        unstable = import nixpkgs-unstable {
+			inherit system;
+          config.allowUnfree = true;
+        };
+      };
   in {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -41,7 +48,11 @@
       };
       server = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./maskiner/server/configuration.nix];
+		inherit system;
+        modules = [
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+			./maskiner/server/configuration.nix
+		];
       };
     };
 
