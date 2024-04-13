@@ -5,6 +5,7 @@
   lib,
   config,
   pkgs,
+  myhostname,
   ...
 }: {
 	# You can import other NixOS modules here
@@ -14,7 +15,7 @@
 		../../moduler/common/nginx.nix
 	];
 
-	networking.hostName = "server";
+	networking.hostName = myhostname;
   nixpkgs = {
     overlays = [
     ];

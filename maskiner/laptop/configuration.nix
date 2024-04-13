@@ -5,6 +5,7 @@
   lib,
   config,
   pkgs,
+  myhostname,
   ...
 }: {
 	# You can import other NixOS modules here
@@ -14,7 +15,7 @@
 	../../config/users.nix
 	];
 
-	networking.hostName = "nix-laptop";
+	networking.hostName = myhostname;
 
 	services.xserver.dpi = 140;
 

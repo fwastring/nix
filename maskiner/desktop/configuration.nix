@@ -5,6 +5,7 @@
   lib,
   config,
   pkgs,
+  myhostname,
   ...
 }: {
   # You can import other NixOS modules here
@@ -15,7 +16,7 @@
   ];
 
   security.rtkit.enable = true;
-  networking.hostName = "nix-desktop";
+  networking.hostName = myhostname;
 
   services.xserver.dpi = 100;
 

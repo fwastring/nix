@@ -34,20 +34,32 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      nix-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+			inherit inputs outputs;
+			myhostname = "laptop";
+		};
         modules = [./maskiner/laptop/configuration.nix];
       };
-      nix-desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+      desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+			inherit inputs outputs;
+			myhostname = "desktop";
+		};
         modules = [./maskiner/desktop/configuration.nix];
       };
-      fw-jobb = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+      jobb = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+			inherit inputs outputs;
+			myhostname = "jobb";
+		};
         modules = [./maskiner/jobb/configuration.nix];
       };
       server = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {
+			inherit inputs outputs;
+			myhostname = "server";
+		};
 		inherit system;
         modules = [
 			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
@@ -59,28 +71,28 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      "fw@nix-laptop" = home-manager.lib.homeManagerConfiguration {
+      "fw@laptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {
 			inherit inputs outputs;
-			myhostname = "nix-laptop";
+			myhostname = "laptop";
 		};
         modules = [./config/home.nix];
       };
-      "fw@nix-desktop" = home-manager.lib.homeManagerConfiguration {
+      "fw@desktop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {
 			inherit inputs outputs;
-			myhostname = "nix-desktop";
+			myhostname = "desktop";
 		};
         # > Our main home-manager configuration file <
         modules = [./config/home.nix];
       };
-      "fw@fw-jobb" = home-manager.lib.homeManagerConfiguration {
+      "fw@jobb" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {
 			inherit inputs outputs;
-			myhostname = "fw-jobb";
+			myhostname = "jobb";
 		};
         # > Our main home-manager configuration file <
         modules = [./config/home.nix];

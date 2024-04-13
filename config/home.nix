@@ -76,6 +76,8 @@
 	spotify-tui
 	wiki-tui
 	speedcrunch
+	thefuck
+	eza
 
 	#Desktop
 	aerc
@@ -94,7 +96,8 @@
     obsidian
     lazygit
 	betterdiscordctl
-
+	audacity
+	pdfarranger
 
 	#Dev
     python3

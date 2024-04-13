@@ -20,6 +20,14 @@
         src = pkgs.zsh-powerlevel10k;
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
+	  {
+        name = "zsh-syntax-highlighting";
+        src = pkgs.zsh-syntax-highlighting;
+      }
+	  {
+        name = "zsh-autosuggestions";
+        src = pkgs.zsh-autosuggestions;
+      }
     ];
     profileExtra = "
       if [[ -z $DISPLAY ]]; then
@@ -27,8 +35,8 @@
       fi
     ";
     shellAliases = {
-      ls="ls --color=auto";
-      ll="ls -al --color=auto";
+      ls="eza";
+      ll="eza -al";
       ccr="gcc intopt.c && ./a.out";
       homec="nvim ~/nix/config/home.nix";
       nvimc="nvim ~/.config/nvim/init.lua";
@@ -65,6 +73,7 @@
     # autoload -Uz compinit
     autoload -U compinit; compinit
     zstyle ':completion:*' menu select
+	eval $(thefuck --alias)
 
     '';
   };
