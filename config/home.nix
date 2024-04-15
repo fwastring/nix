@@ -21,6 +21,7 @@
     ../moduler/common/lazygit.nix
     ../moduler/common/spotifyd.nix
     ../moduler/common/ssh.nix
+    ../moduler/common/aerc.nix
   ];
 
   nixpkgs = {
