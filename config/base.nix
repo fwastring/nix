@@ -86,6 +86,8 @@
     };
 	picom = {
 	  enable = true;
+	  fade = true;
+	  fadeDelta = 15;
 	};
 	spotifyd = {
 	  enable = true;
