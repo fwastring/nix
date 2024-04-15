@@ -2,7 +2,7 @@
 {
   programs.kitty = {
     enable = true;
-    font = if myhostname == "nix-desktop" then {
+    font = if myhostname == "desktop" then {
       name = "FiraCode Nerd Font";
       size = 18;
     } else {
