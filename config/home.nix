@@ -65,6 +65,7 @@
 	bat
 	steam-run
 	appimage-run
+	bluez-tools
 
 	#Terminal	
     git
@@ -74,10 +75,17 @@
 	fzf
 	ripgrep
 	spotify-tui
+	spotify-player
+	alsa-lib
+	libdbusmenu
+	xorg.libxcb
 	wiki-tui
 	speedcrunch
 	thefuck
 	eza
+	btop
+	poppler_utils
+	pandoc
 
 	#Desktop
 	aerc
@@ -98,6 +106,7 @@
 	betterdiscordctl
 	audacity
 	pdfarranger
+	byzanz
 
 	#Dev
     python3
