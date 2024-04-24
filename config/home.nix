@@ -67,6 +67,8 @@
 	steam-run
 	appimage-run
 	bluez-tools
+	sops
+	age
 
 	#Terminal	
     git
@@ -87,6 +89,7 @@
 	btop
 	poppler_utils
 	pandoc
+	ncspot
 
 	#Desktop
 	aerc
@@ -108,6 +111,7 @@
 	audacity
 	pdfarranger
 	byzanz
+	freecad
 
 	#Dev
     python3

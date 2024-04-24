@@ -10,6 +10,7 @@
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-gaming.url = "github:fufexan/nix-gaming";
+	sops-nix.url = "github:Mic92/sops-nix";
 
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
@@ -20,6 +21,7 @@
     nixpkgs,
     home-manager,
 	nixpkgs-unstable,
+	sops-nix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -39,7 +41,10 @@
 			inherit inputs outputs;
 			myhostname = "laptop";
 		};
-        modules = [./maskiner/laptop/configuration.nix];
+        modules = [
+		./maskiner/laptop/configuration.nix
+			sops-nix.nixosModules.sops
+		];
       };
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {

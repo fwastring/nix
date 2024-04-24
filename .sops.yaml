@@ -1,0 +1,11 @@
+keys:
+  - &admin_fred age1krwc99ct25lst4543jrcfdkfhufha7j6237a2r4zhf425d5e54wqcl20jr
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+      - *admin_fred
+  - path_regex: secrets/fred/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+      - *admin_fred

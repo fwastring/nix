@@ -7,7 +7,9 @@
       size = 18;
     } else {
       name = "FiraCode Nerd Font";
+	  # size = 18;
       size = 24;
+      # size = 30;
     };
     shellIntegration = {
       enableZshIntegration = true;
