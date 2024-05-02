@@ -12,10 +12,30 @@
 			   sha256 = "0dbnir6jbwjpjalz14snzd3cgdysgcs3raznsijd6savad3qhijc";
 			 };
 		   }
+		   {
+			 name = "autopair";
+			 src = pkgs.fishPlugins.autopair.src;
+		   }
+		   {
+			 name = "tide";
+			 src = pkgs.fishPlugins.tide.src;
+		   }
+		   {
+		   	 name = "fzf";
+			 src = pkgs.fishPlugins.fzf.src;
+		   }
+		   {
+		   	 name = "done";
+			 src = pkgs.fishPlugins.done.src;
+		   }
+		   {
+		   	 name = "sponge";
+			 src = pkgs.fishPlugins.sponge.src;
+		   }
 		   { 
-		   	name = "grc"; 
-			src = pkgs.fishPlugins.grc.src; 
-			}
+			 name = "grc"; 
+			 src = pkgs.fishPlugins.grc.src; 
+		   }
 	  ];
 	  shellAbbrs = {
 		  homec="nvim ~/nix/config/home.nix";
@@ -23,6 +43,7 @@
 	  };
 	  interactiveShellInit = ''
 		${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+		set fish_greeting # Disable greeting
 	  '';
 	};
 }

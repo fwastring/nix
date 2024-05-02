@@ -15,7 +15,7 @@
     ../moduler/common/tmux.nix
     # ../moduler/common/zsh.nix 
     ../moduler/common/fish.nix 
-    ../moduler/common/starship.nix 
+    # ../moduler/common/starship.nix 
     ../moduler/common/git.nix
     ../moduler/common/nixpkgs.nix
     ../moduler/common/firefox.nix

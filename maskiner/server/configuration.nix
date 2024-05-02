@@ -109,7 +109,7 @@
 			PermitRootLogin = "no";
 			PasswordAuthentication = false;
 			X11Forwarding = true;
-                };
+		};
 		extraConfig = ''
 		  AllowUsers fw
 		'';

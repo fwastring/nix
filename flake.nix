@@ -51,7 +51,10 @@
 			inherit inputs outputs;
 			myhostname = "desktop";
 		};
-        modules = [./maskiner/desktop/configuration.nix];
+        modules = [
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+			./maskiner/desktop/configuration.nix
+		];
       };
       jobb = nixpkgs.lib.nixosSystem {
         specialArgs = {

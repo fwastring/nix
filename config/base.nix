@@ -17,6 +17,7 @@
 
   nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
   nix.nixPath = ["/etc/nix/path"];
+  users.defaultUserShell = pkgs.bash;
   programs.fish.enable = true;
 	programs.bash = {
 	interactiveShellInit = ''
@@ -27,7 +28,6 @@
 		fi
 	  '';
 	};
-  users.defaultUserShell = pkgs.bash;
   environment.etc =
     lib.mapAttrs'
     (name: value: {
@@ -88,7 +88,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   console.keyMap = "sv-latin1";
-  # programs.zsh.enable = true;
 
   services = {
     openssh = {
