@@ -4,7 +4,7 @@
 }: {
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users = {
-    defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.bash;
     users = {
       fw = {
         initialPassword = "password";

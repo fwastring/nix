@@ -21,8 +21,20 @@
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
 	  {
-        name = "zsh-syntax-highlighting";
-        src = pkgs.zsh-syntax-highlighting;
+        name = "fash-syntax-highlighting";
+        file = "fast-syntax-highlighting.plugin.zsh";
+        src = builtins.fetchGit {
+          url = "https://github.com/zdharma-continuum/fast-syntax-highlighting";
+          rev = "cf318e06a9b7c9f2219d78f41b46fa6e06011fd9";
+        };
+      }
+	  {
+        name = "zsh-fzf-history-search";
+        file = "zsh-fzf-history-search.plugin.zsh";
+        src = builtins.fetchGit {
+          url = "https://github.com/joshskidmore/zsh-fzf-history-search";
+          rev = "741012388886e7ee39330fe3cdb6a4803012dc0b";
+        };
       }
 	  {
         name = "zsh-autosuggestions";

@@ -4,7 +4,7 @@
   	enable = true;
 	settings = {
 		username = "fredzyw";
-		password = sops.secrets.spotify_password;
+		# password = sops.secrets.spotify_password;
 		device_name = myhostname;
 	};
   };

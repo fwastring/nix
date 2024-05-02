@@ -12,7 +12,7 @@
       # size = 30;
     };
     shellIntegration = {
-      enableZshIntegration = true;
+      # enableZshIntegration = true;
       mode = "no-cursor";
     };
     theme = "Catppuccin-Macchiato";

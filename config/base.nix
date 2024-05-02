@@ -16,8 +16,18 @@
   };
 
   nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
-
   nix.nixPath = ["/etc/nix/path"];
+  programs.fish.enable = true;
+	programs.bash = {
+	interactiveShellInit = ''
+		if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+		then
+		  shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+		  exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+		fi
+	  '';
+	};
+  users.defaultUserShell = pkgs.bash;
   environment.etc =
     lib.mapAttrs'
     (name: value: {
@@ -78,7 +88,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   console.keyMap = "sv-latin1";
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
 
   services = {
     openssh = {

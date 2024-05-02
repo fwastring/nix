@@ -13,7 +13,9 @@
     ../moduler/common/dmenu.nix
     ../moduler/common/kitty.nix
     ../moduler/common/tmux.nix
-    ../moduler/common/zsh.nix 
+    # ../moduler/common/zsh.nix 
+    ../moduler/common/fish.nix 
+    ../moduler/common/starship.nix 
     ../moduler/common/git.nix
     ../moduler/common/nixpkgs.nix
     ../moduler/common/firefox.nix
@@ -69,6 +71,7 @@
 	bluez-tools
 	sops
 	age
+	grc
 
 	#Terminal	
     git
@@ -90,6 +93,8 @@
 	poppler_utils
 	pandoc
 	ncspot
+	starship
+	any-nix-shell
 
 	#Desktop
 	aerc
@@ -163,6 +168,7 @@
     dotnetPackages.Nuget
   ];
   programs.home-manager.enable = true;
+  programs.fish.enable = true;
 
   xsession.enable = true;
   xsession.windowManager.command = "exec dwm";

@@ -12,7 +12,17 @@
 			   sha256 = "0dbnir6jbwjpjalz14snzd3cgdysgcs3raznsijd6savad3qhijc";
 			 };
 		   }
-		   { name = "grc"; src = pkgs.fishPlugins.grc.src; }
+		   { 
+		   	name = "grc"; 
+			src = pkgs.fishPlugins.grc.src; 
+			}
 	  ];
+	  shellAbbrs = {
+		  homec="nvim ~/nix/config/home.nix";
+		  ls="exa -lag --header";
+	  };
+	  interactiveShellInit = ''
+		${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+	  '';
 	};
 }
