@@ -27,6 +27,20 @@ networking.firewall = {
     { from = 8000; to = 8010; }
   ];
 };
+	services = {
+		openssh = {
+			enable = true;
+			ports = [55502];
+			settings = {
+				PermitRootLogin = "no";
+				PasswordAuthentication = false;
+				X11Forwarding = true;
+			};
+			extraConfig = ''
+			  AllowUsers fw
+			'';
+		};
+	};
 
 
   security.rtkit.enable = true;

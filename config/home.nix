@@ -33,6 +33,7 @@
       allowUnfreePredicate = _: true;
       permittedInsecurePackages = [
         "electron-25.9.0"
+		"electron-19.1.9"
         "nix-2.16.2"
       ];
     };
@@ -72,8 +73,11 @@
 	sops
 	age
 	grc
+	catppuccin-cursors.macchiatoGreen
+	xorg.xmodmap
 
 	#Terminal	
+	libsixel
     git
     tmux
     zathura
@@ -93,8 +97,9 @@
 	poppler_utils
 	pandoc
 	ncspot
-	starship
 	any-nix-shell
+	glow
+	macchina
 
 	#Desktop
 	aerc
@@ -116,7 +121,8 @@
 	audacity
 	pdfarranger
 	byzanz
-	freecad
+	drawio
+	woeusb
 
 	#Dev
     python3

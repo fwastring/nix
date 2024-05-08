@@ -109,6 +109,8 @@
 	};
     xserver = {
       enable = true;
+      # layout = "us";
+      # xkbVariant = "colemak_dh_iso";
       layout = "se";
       xkbVariant = "";
       displayManager = {
