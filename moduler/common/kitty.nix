@@ -2,17 +2,14 @@
 {
   programs.kitty = {
     enable = true;
-    font = if myhostname == "desktop" then {
+    font = if myhostname == "laptop" then {
       name = "FiraCode Nerd Font";
-      size = 18;
+      size = 24;
     } else {
       name = "FiraCode Nerd Font";
-	  # size = 18;
-      size = 24;
-      # size = 30;
+      size = 18;
     };
     shellIntegration = {
-      # enableZshIntegration = true;
       mode = "no-cursor";
     };
     theme = "Catppuccin-Macchiato";
