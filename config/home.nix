@@ -54,6 +54,8 @@
     openssh
     xsel
     unzip
+	zip
+	imagemagick
     nixops_unstable
 	killall
 	cmake
@@ -97,7 +99,6 @@
 	poppler_utils
 	pandoc
 	ncspot
-	any-nix-shell
 	glow
 	macchina
 
@@ -169,9 +170,6 @@
 
     # Jobb
     remmina
-    dotnet-sdk_8
-    mono5
-    dotnetPackages.Nuget
   ];
   programs.home-manager.enable = true;
   programs.fish.enable = true;
