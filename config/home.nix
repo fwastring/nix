@@ -77,6 +77,7 @@
 	grc
 	catppuccin-cursors.macchiatoGreen
 	xorg.xmodmap
+	playerctl
 
 	#Terminal	
 	libsixel
