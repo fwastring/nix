@@ -17,6 +17,10 @@
 			 src = pkgs.fishPlugins.autopair.src;
 		   }
 		   {
+			 name = "foreign-env";
+			 src = pkgs.fishPlugins.foreign-env.src;
+		   }
+		   {
 			 name = "tide";
 			 src = pkgs.fishPlugins.tide.src;
 		   }
@@ -40,6 +44,7 @@
 	  shellAbbrs = {
 		  homec="nvim ~/nix/config/home.nix";
 		  ls="exa -lag --header";
+		  dev="nix develop --command fish";
 	  };
 	  interactiveShellInit = ''
 		set fish_greeting # Disable greeting
