@@ -1,15 +1,27 @@
-{ pkgs, lib, ... }:
+{ lib, config, pkgs, fetchFromGitHub, ... }:
 {
   programs.tmux = {
     enable = true;
     mouse = true;
     plugins = with pkgs; [
 		tmuxPlugins.sensible
-		tmuxPlugins.tmux-fzf
+		# tmuxPlugins.tmux-fzf
 		tmuxPlugins.pain-control
 		tmuxPlugins.sessionist
-		# tmuxPlugins.catppuccin
-		# tmuxPlugins.weather
+		{
+			plugin = tmuxPlugins.dracula;
+			extraConfig = ''
+				set -g @dracula-show-battery false
+				set -g @dracula-show-powerline true
+				# available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, tmux-ram-usage, network, network-bandwidth, network-ping, ssh-session, attached-clients, network-vpn, weather, time, mpc, spotify-tui, playerctl, kubernetes-context, synchronize-panes
+				set -g @dracula-plugins 'playerctl git network time'
+				set -g @dracula-refresh-rate 10
+				set -g @dracula-playerctl-format "►  {{ artist }} - {{ title }}"
+				set -g @dracula-show-timezone false
+				set -g @dracula-military-time true
+				set -g @dracula-day-month true
+			'';
+		}
 		tmuxPlugins.resurrect
 		tmuxPlugins.continuum
     ];
@@ -18,30 +30,7 @@
     keyMode = "vi";
 	escapeTime = 0;
     extraConfig = "
-		set -g @catppuccin_flavour 'macchiato'
-		set -g @catppuccin_window_left_separator '█'
-		set -g @catppuccin_window_right_separator '█ '
-		set -g @catppuccin_window_number_position 'right'
-		set -g @catppuccin_window_middle_separator '  █'
 
-		set -g @catppuccin_window_default_fill 'number'
-
-		set -g @catppuccin_window_current_fill 'number'
-		set -g @catppuccin_window_current_text '#{pane_current_path}'
-
-		set -g @catppuccin_status_left_separator  ''
-		set -g @catppuccin_status_right_separator ' '
-		set -g @catppuccin_status_fill 'all'
-		set -g @catppuccin_status_connect_separator 'yes'
-		run-shell ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
-		run-shell ${pkgs.tmuxPlugins.weather}/share/tmux-plugins/weather/weather.tmux
-		set -g @catppuccin_status_modules_right 'date_time weather'
-		set -g @catppuccin_window_number_position 'right'
-		set -g @continuum-boot 'on'
-		set -g @continuum-restore 'on'
-		set -g @resurrect-strategy-nvim 'session'
-		set -g @resurrect-capture-pane-contents 'on'
-		set -g @resurrect-processes 'nvim'
     ";
   };
 }
