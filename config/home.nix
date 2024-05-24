@@ -88,7 +88,7 @@
 	fzf
 	ripgrep
 	spotify-tui
-	spotify-player
+	fw-pkgs.spotify-player
 	alsa-lib
 	libdbusmenu
 	xorg.libxcb

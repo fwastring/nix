@@ -15,6 +15,11 @@
         user = "fw";
         identityFile = "/home/fw/.ssh/id_rsa";
       };
+      "lth" = {
+        hostname = "login.student.lth.se";
+        port = 22;
+        user = "fr7658wa-s";
+      };
     };
   };
 }

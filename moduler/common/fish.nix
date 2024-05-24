@@ -45,6 +45,7 @@
 		  homec="nvim ~/nix/config/home.nix";
 		  ls="exa -lag --header";
 		  dev="nix develop --command fish";
+		  spot="steam-run ~/program/spotify_player";
 	  };
 	  interactiveShellInit = ''
 		set fish_greeting # Disable greeting

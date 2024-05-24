@@ -12,7 +12,7 @@
     shellIntegration = {
       mode = "no-cursor";
     };
-    theme = "Catppuccin-Macchiato";
+    theme = "Dracula";
     settings = {
       confirm_os_window_close = 2;
       cursor_shape = "block";

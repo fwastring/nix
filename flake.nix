@@ -5,6 +5,7 @@
     # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
 	nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+	fw-pkgs.url = "github:FredzyW/fw-pkgs/master";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-23.11";
@@ -21,6 +22,7 @@
     nixpkgs,
     home-manager,
 	nixpkgs-unstable,
+	fw-pkgs,
 	sops-nix,
     ...
   } @ inputs: let
@@ -28,6 +30,12 @@
 	system = "x86_64-linux";
 	overlay-unstable = final: prev: {
         unstable = import nixpkgs-unstable {
+			inherit system;
+          config.allowUnfree = true;
+        };
+      };
+	overlay-fw-pkgs = final: prev: {
+        fw-pkgs = import fw-pkgs {
 			inherit system;
           config.allowUnfree = true;
         };
@@ -85,7 +93,11 @@
 			inherit inputs outputs;
 			myhostname = "laptop";
 		};
-        modules = [./config/home.nix];
+        modules = [
+			./config/home.nix
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-fw-pkgs ]; })
+		];
       };
       "fw@desktop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
