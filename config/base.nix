@@ -43,6 +43,7 @@
 
   virtualisation.docker = {
     enable = true;
+	liveRestore = false;
   };
 
   hardware = {
@@ -126,7 +127,8 @@
     };
     locate = {
       enable = true;
-      locate = pkgs.mlocate;
+      package = pkgs.mlocate;
+	  localuser = null;
     };
     blueman = {
       enable = true;
