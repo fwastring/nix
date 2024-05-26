@@ -7,7 +7,7 @@
         hostname = "git.wastring.com";
         port = 55503;
         user = "git";
-        identityFile = "/home/fw/.ssh/gitea";
+        identityFile = "/home/fw/.ssh/id_rsa";
       };
       "wastring.com" = {
         hostname = "wastring.com";
