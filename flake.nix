@@ -10,8 +10,6 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-gaming.url = "github:fufexan/nix-gaming";
-	sops-nix.url = "github:Mic92/sops-nix";
 
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
@@ -71,17 +69,6 @@
 		};
         modules = [./maskiner/jobb/configuration.nix];
       };
-      server = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-			inherit inputs outputs;
-			myhostname = "server";
-		};
-		inherit system;
-        modules = [
-			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
-			./maskiner/server/configuration.nix
-		];
-      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -116,15 +103,6 @@
 		};
         # > Our main home-manager configuration file <
         modules = [./config/home.nix];
-      };
-      "fw@server" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {
-			inherit inputs outputs;
-			myhostname = "server";
-		};
-        # > Our main home-manager configuration file <
-        modules = [./config/server.nix];
       };
     };
   };

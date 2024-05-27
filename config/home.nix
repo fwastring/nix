@@ -13,6 +13,7 @@
     ../moduler/common/dmenu.nix
     ../moduler/common/kitty.nix
     ../moduler/common/tmux.nix
+    ../moduler/common/vim.nix
     # ../moduler/common/zsh.nix 
     ../moduler/common/fish.nix 
     # ../moduler/common/starship.nix 
@@ -104,6 +105,7 @@
 	macchina
 
 	#Desktop
+	# vim_configurable
 	aerc
     firefox
 	vimb

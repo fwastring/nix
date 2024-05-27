@@ -12,8 +12,8 @@
 			extraConfig = ''
 				set -g @dracula-show-powerline true
 				# available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, tmux-ram-usage, network, network-bandwidth, network-ping, ssh-session, attached-clients, network-vpn, weather, time, mpc, spotify-tui, playerctl, kubernetes-context, synchronize-panes
-				# set -g @dracula-plugins 'spotify-tui battery time'
-				set -g @dracula-plugins 'battery time'
+				set -g @dracula-plugins 'spotify-tui battery time'
+				# set -g @dracula-plugins 'battery time'
 				set -g @dracula-refresh-rate 10
 				set -g @dracula-show-timezone false
 				set -g @dracula-military-time true
