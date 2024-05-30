@@ -57,7 +57,6 @@
     unzip
 	zip
 	imagemagick
-    nixops_unstable
 	killall
 	cmake
     feh
@@ -65,7 +64,6 @@
     scrot
     dunst
     xbanish
-	rofi
     networkmanager
     pavucontrol
 	fd
@@ -73,15 +71,12 @@
 	steam-run
 	appimage-run
 	bluez-tools
-	sops
-	age
 	grc
-	catppuccin-cursors.macchiatoGreen
 	xorg.xmodmap
 	playerctl
 
 	#Terminal	
-	libsixel
+	gh
     git
     tmux
     zathura
@@ -93,40 +88,33 @@
 	alsa-lib
 	libdbusmenu
 	xorg.libxcb
-	wiki-tui
 	speedcrunch
-	thefuck
 	eza
 	btop
 	poppler_utils
 	pandoc
-	ncspot
 	glow
-	macchina
+	rustup
 
 	#Desktop
-	# vim_configurable
 	aerc
     firefox
-	vimb
     thunderbird
     spotify
     signal-desktop
     darktable
     discord
     slack
-    lunarvim
     kitty
     neovim
     neofetch
     obsidian
     lazygit
 	betterdiscordctl
-	audacity
 	pdfarranger
 	byzanz
 	drawio
-	woeusb
+    remmina
 
 	#Dev
     python3
@@ -160,19 +148,6 @@
     networkmanager-l2tp
     strongswan
     ansible
-
-    #Funk
-    cabal-install
-    ghc
-    haskellPackages.hoogle
-    haskellPackages.fast-tags
-
-    #Disk
-    clojure
-    leiningen
-
-    # Jobb
-    remmina
   ];
   programs.home-manager.enable = true;
   programs.fish.enable = true;
