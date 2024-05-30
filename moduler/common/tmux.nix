@@ -1,4 +1,4 @@
-{ lib, config, pkgs, fetchFromGitHub, ... }:
+{ pkgs, ... }:
 {
   programs.tmux = {
     enable = true;
@@ -7,25 +7,31 @@
 		tmuxPlugins.sensible
 		tmuxPlugins.pain-control
 		tmuxPlugins.sessionist
+		tmuxPlugins.logging
 		{
-			plugin = fw-pkgs.tmuxPlugins.dracula;
+			plugin = tmuxPlugins.resurrect;
 			extraConfig = ''
-				set -g @dracula-show-powerline true
-				# available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, tmux-ram-usage, network, network-bandwidth, network-ping, ssh-session, attached-clients, network-vpn, weather, time, mpc, spotify-tui, playerctl, kubernetes-context, synchronize-panes
-				set -g @dracula-plugins 'spotify-tui battery time'
-				# set -g @dracula-plugins 'battery time'
-				set -g @dracula-refresh-rate 10
-				set -g @dracula-show-timezone false
-				set -g @dracula-military-time true
-				set -g @dracula-day-month true
-				set -g @dracula-show-left-icon session
-				set -g @dracula-battery-label ""
-				set -g @dracula-battery-colors "cyan dark_gray"
-				set -g @dracula-spotify-tui-colors "pink dark_gray"
-				set -g @dracula-ssh-session-colors "orange dark_gray"
-				set -g @dracula-show-empty-plugins false
+				resurrect_dir=“$HOME/.tmux/resurrect”
+				set -g @resurrect-dir $resurrect_dir
+				set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed “s| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g” $target | sponge $target'
+				set -g @resurrect-strategy-nvim 'session'
 			'';
 		}
+		{
+			plugin = tmuxPlugins.continuum;
+			extraConfig = ''
+				set -g @continuum-boot 'on'
+				set -g @continuum-restore 'on'
+			'';
+		}
+		fw-pkgs.tmuxPlugins.spotify
+		{
+			plugin = fw-pkgs.tmuxPlugins.minimal;
+			extraConfig = ''
+				bind-key b set-option status
+			'';
+		}
+		
     ];
     prefix = "C-a";
     terminal = "xterm-256color";

@@ -5,7 +5,7 @@
     # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
 	nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-	fw-pkgs.url = "github:FredzyW/fw-pkgs/master";
+	fw-pkgs.url = "github:fwastring/fwpkgs/main";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-23.11";
