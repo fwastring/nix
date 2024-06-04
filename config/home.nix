@@ -14,9 +14,7 @@
     ../moduler/common/kitty.nix
     ../moduler/common/tmux.nix
     ../moduler/common/vim.nix
-    # ../moduler/common/zsh.nix 
     ../moduler/common/fish.nix 
-    # ../moduler/common/starship.nix 
     ../moduler/common/git.nix
     ../moduler/common/nixpkgs.nix
     ../moduler/common/firefox.nix
@@ -25,6 +23,7 @@
     ../moduler/common/spotifyd.nix
     ../moduler/common/ssh.nix
     ../moduler/common/aerc.nix
+    ../moduler/common/rbw.nix
   ];
 
   nixpkgs = {
@@ -83,7 +82,6 @@
     yt-dlp
 	fzf
 	ripgrep
-	spotify-tui
 	fw-pkgs.spotify-player
 	alsa-lib
 	libdbusmenu
@@ -114,7 +112,12 @@
 	pdfarranger
 	byzanz
 	drawio
+	xdotool
+	pinentry
     remmina
+	rofi
+	rbw
+	rofi-rbw
 
 	#Dev
     python3
