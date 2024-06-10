@@ -20,6 +20,24 @@
         port = 22;
         user = "fr7658wa-s";
       };
+      "dm2" = {
+        hostname = "docker-master2";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
+      "ha1" = {
+        hostname = "hosted-agent-1";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
+      "ba6" = {
+        hostname = "buildagent6";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
     };
   };
 }

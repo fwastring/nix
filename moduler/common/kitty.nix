@@ -7,7 +7,7 @@
       size = 20;
     } else {
       name = "FiraCode Nerd Font";
-      size = 18;
+      size = 16;
     };
     shellIntegration = {
       mode = "no-cursor";
