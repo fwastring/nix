@@ -105,7 +105,7 @@
     slack
     kitty
     neovim
-    neofetch
+    fastfetch
     obsidian
     lazygit
 	betterdiscordctl
