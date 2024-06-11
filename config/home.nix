@@ -140,7 +140,7 @@
 	ansible-language-server
 	lua-language-server
 	tree-sitter
-	nodejs_21
+	nodejs_22
 	nodePackages_latest.vls
 	nodePackages_latest.volar
 	vscode-langservers-extracted

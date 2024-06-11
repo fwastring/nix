@@ -38,6 +38,18 @@
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
+      "fs1" = {
+        hostname = "192.168.0.120";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
+      "backups" = {
+        hostname = "192.168.0.120";
+        port = 22;
+        user = "github";
+        identityFile = "/home/fw/.ssh/github-ssh-key";
+      };
     };
   };
 }

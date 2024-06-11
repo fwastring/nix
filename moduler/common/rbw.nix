@@ -5,7 +5,7 @@
 	settings = {
 		email = "fredrik@wastring.com";
 		pinentry = pkgs.pinentry;
-		url = "https://pass.wastring.com";
+		base_url = "https://pass.wastring.com";
 	};
   };
 }
