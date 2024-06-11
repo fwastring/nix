@@ -94,14 +94,6 @@
     openssh = {
       enable = true;
     };
-	picom = {
-	  enable = true;
-	  fade = true;
-	  fadeDelta = 15;
-	};
-	spotifyd = {
-	  enable = true;
-	};
 	strongswan = {
 		enable = true;
 		secrets = [
@@ -110,10 +102,10 @@
 	};
     xserver = {
       enable = true;
-      # layout = "us";
-      # xkbVariant = "colemak_dh_iso";
-      layout = "se";
-      xkbVariant = "";
+	  xkb = {
+		  layout = "se";
+		  variant = "";
+	  };
       displayManager = {
         startx = {
          enable = true;
