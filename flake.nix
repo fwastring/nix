@@ -93,7 +93,11 @@
 			myhostname = "desktop";
 		};
         # > Our main home-manager configuration file <
-        modules = [./config/home.nix];
+        modules = [
+			./config/home.nix
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-fw-pkgs ]; })
+		];
       };
       "fw@jobb" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;

@@ -24,15 +24,15 @@ networking.firewall = {
           proxyWebsockets = true;
         };
       };
-      #   "git.wastring.com" = {
-      #           sslCertificateKey = "/certs/.lego/certificates/wastring.com.key";
-      #           sslCertificate = "/certs/.lego/certificates/wastring.com.crt";
-      #   forceSSL = true;
-      #   locations."/" = {
-      #     proxyPass = "http://172.17.0.1:3009";
-      #     proxyWebsockets = true;
-      #   };
-      # };
+        "git.wastring.com" = {
+                sslCertificateKey = "/certs/.lego/certificates/wastring.com.key";
+                sslCertificate = "/certs/.lego/certificates/wastring.com.crt";
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://192.168.16.1:3000";
+          proxyWebsockets = true;
+        };
+      };
         "cal.wastring.com" = {
                 sslCertificateKey = "/certs/.lego/certificates/wastring.com.key";
                 sslCertificate = "/certs/.lego/certificates/wastring.com.crt";
