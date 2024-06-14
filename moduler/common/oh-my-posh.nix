@@ -14,6 +14,7 @@
 				"peach" = "#f5a97f";
 				"red" = "#ed8796";
 				"green" = "#a6da95";
+				"mauve" = "#c6a0f6";
 		  };
 		  "blocks"= [
 			{
@@ -54,6 +55,12 @@
 				  "style"= "plain";
 				  "foreground"= "p:closer";
 				  "type"= "text";
+				}
+				{
+				  "foreground"= "p:mauve";
+				  "style"= "plain";
+				  "template"= "{{ .UserName }}@{{ .HostName }} ";
+				  "type"= "session";
 				}
 			  ];
 			}
