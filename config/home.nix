@@ -24,6 +24,7 @@
     ../moduler/common/ssh.nix
     ../moduler/common/aerc.nix
     ../moduler/common/rbw.nix
+    ../moduler/common/oh-my-posh.nix
   ];
 
   nixpkgs = {
