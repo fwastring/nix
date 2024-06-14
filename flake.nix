@@ -1,5 +1,5 @@
 {
-  description = "NixOS Deployments";
+  description = "fwastrings Nix-baserade konfigurationsfiler";
 
   inputs = {
     # Nixpkgs
@@ -10,9 +10,6 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    # TODO: Add any other flake you might need
-    # hardware.url = "github:nixos/nixos-hardware";
   };
 
   outputs = {
