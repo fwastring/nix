@@ -6,12 +6,12 @@
 		settings = {
 		  gui = {
 			  theme = {
-				  activeBorderColor = [ "#a6da95" "bold" ];
+				  activeBorderColor = [ "#f5a97f" "bold" ];
 				  inactiveBorderColor = [ "#a5adcb" ];
 				  optionsTextColor = [ "#8aadf4" ];
 				  selectedLineBgColor = [ "#363a4f" ];
 				  cherryPickedCommitBgColor = [ "#494d64" ];
-				  cherryPickedCommitFgColor = [ "#a6da95" ];
+				  cherryPickedCommitFgColor = [ "#f5a97f" ];
 				  unstagedChangesColor = [ "#ed8796" ];
 				  defaultFgColor = [ "#cad3f5" ];
 				  searchingActiveBorderColor = [ "#eed49f" ];

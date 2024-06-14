@@ -21,8 +21,8 @@
 			 src = pkgs.fishPlugins.foreign-env.src;
 		   }
 		   {
-			 name = "tide";
-			 src = pkgs.fishPlugins.tide.src;
+			 name = "pure";
+			 src = pkgs.fishPlugins.pure.src;
 		   }
 		   {
 		   	 name = "fzf";
@@ -50,6 +50,16 @@
 	  interactiveShellInit = ''
 		set fish_greeting # Disable greeting
 		set -Ux FZF_DEFAULT_OPTS "--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"
+		set --universal pure_symbol_prompt 
+		set --universal pure_enable_nixdevshell true
+		set --universal pure_color_primary f5a97f
+		set --universal pure_color_danger ed8796
+		set --universal pure_color_success a6da95
+		set --universal pure_color_warning eed49f
+		set --universal pure_color_light f4dbd6
+		set --universal pure_color_mute c6a0f6
+		# set --universal pure_color_danger ed8796
+		# set --universal pure_color_danger ed8796
 	  '';
 	};
 }
