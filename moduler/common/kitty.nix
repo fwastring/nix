@@ -3,10 +3,10 @@
   programs.kitty = {
     enable = true;
     font = if myhostname == "laptop" then {
-      name = "FiraCode Nerd Font";
-      size = 20;
+      name = "FiraCode Nerd Font Bold";
+      size = 18;
     } else {
-      name = "FiraCode Nerd Font";
+      name = "FiraCode Nerd Font Bold";
       size = 16;
     };
     shellIntegration = {
