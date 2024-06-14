@@ -69,10 +69,12 @@
 	bat
 	steam-run
 	appimage-run
+	bluez
 	bluez-tools
 	grc
 	xorg.xmodmap
 	playerctl
+	openssl
 
 	#Terminal	
 	gh
@@ -93,6 +95,11 @@
 	pandoc
 	glow
 	rustup
+	azure-cli
+	azuredatastudio
+	adrs
+	opentofu
+	kubernetes
 
 	#Desktop
 	aerc

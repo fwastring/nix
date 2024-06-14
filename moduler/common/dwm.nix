@@ -5,7 +5,7 @@ let
       url = "https://github.com/FredzyW/dwm-conf.git";
       # rev = "99a1e812295bcf65625a4b5a0dc1022658977920";
       # rev = "99f005ad0e5e5c904262e980b541cd6f0d001949";
-      rev = "1ba673a54d8241b87e706328cac362412f4bc584";
+      rev = "08965507ccd586f008cb0172ba7eee628542c5b9";
       # rev = "577d43c76b193f45ed74f9f403946ea3cc4298cf";
       # url = "https://git.wastring.com/fw/dwm.git";
       # rev = "04039f157960b83f1ab8abebb0ea77c72a75a249";
