@@ -78,6 +78,9 @@
 	openssl
 
 	#Terminal	
+	betterlockscreen
+	pyradio
+	haskellPackages.patat
 	gh
     git
     tmux
@@ -101,6 +104,7 @@
 	adrs
 	opentofu
 	kubernetes
+	lazydocker
 
 	#Desktop
 	aerc
