@@ -12,10 +12,10 @@ fi
 xrdb -merge ~/.Xresources
 setxkbmap -option caps:swapescape
 
-feh --bg-scale ~/wallpapers/nix-black-4k.png
+feh --bg-center ~/nix/wallpapers/peach-cat.png
+
 dwmblocks &
 dunst &
 xbanish &
-picom -b
 
 exec dwm
