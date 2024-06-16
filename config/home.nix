@@ -76,8 +76,16 @@
 	xorg.xmodmap
 	playerctl
 	openssl
+	libsecret
 
 	#Terminal	
+	vdirsyncer
+	todoman
+	calcure
+	python311Packages.urwid
+	signal-cli
+	scli
+	sysz
 	betterlockscreen
 	pyradio
 	haskellPackages.patat
@@ -99,6 +107,8 @@
 	pandoc
 	glow
 	rustup
+	openssl
+	pkg-config
 	azure-cli
 	azuredatastudio
 	adrs
@@ -114,6 +124,7 @@
     signal-desktop
     darktable
     discord
+	discordo
     slack
     kitty
     neovim
