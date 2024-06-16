@@ -4,7 +4,7 @@
     enable = true;
     font = if myhostname == "laptop" then {
       name = "FiraCode Nerd Font Bold";
-      size = 18;
+      size = 17;
     } else {
       name = "FiraCode Nerd Font Bold";
       size = 16;
