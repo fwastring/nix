@@ -13,7 +13,7 @@
     ./hardware-configuration.nix
 	../../config/base.nix
 	../../config/users.nix
-	../../moduler/common/nginx.nix
+	../../shared/nginx.nix
   ];
 
 	environment.systemPackages = with pkgs; [

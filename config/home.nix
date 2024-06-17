@@ -9,22 +9,22 @@
   ...
 }: {
   imports = [
-    ../moduler/common/dwm.nix
-    ../moduler/common/dmenu.nix
-    ../moduler/common/kitty.nix
-    ../moduler/common/tmux.nix
-    ../moduler/common/vim.nix
-    ../moduler/common/fish.nix 
-    ../moduler/common/git.nix
-    ../moduler/common/nixpkgs.nix
-    ../moduler/common/firefox.nix
-    ../moduler/common/zathura.nix
-    ../moduler/common/lazygit.nix
-    ../moduler/common/spotifyd.nix
-    ../moduler/common/ssh.nix
-    ../moduler/common/aerc.nix
-    ../moduler/common/rbw.nix
-    ../moduler/common/oh-my-posh.nix
+    ../shared/dwm.nix
+    ../shared/dmenu.nix
+    ../shared/kitty.nix
+    ../shared/tmux.nix
+    ../shared/vim.nix
+    ../shared/fish.nix 
+    ../shared/git.nix
+    ../shared/nixpkgs.nix
+    ../shared/firefox.nix
+    ../shared/zathura.nix
+    ../shared/lazygit.nix
+    ../shared/spotifyd.nix
+    ../shared/ssh.nix
+    ../shared/aerc.nix
+    ../shared/rbw.nix
+    ../shared/oh-my-posh.nix
   ];
 
   nixpkgs = {

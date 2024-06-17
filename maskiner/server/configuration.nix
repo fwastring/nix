@@ -12,7 +12,7 @@
 	imports = [
 		./hardware-configuration.nix
 		../../config/users.nix
-		../../moduler/common/nginx.nix
+		../../shared/nginx.nix
 	];
 
 	networking.hostName = myhostname;

@@ -10,11 +10,11 @@
   ...
 }: {
   imports = [
-    ../moduler/common/git.nix
-    ../moduler/common/tmux.nix
-    ../moduler/common/nixpkgs.nix
-    ../moduler/common/lazygit.nix
-    ../moduler/common/zsh-server.nix
+    ../shared/git.nix
+    ../shared/tmux.nix
+    ../shared/nixpkgs.nix
+    ../shared/lazygit.nix
+    ../shared/zsh-server.nix
   ];
 
   nixpkgs = {
