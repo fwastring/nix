@@ -90,6 +90,35 @@
   boot.loader.efi.canTouchEfiVariables = true;
   console.keyMap = "sv-latin1";
 
+	systemd.services.vdirsyncer = {
+	  serviceConfig.Type = "oneshot";
+	  serviceConfig.User = "fw";
+	  path = with pkgs; [ vdirsyncer ];
+	  script = ''
+		vdirsyncer -c "/home/fw/.config/vdirsyncer/config" sync
+	  '';
+	};
+	systemd.timers.vdirsyncer = {
+	  wantedBy = [ "timers.target" ];
+	  partOf = [ "vdirsyncer.service" ];
+	  timerConfig = {
+		OnBootSec = "5m";
+		OnUnitActiveSec = "5m";
+		Unit = "vdirsyncer.service";
+	  };
+	};
+
+	environment.systemPackages = [(
+	  pkgs.catppuccin-sddm.override {
+		flavor = "mocha";
+		font  = "FiraCode Nerd Font Bold";
+		fontSize = "17";
+		background = "${../wallpapers/inverted.png}";
+		loginBackground = true;
+	  }
+	)];
+
+
   services = {
     openssh = {
       enable = true;
@@ -107,9 +136,11 @@
 		  variant = "";
 	  };
       displayManager = {
-        startx = {
-         enable = true;
-        };
+		sddm = {
+		  enable = true;
+		  theme = "catppuccin-mocha";
+		  package = pkgs.kdePackages.sddm;
+		};
       };
       windowManager = {
         dwm = {

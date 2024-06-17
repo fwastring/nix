@@ -79,6 +79,10 @@
 	libsecret
 
 	#Terminal	
+	sc-im
+	gnuplot
+	bison
+
 	vdirsyncer
 	todoman
 	calcure
@@ -179,7 +183,7 @@
   programs.fish.enable = true;
 
   xsession.enable = true;
-  xsession.windowManager.command = "exec dwm";
+  xsession.windowManager.command = "/home/fw/nix/.xinitrc";
 
   home.username = "fw";
   home.homeDirectory = "/home/fw";

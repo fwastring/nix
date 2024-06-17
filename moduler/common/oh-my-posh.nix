@@ -10,7 +10,7 @@
 				"closer"= "p:os";
 				"pink"= "#F5BDE6";
 				"lavender"= "#B7BDF8";
-				"blue"=  "#8AADF4";
+				"blue"=  "#8aadf4";
 				"peach" = "#f5a97f";
 				"red" = "#ed8796";
 				"green" = "#a6da95";
@@ -22,6 +22,15 @@
 			  "newline" = true;
 			  "type"= "prompt";
 			  "segments" = [
+				  {
+				  "background"= "transparent";
+				  "foreground"= "p:blue";
+				  # "powerline_symbol"= "\ue0b4";
+				  # "leading_diamond"= "\ue0b6";
+				  "style"= "diamond";
+				  "template"= "{{.Icon}}  ";
+				  "type"= "os";
+				}
 				{
 				  "foreground"= "p:peach";
 				  "properties"= {
