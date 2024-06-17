@@ -12,7 +12,7 @@ fi
 xrdb -merge ~/.Xresources
 setxkbmap -option caps:swapescape
 
-feh --bg-center ~/nix/wallpapers/peach-cat.png
+feh --bg-center ~/nix/wallpapers/inverted.png
 
 dwmblocks &
 dunst &
