@@ -60,33 +60,43 @@ networking.firewall = {
           proxyWebsockets = true;
         };
       };
-      #   "search.wastring.com" = {
-      #           sslCertificateKey = "/certs/.lego/certificates/wastring.com.key";
-      #           sslCertificate = "/certs/.lego/certificates/wastring.com.crt";
-      #   forceSSL = true;
-      #   locations."/" = {
-      #     proxyPass = "http://172.17.0.1:8060";
-      #     proxyWebsockets = true;
-      #   };
-      # };
-      #   "docs.wastring.com" = {
-      #           sslCertificateKey = "/certs/.lego/certificates/wastring.com.key";
-      #           sslCertificate = "/certs/.lego/certificates/wastring.com.crt";
-      #   forceSSL = true;
-      #   locations."/" = {
-      #     proxyPass = "http://172.17.0.1:8003";
-      #     proxyWebsockets = true;
-      #   };
-      # };
-      #   "wastring.com" = {
-      #           sslCertificateKey = "/home/fw/.lego/certificates/wastring.com.key";
-      #           sslCertificate = "/certs/.lego/certificates/wastring.com.crt";
-      #   forceSSL = true;
-      #   locations."/" = {
-      #     proxyPass = "http://172.17.0.1:2283";
-      #     proxyWebsockets = true;
-      #   };
-      # };
+        "drive.wastring.com" = {
+                sslCertificateKey = "/certs/.lego/certificates/wastring.com.key";
+                sslCertificate = "/certs/.lego/certificates/wastring.com.crt";
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://172.17.0.1:3001";
+          proxyWebsockets = true;
+        };
+      };
+
+        "sandbox.wastring.com" = {
+                sslCertificateKey = "/certs/.lego/certificates/wastring.com.key";
+                sslCertificate = "/certs/.lego/certificates/wastring.com.crt";
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://172.17.0.1:3001";
+          proxyWebsockets = true;
+        };
+      };
+        "files.wastring.com" = {
+                sslCertificateKey = "/certs/.lego/certificates/wastring.com.key";
+                sslCertificate = "/certs/.lego/certificates/wastring.com.crt";
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://172.17.0.1:3923";
+          proxyWebsockets = true;
+        };
+      };
+        "ftp.wastring.com" = {
+                sslCertificateKey = "/certs/.lego/certificates/wastring.com.key";
+                sslCertificate = "/certs/.lego/certificates/wastring.com.crt";
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://172.17.0.1:3921";
+          proxyWebsockets = true;
+        };
+      };
   };
 };
 }
