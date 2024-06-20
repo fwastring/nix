@@ -183,7 +183,7 @@
   programs.fish.enable = true;
 
   xsession.enable = true;
-  xsession.windowManager.command = "/home/fw/nix/.xinitrc";
+  xsession.windowManager.command = if myhostname == "laptop" then "/home/fw/nix/.xinitrc.laptop" else "/home/fw/nix/.xinitrc";
 
   home.username = "fw";
   home.homeDirectory = "/home/fw";
