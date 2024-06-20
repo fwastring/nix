@@ -37,7 +37,7 @@ networking.firewall = {
 				X11Forwarding = true;
 			};
 			extraConfig = ''
-			  AllowUsers fw
+			  AllowUsers fw ios
 			'';
 		};
 	};
