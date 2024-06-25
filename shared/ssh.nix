@@ -9,7 +9,7 @@
         user = "git";
         identityFile = "/home/fw/.ssh/id_rsa";
       };
-      "wastring.com" = {
+      "desktop" = {
         hostname = "wastring.com";
         port = 55502;
         user = "fw";
@@ -38,7 +38,7 @@
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
-      "fs1" = {
+      "ba2" = {
         hostname = "192.168.0.120";
         port = 22;
         user = "fw";
