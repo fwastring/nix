@@ -120,12 +120,6 @@
 
 
   services = {
-	  syncthing = {
-        enable = true;
-        user = "fw";
-        dataDir = "/home/fw/docs";    # Default folder for new synced folders
-        configDir = "/home/fw/.config/syncthing";   # Folder for Syncthing's settings and keys
-    };
     openssh = {
       enable = true;
     };
