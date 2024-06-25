@@ -52,13 +52,13 @@ networking.firewall = {
 		  guiAddress = "0.0.0.0:8384";
 			settings = {
 			  devices = {
-				# "device1" = { id = "DEVICE-ID-GOES-HERE"; };
+				"laptop" = { id = "2VEN7O3-PB3G2MK-XJI7R5Z-6MHTNN2-WMXERIX-6G7QWSK-VKSWOSH-Q5WFDAI"; };
 				# "device2" = { id = "DEVICE-ID-GOES-HERE"; };
 			  };
 			  folders = {
 				"Documents" = {         # Name of folder in Syncthing, also the folder ID
 				  path = "/home/fw/docs";    # Which folder to add to Syncthing
-				  # devices = [ "device1" "device2" ];      # Which devices to share the folder with
+				  devices = [ "laptop" ];      # Which devices to share the folder with
 				};
 			  };
 			};
