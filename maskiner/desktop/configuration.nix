@@ -53,7 +53,7 @@ networking.firewall = {
 			settings = {
 			  devices = {
 				"laptop" = { id = "2VEN7O3-PB3G2MK-XJI7R5Z-6MHTNN2-WMXERIX-6G7QWSK-VKSWOSH-Q5WFDAI"; };
-				# "device2" = { id = "DEVICE-ID-GOES-HERE"; };
+				"jobb" = { id = "XRKVC74-UNJDQSW-4G3RHC3-5I4W5UT-D2MRMBZ-R4A4MMT-4XB4W47-LFLFBAV"; };
 			  };
 			  folders = {
 				"Documents" = {         # Name of folder in Syncthing, also the folder ID
