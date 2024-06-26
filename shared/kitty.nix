@@ -7,11 +7,12 @@
       size = 17;
     } else {
       name = "FiraCode Nerd Font Bold";
-      size = 16;
+      size = 13;
     };
     shellIntegration = {
       mode = "no-cursor";
     };
+    # theme = "Catppuccin-Latte";
     theme = "Catppuccin-Macchiato";
     settings = {
       confirm_os_window_close = 2;

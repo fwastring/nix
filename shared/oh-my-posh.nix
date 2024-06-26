@@ -5,6 +5,7 @@
 		enableFishIntegration = true;
 		settings = {
 		  "$schema"= "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json";
+		  # Macchiato
 		  "palette" =  {
 				"os"= "#ACB0BE";
 				"closer"= "p:os";
@@ -16,6 +17,18 @@
 				"green" = "#a6da95";
 				"mauve" = "#c6a0f6";
 		  };
+		  # Latte
+		  # "palette" =  {
+				# "os"= "#ACB0BE";
+				# "closer"= "p:os";
+				# "pink"= "#ea76cb";
+				# "lavender"= "#B7BDF8";
+				# "blue"=  "#8aadf4";
+				# "peach" = "#fe640b";
+				# "red" = "#d20f39";
+				# "green" = "#40a02b";
+				# "mauve" = "#8839ef";
+		  # };
 		  "blocks"= [
 			{
 			  "alignment"= "left";
