@@ -121,6 +121,7 @@
 	lazydocker
 
 	#Desktop
+	libreoffice-qt6-fresh
 	aerc
     firefox
     thunderbird
@@ -152,8 +153,12 @@
 	ranger
 	python311Packages.pynvim
 	ueberzugpp
+	go
+	gopls
 
 	#LSP
+	zig
+	zls
     nil
 	python311Packages.python-lsp-server
 	marksman
