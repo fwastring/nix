@@ -13,7 +13,8 @@
       mode = "no-cursor";
     };
     # theme = "Catppuccin-Latte";
-    theme = "Catppuccin-Macchiato";
+    theme = "Catppuccin-Mocha";
+    # theme = "Catppuccin-Macchiato";
     settings = {
       confirm_os_window_close = 2;
       cursor_shape = "block";

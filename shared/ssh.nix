@@ -50,6 +50,18 @@
         user = "github";
         identityFile = "/home/fw/.ssh/github-ssh-key";
       };
+      "backup1" = {
+        hostname = "192.168.0.220";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
+      "dashboard" = {
+        hostname = "192.168.0.159";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
     };
   };
 }
