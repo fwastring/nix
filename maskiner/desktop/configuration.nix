@@ -27,6 +27,7 @@ networking.firewall = {
     { from = 8000; to = 8010; }
   ];
 };
+
    networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 
 	services = {

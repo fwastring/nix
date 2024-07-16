@@ -17,6 +17,11 @@
 
 	networking.hostName = myhostname;
 
+	environment.systemPackages = with pkgs; [
+		dotnet-sdk_8
+	];
+
+
 	services.xserver.dpi = 140;
 	services = {
 		syncthing = {

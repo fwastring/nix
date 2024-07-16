@@ -77,9 +77,22 @@
 	xorg.xmodmap
 	playerctl
 	openssl
+	libiconv
+	pkg-config
 	libsecret
+	go
+	ghorg
+	libsixel
+	kompose
 
 	#Terminal	
+	weechat
+	jira-cli-go
+	texliveSmall
+	jq
+
+	vscode
+
 	sc-im
 	gnuplot
 	bison
@@ -88,6 +101,7 @@
 	texliveMedium
 
 	vdirsyncer
+	todoist
 	todoman
 	calcure
 	python311Packages.urwid
@@ -121,11 +135,10 @@
 	azuredatastudio
 	adrs
 	opentofu
-	kubernetes
 	lazydocker
 
 	#Desktop
-	libreoffice-qt6-fresh
+	openvpn3
 	aerc
     firefox
 	chromium
@@ -160,12 +173,8 @@
 	ranger
 	python311Packages.pynvim
 	ueberzugpp
-	go
-	gopls
 
 	#LSP
-	zig
-	zls
     nil
 	python311Packages.python-lsp-server
 	marksman
@@ -183,6 +192,7 @@
 	nodePackages_latest.vls
 	nodePackages_latest.volar
 	vscode-langservers-extracted
+	gopls
 
     #VPN
     openvpn
@@ -195,7 +205,7 @@
   programs.fish.enable = true;
 
   xsession.enable = true;
-  xsession.windowManager.command = if myhostname == "laptop" then "/home/fw/nix/.xinitrc.laptop" else "/home/fw/nix/.xinitrc";
+  xsession.windowManager.command = if myhostname == "laptop" then "/home/fw/nix/.xinitrc.laptop" else if myhostname == "jobb" then "/home/fw/nix/.xinitrc.jobb" else "/home/fw/nix/.xinitrc";
 
   home.username = "fw";
   home.homeDirectory = "/home/fw";
