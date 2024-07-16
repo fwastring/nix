@@ -88,7 +88,6 @@
 	#Terminal	
 	weechat
 	jira-cli-go
-	texliveSmall
 	jq
 
 	vscode
