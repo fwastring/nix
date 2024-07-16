@@ -57,6 +57,7 @@
     unzip
 	zip
 	imagemagick
+	ghostscript
 	killall
 	cmake
     feh
@@ -82,6 +83,9 @@
 	sc-im
 	gnuplot
 	bison
+	tesseract
+	qrencode
+	texliveMedium
 
 	vdirsyncer
 	todoman
@@ -124,6 +128,8 @@
 	libreoffice-qt6-fresh
 	aerc
     firefox
+	chromium
+	vial
     thunderbird
     spotify
     signal-desktop
@@ -146,6 +152,7 @@
 	rofi
 	rbw
 	rofi-rbw
+	teams-for-linux
 
 	#Dev
     python3
