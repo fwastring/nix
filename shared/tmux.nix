@@ -38,6 +38,8 @@
     keyMode = "vi";
 	escapeTime = 0;
     extraConfig = ''
+		set -g base-index 1
+		setw -g pane-base-index 1
 		set-option -ga terminal-overrides ",alacritty:Tc"
     '';
   };

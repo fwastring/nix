@@ -8,18 +8,26 @@
 			};
 			font = {
 				normal = { 
+					# family = "Agave Nerd Font Mono";
+					# family = "Victor Mono";
 					family = "FiraCode Nerd Font";
 					style = "SemiBold";
 				};
 				bold = { 
+					# family = "Agave Nerd Font Mono";
+					# family = "Victor Mono";
 					family = "FiraCode Nerd Font";
 					style = "Bold";
 				};
 				italic = { 
+					# family = "Agave Nerd Font Mono";
+					# family = "Victor Mono";
 					family = "FiraCode Nerd Font";
 					style = "Light";
 				};
 				bold_italic = { 
+					# family = "Agave Nerd Font Mono";
+					# family = "Victor Mono";
 					family = "FiraCode Nerd Font";
 					style = "Regular";
 				};

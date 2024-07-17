@@ -23,6 +23,7 @@
   users.defaultUserShell = pkgs.bash;
   # environment.systemPackages = with pkgs; [
   # ];
+  systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
   programs.fish.enable = true;
 	programs.bash = {
 	interactiveShellInit = ''
@@ -72,6 +73,8 @@
     (nerdfonts.override { 
       fonts = [ 
         "FiraCode" 
+		"Agave"
+		"VictorMono"
         "DroidSansMono" 
       ]; 
     })
@@ -140,19 +143,19 @@
 		  "ipsec.d/ipsec.nm-l2tp.secrets"
 		];
 	};
+  displayManager = {
+	sddm = {
+	  enable = true;
+	  theme = "catppuccin-mocha";
+	  package = pkgs.kdePackages.sddm;
+	};
+  };
     xserver = {
       enable = true;
 	  xkb = {
 		  layout = "se";
 		  variant = "";
 	  };
-      displayManager = {
-		sddm = {
-		  enable = true;
-		  theme = "catppuccin-mocha";
-		  package = pkgs.kdePackages.sddm;
-		};
-      };
       windowManager = {
         dwm = {
           enable = true;
