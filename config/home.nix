@@ -11,7 +11,8 @@
   imports = [
     ../shared/dwm.nix
     ../shared/dmenu.nix
-    ../shared/kitty.nix
+    # ../shared/kitty.nix
+    ../shared/alacritty.nix
     ../shared/tmux.nix
     ../shared/vim.nix
     ../shared/fish.nix 
@@ -145,6 +146,7 @@
 	discordo
     slack
     kitty
+	alacritty
     neovim
     fastfetch
     obsidian
