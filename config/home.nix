@@ -58,6 +58,7 @@
     unzip
 	zip
 	imagemagick
+	ghostscript
 	killall
 	cmake
     feh
@@ -88,7 +89,6 @@
 	#Terminal	
 	weechat
 	jira-cli-go
-	texliveSmall
 	jq
 
 	vscode
@@ -96,6 +96,9 @@
 	sc-im
 	gnuplot
 	bison
+	tesseract
+	qrencode
+	texliveMedium
 
 	vdirsyncer
 	todoist
@@ -138,6 +141,8 @@
 	openvpn3
 	aerc
     firefox
+	chromium
+	vial
     thunderbird
     spotify
     signal-desktop
@@ -161,6 +166,7 @@
 	rofi
 	rbw
 	rofi-rbw
+	teams-for-linux
 
 	#Dev
     python3

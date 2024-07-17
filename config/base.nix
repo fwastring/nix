@@ -7,6 +7,9 @@
   pkgs,
   ...
 }: {
+	imports = [
+		../shared/vial.nix
+	];
   nixpkgs = {
     overlays = [
     ];
@@ -18,6 +21,8 @@
   nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
   nix.nixPath = ["/etc/nix/path"];
   users.defaultUserShell = pkgs.bash;
+  # environment.systemPackages = with pkgs; [
+  # ];
   programs.fish.enable = true;
 	programs.bash = {
 	interactiveShellInit = ''
@@ -108,18 +113,24 @@
 	#   };
 	# };
 
-	environment.systemPackages = [(
-	  pkgs.catppuccin-sddm.override {
-		flavor = "mocha";
-		font  = "FiraCode Nerd Font Bold";
-		fontSize = "17";
-		background = "${../wallpapers/inverted.png}";
-		loginBackground = true;
-	  }
+	environment.systemPackages = with pkgs; [(
+		catppuccin-sddm.override {
+			flavor = "mocha";
+			font  = "FiraCode Nerd Font Bold";
+			fontSize = "17";
+			background = "${../wallpapers/inverted.png}";
+			loginBackground = true;
+		}
 	)];
 
 
   services = {
+  	udev = {
+		packages = with pkgs; [
+			vial
+			via
+		];
+	};
     openssh = {
       enable = true;
     };
