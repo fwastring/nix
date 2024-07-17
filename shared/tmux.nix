@@ -34,11 +34,11 @@
 		
     ];
     prefix = "C-a";
-    terminal = "xterm-256color";
+    terminal = "alacritty";
     keyMode = "vi";
 	escapeTime = 0;
-    extraConfig = "
-
-    ";
+    extraConfig = ''
+		set-option -ga terminal-overrides ",alacritty:Tc"
+    '';
   };
 }

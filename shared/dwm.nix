@@ -3,7 +3,7 @@ let
   dwm = pkgs.dwm.overrideAttrs (old: {
     src = builtins.fetchGit {
       url = "https://github.com/FredzyW/dwm-conf.git";
-      rev = "eb3015553442df6a92a79d47ff4ace8297edb9cb";
+      rev = "964a3b9c94e780636a1a4ef01afb90ab8de4bb6d";
     };
     nativeBuildInputs = with pkgs; [ 
       xorg.libX11.dev
