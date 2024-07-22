@@ -10,7 +10,7 @@ if command -v dbus-update-activation-environment >/dev/null 2>&1; then
 fi
 
 xrdb -merge ~/.Xresources
-# setxkbmap -option caps:swapescape
+setxkbmap -option caps:swapescape
 
 feh --bg-scale ~/nix/wallpapers/inverted.png
 
