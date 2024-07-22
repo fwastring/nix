@@ -17,12 +17,12 @@
 
   networking.hostName = myhostname;
 
-	# services.k3s = {
- #    enable = true;
- #    role = "server";
- #    token = "supersupersecretkey";
- #    clusterInit = true;
- #  };
+	services.k3s = {
+    enable = true;
+    role = "server";
+    token = "supersupersecretkey";
+    clusterInit = true;
+  };
 
 	# services = {
 	# 	syncthing = {
