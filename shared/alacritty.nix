@@ -31,7 +31,7 @@
 					family = "FiraCode Nerd Font";
 					style = "Regular";
 				};
-				size = 9;
+				size = 11;
 			};
 		colors = {
 			primary = {

@@ -62,6 +62,24 @@
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
+      "kub1" = {
+        hostname = "192.168.0.52";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
+      "mac" = {
+        hostname = "82.76.34.36";
+        port = 22;
+        user = "ifacts";
+        identityFile = "/home/fw/.ssh/ifacts-ssh-key";
+      };
+      "malmo" = {
+        hostname = "192.168.0.138";
+        port = 22;
+        user = "ifacts";
+        identityFile = "/home/fw/.ssh/ifacts-ssh-key";
+      };
     };
   };
 }

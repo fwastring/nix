@@ -13,6 +13,7 @@
     ../shared/dmenu.nix
     # ../shared/kitty.nix
     ../shared/alacritty.nix
+    # ../shared/dunst.nix
     ../shared/tmux.nix
     ../shared/vim.nix
     ../shared/fish.nix 
