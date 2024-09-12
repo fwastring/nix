@@ -6,6 +6,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
 	nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 	fw-pkgs.url = "github:fwastring/fwpkgs/main";
+	knock.url = "github:BentonEdmondson/knock";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-24.05";
@@ -18,7 +19,7 @@
     home-manager,
 	nixpkgs-unstable,
 	fw-pkgs,
-	sops-nix,
+	knock,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -35,6 +36,12 @@
           config.allowUnfree = true;
         };
       };
+	overlay-knock = final: prev: {
+        knock = import knock {
+			inherit system;
+          config.allowUnfree = true;
+        };
+      };
   in {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -46,7 +53,6 @@
 		};
         modules = [
 		./maskiner/laptop/configuration.nix
-			sops-nix.nixosModules.sops
 		];
       };
       desktop = nixpkgs.lib.nixosSystem {
@@ -57,6 +63,7 @@
         modules = [
 			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
 			./maskiner/desktop/configuration.nix
+			knock
 		];
       };
       jobb = nixpkgs.lib.nixosSystem {
@@ -79,8 +86,7 @@
 		};
         modules = [
 			./config/home.nix
-			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
-			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-fw-pkgs ]; })
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable overlay-knock overlay-fw-pkgs ]; })
 		];
       };
       "fw@desktop" = home-manager.lib.homeManagerConfiguration {

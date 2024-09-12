@@ -1,5 +1,39 @@
 {
   "nodes": {
+    "base64-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1705041416,
+        "narHash": "sha256-fi1/gozIXtVAhJr/TOM5cu1hJ7BKgz4KaDtkbYNKYR0=",
+        "ref": "refs/heads/master",
+        "rev": "dceb7af2f73afb7aae20322cca04f27331d2e16a",
+        "revCount": 3,
+        "type": "git",
+        "url": "https://gist.github.com/tomykaira/f0fd86b6c73063283afe550bc5d77594"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://gist.github.com/tomykaira/f0fd86b6c73063283afe550bc5d77594"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1710146030,
+        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
+        "ref": "refs/heads/main",
+        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
+        "revCount": 92,
+        "type": "git",
+        "url": "https://github.com/numtide/flake-utils"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/numtide/flake-utils"
+      }
+    },
     "fw-pkgs": {
       "locked": {
         "lastModified": 1717322328,
@@ -14,6 +48,22 @@
         "ref": "main",
         "repo": "fwpkgs",
         "type": "github"
+      }
+    },
+    "gourou-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1713159448,
+        "narHash": "sha256-z/hMvFPDd3CXo4iUiZPfkUVQPPcJe+Tk6By+cibAtE0=",
+        "ref": "refs/heads/master",
+        "rev": "81faf1f9bef4d27d8659f2f16b9c65df227ee3d7",
+        "revCount": 141,
+        "type": "git",
+        "url": "https://forge.soutade.fr/soutade/libgourou"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://forge.soutade.fr/soutade/libgourou"
       }
     },
     "home-manager": {
@@ -37,36 +87,42 @@
         "type": "github"
       }
     },
-    "nixpkgs": {
+    "knock": {
+      "inputs": {
+        "base64-src": "base64-src",
+        "flake-utils": "flake-utils",
+        "gourou-src": "gourou-src",
+        "nixpkgs": "nixpkgs",
+        "pugixml-src": "pugixml-src",
+        "updfparser-src": "updfparser-src"
+      },
       "locked": {
-        "lastModified": 1718208800,
-        "narHash": "sha256-US1tAChvPxT52RV8GksWZS415tTS7PV42KTc2PNDBmc=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "cc54fb41d13736e92229c21627ea4f22199fee6b",
+        "lastModified": 1721181121,
+        "narHash": "sha256-181wtuVI4l6mWUMwDe0HkvoqKWrDF+UVL0E83YEztks=",
+        "owner": "BentonEdmondson",
+        "repo": "knock",
+        "rev": "0aa4005fd4f2ee1b41c20643017c8f0a2bdf6262",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-24.05",
-        "repo": "nixpkgs",
+        "owner": "BentonEdmondson",
+        "repo": "knock",
         "type": "github"
       }
     },
-    "nixpkgs-stable": {
+    "nixpkgs": {
       "locked": {
-        "lastModified": 1713638189,
-        "narHash": "sha256-q7APLfB6FmmSMI1Su5ihW9IwntBsk2hWNXh8XtSdSIk=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "74574c38577914733b4f7a775dd77d24245081dd",
-        "type": "github"
+        "lastModified": 1720928027,
+        "narHash": "sha256-Ze8frbrRJAuEJWVWf9bExMoFshPYhAmp1Nq5VYkzlVU=",
+        "ref": "refs/heads/master",
+        "rev": "048f85c494ef4fcd90889537f78e8548f5abcaf0",
+        "revCount": 652811,
+        "type": "git",
+        "url": "https://github.com/nixos/nixpkgs"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "release-23.11",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "git",
+        "url": "https://github.com/nixos/nixpkgs"
       }
     },
     "nixpkgs-unstable": {
@@ -87,44 +143,74 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1713596654,
-        "narHash": "sha256-LJbHQQ5aX1LVth2ST+Kkse/DRzgxlVhTL1rxthvyhZc=",
+        "lastModified": 1718208800,
+        "narHash": "sha256-US1tAChvPxT52RV8GksWZS415tTS7PV42KTc2PNDBmc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fd16bb6d3bcca96039b11aa52038fafeb6e4f4be",
+        "rev": "cc54fb41d13736e92229c21627ea4f22199fee6b",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
+        "ref": "nixos-24.05",
         "repo": "nixpkgs",
         "type": "github"
+      }
+    },
+    "pugixml-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720456557,
+        "narHash": "sha256-0KZgn1PASbEb+Xl9XDZI+uifWwKPL6pVC1Lgbnjbet0=",
+        "ref": "refs/heads/master",
+        "rev": "30cc354fe37114ec7a0a4ed2192951690357c2ed",
+        "revCount": 1799,
+        "type": "git",
+        "url": "https://github.com/zeux/pugixml"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/zeux/pugixml"
       }
     },
     "root": {
       "inputs": {
         "fw-pkgs": "fw-pkgs",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable",
-        "sops-nix": "sops-nix"
+        "knock": "knock",
+        "nixpkgs": "nixpkgs_2",
+        "nixpkgs-unstable": "nixpkgs-unstable"
       }
     },
-    "sops-nix": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2",
-        "nixpkgs-stable": "nixpkgs-stable"
-      },
+    "systems": {
       "locked": {
-        "lastModified": 1713892811,
-        "narHash": "sha256-uIGmA2xq41vVFETCF1WW4fFWFT2tqBln+aXnWrvjGRE=",
-        "path": "/nix/store/d0lnnw00mxa025i7dz4g4qcdfixxmg1s-source",
-        "rev": "f1b0adc27265274e3b0c9b872a8f476a098679bd",
-        "type": "path"
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
       },
       "original": {
-        "id": "sops-nix",
-        "type": "indirect"
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "updfparser-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1711214903,
+        "narHash": "sha256-HD73WGZ4e/3T7vQmwU/lRADtvsInFG62uqvJmF773Rk=",
+        "ref": "refs/heads/master",
+        "rev": "6060d123441a06df699eb275ae5ffdd50409b8f3",
+        "revCount": 33,
+        "type": "git",
+        "url": "https://forge.soutade.fr/soutade/updfparser"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://forge.soutade.fr/soutade/updfparser"
       }
     }
   },

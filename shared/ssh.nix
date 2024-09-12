@@ -62,6 +62,11 @@
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
+      "kobo" = {
+        hostname = "192.168.1.192";
+        port = 22;
+        user = "root";
+      };
     };
   };
 }

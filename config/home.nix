@@ -84,10 +84,12 @@
 	go
 	ghorg
 	libsixel
-	kompose
+	valgrind
+	gnupg
+	(pass.withExtensions (ext: with ext; [pass-import]))
 
 	#Terminal	
-	weechat
+	deno
 	jira-cli-go
 	jq
 
@@ -98,13 +100,16 @@
 	bison
 	tesseract
 	qrencode
-	texliveMedium
+	texliveFull
+	freecad
 
 	vdirsyncer
 	todoist
 	todoman
 	calcure
 	python311Packages.urwid
+	python311Packages.numpy
+	python311Packages.matplotlib
 	signal-cli
 	scli
 	sysz
@@ -138,6 +143,10 @@
 	lazydocker
 
 	#Desktop
+	libreoffice-qt6-fresh
+	calibre
+	fluent-reader
+	newsboat
 	openvpn3
 	aerc
     firefox
@@ -152,7 +161,7 @@
     slack
     kitty
 	alacritty
-    neovim
+    unstable.neovim
     fastfetch
     obsidian
     lazygit
@@ -174,6 +183,8 @@
 	ranger
 	python311Packages.pynvim
 	ueberzugpp
+	jdk
+	maven
 
 	#LSP
     nil
