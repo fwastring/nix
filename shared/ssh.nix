@@ -69,7 +69,7 @@
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
       "mac" = {
-        hostname = "82.76.34.36";
+        hostname = "192.168.0.206";
         port = 22;
         user = "ifacts";
         identityFile = "/home/fw/.ssh/ifacts-ssh-key";
