@@ -26,6 +26,7 @@
     ../shared/aerc.nix
     ../shared/rbw.nix
     ../shared/oh-my-posh.nix
+    ../shared/mpv.nix
   ];
 
   nixpkgs = {
@@ -51,7 +52,6 @@
     alsa-utils
     killall
     upower
-    mpv
     gcc
     gnumake
     htop
