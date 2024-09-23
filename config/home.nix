@@ -21,7 +21,7 @@
     ../shared/firefox.nix
     ../shared/zathura.nix
     ../shared/lazygit.nix
-    ../shared/spotifyd.nix
+    # ../shared/spotifyd.nix
     ../shared/ssh.nix
     ../shared/aerc.nix
     ../shared/rbw.nix
@@ -31,6 +31,8 @@
   nixpkgs = {
     overlays = [];
     config = {
+      # allowUnfree = false;
+      # allowUnfreePredicate = _: false;
       allowUnfree = true;
       allowUnfreePredicate = _: true;
       permittedInsecurePackages = [
@@ -70,7 +72,6 @@
     pavucontrol
 	fd
 	bat
-	steam-run
 	appimage-run
 	bluez
 	bluez-tools
@@ -85,37 +86,20 @@
 	ghorg
 	libsixel
 	valgrind
-	gnupg
-	(pass.withExtensions (ext: with ext; [pass-import]))
+	soulseekqt
 
 	#Terminal	
-	deno
-	jira-cli-go
 	jq
 
-	vscode
-
-	sc-im
 	gnuplot
-	bison
-	tesseract
 	qrencode
 	texliveFull
-	freecad
 
-	vdirsyncer
-	todoist
-	todoman
-	calcure
 	python311Packages.urwid
 	python311Packages.numpy
 	python311Packages.matplotlib
-	signal-cli
-	scli
 	sysz
 	betterlockscreen
-	pyradio
-	haskellPackages.patat
 	gh
     git
     tmux
@@ -123,7 +107,6 @@
     yt-dlp
 	fzf
 	ripgrep
-	fw-pkgs.spotify-player
 	alsa-lib
 	libdbusmenu
 	xorg.libxcb
@@ -136,46 +119,39 @@
 	rustup
 	openssl
 	pkg-config
-	azure-cli
-	azuredatastudio
-	adrs
-	opentofu
 	lazydocker
+
+	#Unfree
+    # obsidian
+    # discord
+    # slack
+
+	#Alternatives
+	slack-cli
+	spotify
+	unstable.spotifyd
+	librespot
+	discordo
 
 	#Desktop
 	libreoffice-qt6-fresh
-	calibre
 	fluent-reader
-	newsboat
-	openvpn3
 	aerc
     firefox
-	chromium
 	vial
     thunderbird
-    spotify
-    signal-desktop
-    darktable
-    discord
-	discordo
-    slack
+    signal-desktop-beta
     kitty
 	alacritty
     unstable.neovim
     fastfetch
-    obsidian
     lazygit
-	betterdiscordctl
 	pdfarranger
 	byzanz
 	drawio
 	xdotool
 	pinentry
     remmina
-	rofi
-	rbw
-	rofi-rbw
-	teams-for-linux
 
 	#Dev
     python3
