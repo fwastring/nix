@@ -21,6 +21,7 @@
   nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
   nix.nixPath = ["/etc/nix/path"];
   users.defaultUserShell = pkgs.bash;
+  documentation.man.generateCaches = false;
   # environment.systemPackages = with pkgs; [
   # ];
   systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
@@ -57,6 +58,11 @@
     bluetooth = {
       enable = true;
       powerOnBoot = true;
+	  settings = {
+	  	General = {
+			Disable="Headset";
+		};
+	  };
     };
   };
 
@@ -121,7 +127,10 @@
 
 	environment.systemPackages = with pkgs; [
 		# wireguard-go
+		pulsemixer
+		openssh
 		pinentry-curses
+		spotify-qt
 		wireguard-tools
 		(firefox.override { nativeMessagingHosts = [passff-host]; })
 		(
