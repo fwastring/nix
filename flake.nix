@@ -27,19 +27,19 @@
 	overlay-unstable = final: prev: {
         unstable = import nixpkgs-unstable {
 			inherit system;
-          config.allowUnfree = true;
+          config.allowUnfree = false;
         };
       };
 	overlay-fw-pkgs = final: prev: {
         fw-pkgs = import fw-pkgs {
 			inherit system;
-          config.allowUnfree = true;
+          config.allowUnfree = false;
         };
       };
 	overlay-knock = final: prev: {
         knock = import knock {
 			inherit system;
-          config.allowUnfree = true;
+          config.allowUnfree = false;
         };
       };
   in {

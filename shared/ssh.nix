@@ -67,6 +67,12 @@
         port = 22;
         user = "root";
       };
+      "disa" = {
+        hostname = "192.168.1.242";
+        port = 22;
+        user = "disah";
+        identityFile = "/home/fw/.ssh/id_rsa";
+      };
     };
   };
 }
