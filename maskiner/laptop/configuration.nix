@@ -23,7 +23,20 @@
 
 
 	services.xserver.dpi = 140;
+
 	services = {
+		openssh = {
+			enable = true;
+			ports = [55504];
+			settings = {
+				PermitRootLogin = "no";
+				PasswordAuthentication = false;
+				X11Forwarding = true;
+			};
+			extraConfig = ''
+			  AllowUsers fw
+			'';
+		};
 		syncthing = {
 			enable = true;
 			user = "fw";

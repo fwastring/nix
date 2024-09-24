@@ -22,16 +22,19 @@
     ../shared/firefox.nix
     ../shared/zathura.nix
     ../shared/lazygit.nix
-    ../shared/spotifyd.nix
+    # ../shared/spotifyd.nix
     ../shared/ssh.nix
     ../shared/aerc.nix
     ../shared/rbw.nix
     ../shared/oh-my-posh.nix
+    ../shared/mpv.nix
   ];
 
   nixpkgs = {
     overlays = [];
     config = {
+      # allowUnfree = false;
+      # allowUnfreePredicate = _: false;
       allowUnfree = true;
       allowUnfreePredicate = _: true;
       permittedInsecurePackages = [
@@ -50,7 +53,6 @@
     alsa-utils
     killall
     upower
-    mpv
     gcc
     gnumake
     htop
@@ -71,7 +73,6 @@
     pavucontrol
 	fd
 	bat
-	steam-run
 	appimage-run
 	bluez
 	bluez-tools
@@ -85,33 +86,21 @@
 	go
 	ghorg
 	libsixel
-	kompose
+	valgrind
+	soulseekqt
 
 	#Terminal	
-	weechat
-	jira-cli-go
 	jq
 
-	vscode
-
-	sc-im
 	gnuplot
-	bison
-	tesseract
 	qrencode
-	texliveMedium
+	texliveFull
 
-	vdirsyncer
-	todoist
-	todoman
-	calcure
 	python311Packages.urwid
-	signal-cli
-	scli
+	python311Packages.numpy
+	python311Packages.matplotlib
 	sysz
 	betterlockscreen
-	pyradio
-	haskellPackages.patat
 	gh
     git
     tmux
@@ -119,7 +108,6 @@
     yt-dlp
 	fzf
 	ripgrep
-	fw-pkgs.spotify-player
 	alsa-lib
 	libdbusmenu
 	xorg.libxcb
@@ -132,42 +120,39 @@
 	rustup
 	openssl
 	pkg-config
-	azure-cli
-	azuredatastudio
-	adrs
-	opentofu
 	lazydocker
 
+	#Unfree
+    # obsidian
+    # discord
+    # slack
+
+	#Alternatives
+	slack-cli
+	spotify
+	unstable.spotifyd
+	librespot
+	discordo
+
 	#Desktop
-	openvpn3
+	libreoffice-qt6-fresh
+	fluent-reader
 	aerc
     firefox
-	chromium
 	vial
     thunderbird
-    spotify
-    signal-desktop
-    darktable
-    discord
-	discordo
-    slack
+    signal-desktop-beta
     kitty
 	alacritty
-    neovim
+    unstable.neovim
     fastfetch
-    obsidian
     lazygit
-	betterdiscordctl
 	pdfarranger
 	byzanz
 	drawio
 	xdotool
 	pinentry
     remmina
-	rofi
-	rbw
-	rofi-rbw
-	teams-for-linux
 
 	#Dev
     python3
@@ -175,6 +160,8 @@
 	ranger
 	python311Packages.pynvim
 	ueberzugpp
+	jdk
+	maven
 
 	#LSP
     nil

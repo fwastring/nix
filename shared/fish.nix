@@ -39,7 +39,7 @@
 	  ];
 	  shellAbbrs = {
 		  homec="nvim ~/nix/config/home.nix";
-		  ls="exa -lag --header";
+		  ls="exa -l --no-time --no-permissions --no-user";
 		  dev="nix develop --command fish";
 		  spot="steam-run ~/program/spotify_player";
 		  sc="sc-im";
@@ -48,6 +48,8 @@
 		  home="home-manager switch --flake $HM_DIR";
 		  reb="sudo nixos-rebuild switch --flake $SYSTEM_DIR";
 		  cam="jira issue create && jira issue assign && jira issue move";
+		  vpnup="sudo VPN_PROTOCOL=wireguard DISABLE_IPV6=yes DIP_TOKEN=no AUTOCONNECT=true PIA_PF=false PIA_DNS=true PIA_USER=p4558499 PIA_PASS=vUZA6Nfzci ~/program/manual-connections/run_setup.sh";
+		  vpndown="wg-quick down pia";
 	  };
 	  interactiveShellInit = ''
 		set fish_greeting # Disable greeting

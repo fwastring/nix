@@ -21,6 +21,7 @@
   nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
   nix.nixPath = ["/etc/nix/path"];
   users.defaultUserShell = pkgs.bash;
+  documentation.man.generateCaches = false;
   # environment.systemPackages = with pkgs; [
   # ];
   systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
@@ -57,6 +58,11 @@
     bluetooth = {
       enable = true;
       powerOnBoot = true;
+	  settings = {
+	  	General = {
+			Disable="Headset";
+		};
+	  };
     };
   };
 
@@ -96,6 +102,9 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # boot.extraModulePackages = [
+  # 	config.boot.kernelPackages.wireguard
+  # ];
   console.keyMap = "sv-latin1";
 
 	# systemd.services.vdirsyncer = {
@@ -116,7 +125,15 @@
 	#   };
 	# };
 
-	environment.systemPackages = with pkgs; [(
+	environment.systemPackages = with pkgs; [
+		# wireguard-go
+		pulsemixer
+		openssh
+		pinentry-curses
+		spotify-qt
+		wireguard-tools
+		(firefox.override { nativeMessagingHosts = [passff-host]; })
+		(
 		catppuccin-sddm.override {
 			flavor = "mocha";
 			font  = "FiraCode Nerd Font Bold";
@@ -124,7 +141,8 @@
 			background = "${../wallpapers/inverted.png}";
 			loginBackground = true;
 		}
-	)];
+		)
+	];
 
 
   services = {
@@ -134,6 +152,7 @@
 			via
 		];
 	};
+	picom.enable = true;
     openssh = {
       enable = true;
     };
