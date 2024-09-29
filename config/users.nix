@@ -18,6 +18,7 @@
           "wheel"
           "audio" 
           "docker"
+		  "input"
         ];
 		openssh.authorizedKeys = {
 			keys = [
