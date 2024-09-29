@@ -36,12 +36,6 @@
           config.allowUnfree = false;
         };
       };
-	overlay-knock = final: prev: {
-        knock = import knock {
-			inherit system;
-          config.allowUnfree = false;
-        };
-      };
   in {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -52,7 +46,8 @@
 			myhostname = "laptop";
 		};
         modules = [
-		./maskiner/laptop/configuration.nix
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+			./maskiner/laptop/configuration.nix
 		];
       };
       desktop = nixpkgs.lib.nixosSystem {
@@ -86,7 +81,8 @@
 		};
         modules = [
 			./config/home.nix
-			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable overlay-knock overlay-fw-pkgs ]; })
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-fw-pkgs ]; })
 		];
       };
       "fw@desktop" = home-manager.lib.homeManagerConfiguration {

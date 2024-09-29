@@ -11,7 +11,7 @@
   imports = [
     ../shared/dwm.nix
     ../shared/dmenu.nix
-    # ../shared/kitty.nix
+    ../shared/kitty.nix
     ../shared/alacritty.nix
     ../shared/tmux.nix
     ../shared/vim.nix
@@ -32,10 +32,10 @@
   nixpkgs = {
     overlays = [];
     config = {
-      # allowUnfree = false;
-      # allowUnfreePredicate = _: false;
-      allowUnfree = true;
-      allowUnfreePredicate = _: true;
+      allowUnfree = false;
+      allowUnfreePredicate = _: false;
+      # allowUnfree = true;
+      # allowUnfreePredicate = _: true;
       permittedInsecurePackages = [
         "electron-25.9.0"
 		"electron-19.1.9"
@@ -86,14 +86,17 @@
 	ghorg
 	libsixel
 	valgrind
-	soulseekqt
+	nicotine-plus
+	resonance
 
 	#Terminal	
+	meli
+	tuifeed
 	jq
-
 	gnuplot
 	qrencode
 	texliveFull
+	filezilla
 
 	python311Packages.urwid
 	python311Packages.numpy
@@ -120,6 +123,7 @@
 	openssl
 	pkg-config
 	lazydocker
+	termusic
 
 	#Unfree
     # obsidian
@@ -128,9 +132,6 @@
 
 	#Alternatives
 	slack-cli
-	spotify
-	unstable.spotifyd
-	librespot
 	discordo
 
 	#Desktop
@@ -140,7 +141,6 @@
     firefox
 	vial
     thunderbird
-    signal-desktop-beta
     kitty
 	alacritty
     unstable.neovim
@@ -154,6 +154,8 @@
     remmina
 
 	#Dev
+	air
+	templ
     python3
     python311Packages.pip
 	ranger
