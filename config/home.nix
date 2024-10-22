@@ -11,6 +11,7 @@
   imports = [
     ../shared/dwm.nix
     ../shared/dmenu.nix
+	../shared/rofi.nix
     ../shared/kitty.nix
     ../shared/alacritty.nix
     # ../shared/dunst.nix
@@ -33,10 +34,10 @@
   nixpkgs = {
     overlays = [];
     config = {
-      allowUnfree = false;
-      allowUnfreePredicate = _: false;
-      # allowUnfree = true;
-      # allowUnfreePredicate = _: true;
+      # allowUnfree = false;
+      # allowUnfreePredicate = _: false;
+      allowUnfree = true;
+      allowUnfreePredicate = _: true;
       permittedInsecurePackages = [
         "electron-25.9.0"
 		"electron-19.1.9"
@@ -48,6 +49,19 @@
 
   home.packages = with pkgs; [
 	# System
+	unstable.ffcast
+	unstable.rofi-screenshot
+	rofi-bluetooth
+	rofi-pulse-select
+	rofi-vpn
+	rofi-emoji
+	rofi-power-menu
+	yarn
+	pastel
+	plantuml
+	geos
+	inotify-tools
+	procps
 	arion
     wget
     alsa-utils
@@ -127,13 +141,14 @@
 	termusic
 
 	#Unfree
-    # obsidian
-    # discord
-    # slack
+    obsidian
+    discord
+    slack
+	spotify
 
 	#Alternatives
-	slack-cli
-	discordo
+	# slack-cli
+	# discordo
 
 	#Desktop
 	libreoffice-qt6-fresh
@@ -167,6 +182,7 @@
 
 	#LSP
     nil
+	jdt-language-server
 	python311Packages.python-lsp-server
 	marksman
     clojure-lsp
@@ -194,6 +210,7 @@
   ];
   programs.home-manager.enable = true;
   programs.fish.enable = true;
+  programs.man.generateCaches = false;
 
   xsession.enable = true;
   xsession.windowManager.command = if myhostname == "laptop" then "/home/fw/nix/.xinitrc.laptop" else if myhostname == "jobb" then "/home/fw/nix/.xinitrc.jobb" else "/home/fw/nix/.xinitrc";
