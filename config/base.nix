@@ -22,8 +22,6 @@
   nix.nixPath = ["/etc/nix/path"];
   users.defaultUserShell = pkgs.bash;
   documentation.man.generateCaches = false;
-  # environment.systemPackages = with pkgs; [
-  # ];
   systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
   programs.fish.enable = true;
 	programs.bash = {
@@ -102,37 +100,10 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # boot.extraModulePackages = [
-  # 	config.boot.kernelPackages.wireguard
-  # ];
   console.keyMap = "sv-latin1";
 
-	# systemd.services.vdirsyncer = {
-	#   serviceConfig.Type = "oneshot";
-	#   serviceConfig.User = "fw";
-	#   path = with pkgs; [ vdirsyncer ];
-	#   script = ''
-	# 	vdirsyncer -c "/home/fw/.config/vdirsyncer/config" sync
-	#   '';
-	# };
-	# systemd.timers.vdirsyncer = {
-	#   wantedBy = [ "timers.target" ];
-	#   partOf = [ "vdirsyncer.service" ];
-	#   timerConfig = {
-	# 	OnBootSec = "5m";
-	# 	OnUnitActiveSec = "5m";
-	# 	Unit = "vdirsyncer.service";
-	#   };
-	# };
-
 	environment.systemPackages = with pkgs; [
-		# wireguard-go
-		pulsemixer
 		openssh
-		pinentry-curses
-		spotify-qt
-		wireguard-tools
-		(firefox.override { nativeMessagingHosts = [passff-host]; })
 		(
 		catppuccin-sddm.override {
 			flavor = "mocha";

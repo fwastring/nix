@@ -49,164 +49,105 @@
 
   home.packages = with pkgs; [
 	# System
-	unstable.ffcast
-	unstable.rofi-screenshot
-	rofi-bluetooth
-	rofi-pulse-select
-	rofi-vpn
-	rofi-emoji
-	rofi-power-menu
-	yarn
-	pastel
-	plantuml
-	geos
-	inotify-tools
-	procps
-	arion
-    wget
-    alsa-utils
-    killall
-    upower
-    gcc
-    gnumake
-    htop
-    openssh
     xsel
     unzip
 	zip
-	imagemagick
-	ghostscript
-	killall
+    wget
+    alsa-utils
+    upower
+    gcc
+    gnumake
 	cmake
-    feh
-    brightnessctl
-    scrot
-    dunst
-    xbanish
-    networkmanager
+	arion
+    htop
     pavucontrol
+	procps
+    openssh
+    networkmanager
 	fd
 	bat
 	appimage-run
 	bluez
 	bluez-tools
-	grc
-	xorg.xmodmap
-	playerctl
-	openssl
-	libiconv
-	pkg-config
-	libsecret
-	go
-	ghorg
-	libsixel
-	valgrind
-	nicotine-plus
-	resonance
-
-	#Terminal	
-	meli
-	tuifeed
-	jq
-	gnuplot
-	qrencode
-	texliveFull
-	filezilla
-
-	python311Packages.urwid
-	python311Packages.numpy
-	python311Packages.matplotlib
-	sysz
 	betterlockscreen
-	gh
-    git
-    tmux
-    zathura
+	tmux
     yt-dlp
 	fzf
-	ripgrep
-	alsa-lib
-	libdbusmenu
-	xorg.libxcb
-	speedcrunch
 	eza
 	btop
-	poppler_utils
-	pandoc
-	glow
-	rustup
-	openssl
-	pkg-config
+	xcolor
+
+	# Dev
+	yarn
+	plantuml
+	go
+	jq
+	qrencode
+    git
 	lazydocker
-	termusic
-
-	#Unfree
-    obsidian
-    discord
-    slack
-	spotify
-
-	#Alternatives
-	# slack-cli
-	# discordo
-
-	#Desktop
-	libreoffice-qt6-fresh
-	fluent-reader
-	aerc
-    firefox
-	vial
-    thunderbird
-    kitty
-	alacritty
-    unstable.neovim
-    fastfetch
-    lazygit
-	pdfarranger
-	byzanz
-	drawio
-	xdotool
-	pinentry
-    remmina
-
-	#Dev
 	air
 	templ
-    python3
-    python311Packages.pip
 	ranger
-	python311Packages.pynvim
-	ueberzugpp
-	jdk
-	maven
+	tesseract4
 
 	#LSP
     nil
 	jdt-language-server
-	python311Packages.python-lsp-server
+	texlab
 	marksman
-    clojure-lsp
-    omnisharp-roslyn
-    haskell-language-server
-	java-language-server
 	nodePackages_latest.bash-language-server
-	dockerfile-language-server-nodejs
-	yaml-language-server
-	ansible-language-server
 	lua-language-server
 	tree-sitter
-	nodejs_22
-	nodePackages_latest.vls
-	nodePackages_latest.volar
-	vscode-langservers-extracted
 	gopls
+
+	# Geography
+	geos
+
+	# UI
+	rofi-bluetooth
+	pastel
+	imagemagick
 
     #VPN
     openvpn
     networkmanagerapplet
     networkmanager-l2tp
     strongswan
-    ansible
+
+	# Display
+    scrot
+    xbanish
+    feh
+    brightnessctl
+    dunst
+
+	# Documentas
+	ripgrep
+	grc
+	texliveFull
+	pandoc
+	poppler_utils
+
+	#Desktop
+	pinta
+    zathura
+    firefox
+	vial
+    thunderbird
+	alacritty
+    unstable.neovim
+    fastfetch
+    lazygit
+	byzanz
+    remmina
+
+	# Utils
+	speedcrunch
+	termusic
+
+	#Unfree
+    discord
+    slack
   ];
   programs.home-manager.enable = true;
   programs.fish.enable = true;
