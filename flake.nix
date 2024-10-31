@@ -6,7 +6,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
 	nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 	fw-pkgs.url = "github:fwastring/fwpkgs/main";
-	knock.url = "github:BentonEdmondson/knock";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-24.05";
@@ -19,7 +18,6 @@
     home-manager,
 	nixpkgs-unstable,
 	fw-pkgs,
-	knock,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -58,7 +56,6 @@
         modules = [
 			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
 			./maskiner/desktop/configuration.nix
-			knock
 		];
       };
       jobb = nixpkgs.lib.nixosSystem {

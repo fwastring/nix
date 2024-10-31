@@ -89,6 +89,9 @@
 	templ
 	ranger
 	tesseract4
+	k9s
+	kubectl
+	kubernetes
 
 	#LSP
     nil
