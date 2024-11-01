@@ -78,6 +78,7 @@
 	xcolor
 
 	# Dev
+	gh
 	yarn
 	plantuml
 	go
@@ -89,6 +90,7 @@
 	templ
 	ranger
 	tesseract4
+	k9s
 
 	#LSP
     nil

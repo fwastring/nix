@@ -51,6 +51,7 @@
 		  latest="git log | head -1 | awk '{print $2;}' | xsel -i";
 	  };
 	  interactiveShellInit = ''
+		fish_vi_key_bindings
 		set fish_greeting # Disable greeting
 		set FLAKE_DIR "/home/fw/nix"
 		set HM_DIR "$FLAKE_DIR#fw@jobb"
