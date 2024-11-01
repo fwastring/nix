@@ -32,17 +32,29 @@
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
-      "ba6" = {
-        hostname = "buildagent6";
+      "ha2" = {
+        hostname = "192.168.0.133";
         port = 22;
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
-      "ba2" = {
+      "ha3" = {
         hostname = "192.168.0.120";
         port = 22;
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
+      "ha4" = {
+        hostname = "192.168.0.52";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
+      "mac" = {
+        hostname = "192.168.0.149";
+        port = 22;
+        user = "ifacts";
+        identityFile = "/home/fw/.ssh/ifacts-ssh-key";
       };
       "backups" = {
         hostname = "192.168.0.120";
@@ -62,18 +74,6 @@
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
-      "kub1" = {
-        hostname = "192.168.0.52";
-        port = 22;
-        user = "fw";
-        identityFile = "/home/fw/.ssh/fw-ssh-key";
-      };
-      "mac" = {
-        hostname = "192.168.0.206";
-        port = 22;
-        user = "ifacts";
-        identityFile = "/home/fw/.ssh/ifacts-ssh-key";
-      };
       "malmo" = {
         hostname = "192.168.0.138";
         port = 22;
@@ -86,9 +86,15 @@
         user = "root";
       };
       "disa" = {
-        hostname = "192.168.1.242";
-        port = 22;
+        hostname = "62.63.222.22";
+        port = 55505;
         user = "disah";
+        identityFile = "/home/fw/.ssh/id_rsa";
+      };
+      "laptop" = {
+        hostname = "62.63.222.22";
+        port = 55504;
+        user = "fw";
         identityFile = "/home/fw/.ssh/id_rsa";
       };
     };

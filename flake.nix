@@ -65,6 +65,13 @@
 		};
         modules = [./maskiner/jobb/configuration.nix];
       };
+      work-desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+			inherit inputs outputs;
+			myhostname = "work-desktop";
+		};
+        modules = [./maskiner/work-desktop/configuration.nix];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -100,6 +107,19 @@
         extraSpecialArgs = {
 			inherit inputs outputs;
 			myhostname = "jobb";
+		};
+        # > Our main home-manager configuration file <
+        modules = [
+			./config/home.nix
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-fw-pkgs ]; })
+		];
+      };
+      "fw@work-desktop" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+			inherit inputs outputs;
+			myhostname = "work-desktop";
 		};
         # > Our main home-manager configuration file <
         modules = [

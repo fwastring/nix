@@ -78,6 +78,7 @@
 	xcolor
 
 	# Dev
+	gh
 	yarn
 	plantuml
 	go
@@ -90,8 +91,6 @@
 	ranger
 	tesseract4
 	k9s
-	kubectl
-	kubernetes
 
 	#LSP
     nil
