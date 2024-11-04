@@ -72,12 +72,14 @@
 	betterlockscreen
 	tmux
     yt-dlp
-	fzf
+	unstable.fzf
 	eza
 	btop
 	xcolor
 
 	# Dev
+	gleam
+	gh-f
 	gh
 	yarn
 	plantuml

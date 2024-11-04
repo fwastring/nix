@@ -25,6 +25,14 @@
 			 src = pkgs.fishPlugins.fzf.src;
 		   }
 		   {
+		   	 name = "fzf-fish";
+			 src = pkgs.fishPlugins.fzf-fish.src;
+		   }
+		   {
+		   	 name = "fifc";
+			 src = pkgs.fishPlugins.fifc.src;
+		   }
+		   {
 		   	 name = "done";
 			 src = pkgs.fishPlugins.done.src;
 		   }
@@ -56,16 +64,16 @@
 		set FLAKE_DIR "/home/fw/nix"
 		set HM_DIR "$FLAKE_DIR#fw@jobb"
 		set SYSTEM_DIR "$FLAKE_DIR#jobb"
-		set GOPRIVATE "github.com/iFacts"
-		# Macchiato
-		set -Ux FZF_DEFAULT_OPTS "--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"
+		set -Ux FZF_CTRL_R_OPTS "--reverse"
+		set -Ux FZF_TMUX_OPTS "-p"
 
-		# Latte
-# 		set -Ux FZF_DEFAULT_OPTS "\
-# --color=bg+:#ccd0da,bg:#eff1f5,spinner:#dc8a78,hl:#d20f39 \
-# --color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78 \
-# --color=marker:#dc8a78,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39"
-		fish_add_path /home/fw/.cargo/bin
+		# Mocha
+		set -Ux FZF_DEFAULT_OPTS "\
+		--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+		--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+		--color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+		--color=selected-bg:#45475a \
+		--multi"
 	  '';
 	};
 }
