@@ -25,14 +25,6 @@
 			 src = pkgs.fishPlugins.fzf.src;
 		   }
 		   {
-		   	 name = "fzf-fish";
-			 src = pkgs.fishPlugins.fzf-fish.src;
-		   }
-		   {
-		   	 name = "fifc";
-			 src = pkgs.fishPlugins.fifc.src;
-		   }
-		   {
 		   	 name = "done";
 			 src = pkgs.fishPlugins.done.src;
 		   }
