@@ -27,7 +27,7 @@
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
       "ha1" = {
-        hostname = "hosted-agent-1";
+        hostname = "192.168.0.180";
         port = 22;
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
