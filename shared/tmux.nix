@@ -25,6 +25,7 @@
 			'';
 		}
 		fw-pkgs.tmuxPlugins.spotify
+		fw-pkgs.tmuxPlugins.tmux-fzf-window
 		{
 			plugin = fw-pkgs.tmuxPlugins.minimal;
 			extraConfig = ''
