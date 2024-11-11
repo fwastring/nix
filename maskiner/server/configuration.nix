@@ -67,6 +67,7 @@
     (nerdfonts.override { 
       fonts = [ 
         "FiraCode" 
+        "Iosevka" 
         "DroidSansMono" 
       ]; 
     })

@@ -76,8 +76,13 @@
 	eza
 	btop
 	xcolor
+	openssl
 
 	# Dev
+	unstable.cargo
+	unstable.rustc
+	cargo-generate
+	nodejs_22
 	gleam
 	gh-f
 	gh
@@ -93,16 +98,24 @@
 	ranger
 	tesseract4
 	k9s
+	kubectl
+	ngrok
 
 	#LSP
+	yaml-language-server
     nil
 	jdt-language-server
 	texlab
 	marksman
 	nodePackages_latest.bash-language-server
+	typescript
+	nodePackages_latest.typescript-language-server
+	nodePackages_latest.vls
+	nodePackages_latest.volar
 	lua-language-server
 	tree-sitter
 	gopls
+	rust-analyzer
 
 	# Geography
 	geos
@@ -133,6 +146,8 @@
 	poppler_utils
 
 	#Desktop
+	unstable.signal-desktop
+	kompare
 	pinta
     zathura
     firefox

@@ -76,10 +76,9 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { 
       fonts = [ 
+        "ComicShannsMono" 
         "FiraCode" 
-		"Agave"
-		"VictorMono"
-        "DroidSansMono" 
+		"Iosevka"
       ]; 
     })
   ];
@@ -107,7 +106,7 @@
 		(
 		catppuccin-sddm.override {
 			flavor = "mocha";
-			font  = "FiraCode Nerd Font Bold";
+			font  = "ComicShannsMono Nerd Font Bold";
 			fontSize = "17";
 			background = "${../wallpapers/inverted.png}";
 			loginBackground = true;
