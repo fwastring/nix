@@ -22,7 +22,7 @@
   nix.nixPath = ["/etc/nix/path"];
   users.defaultUserShell = pkgs.bash;
   documentation.man.generateCaches = false;
-  systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
+  # systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
   programs.fish.enable = true;
 	programs.bash = {
 	interactiveShellInit = ''
@@ -97,21 +97,31 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+	  efi = {
+		canTouchEfiVariables = false;
+	  };
+	  grub = {
+		 efiSupport = true;
+		 efiInstallAsRemovable = true;
+		 device = "nodev";
+	  };
+	};
   console.keyMap = "sv-latin1";
 
 	environment.systemPackages = with pkgs; [
 		openssh
-		(
-		catppuccin-sddm.override {
-			flavor = "mocha";
-			font  = "ComicShannsMono Nerd Font Bold";
-			fontSize = "17";
-			background = "${../wallpapers/inverted.png}";
-			loginBackground = true;
-		}
-		)
+		# (
+		# catppuccin-sddm.override {
+		# 	flavor = "mocha";
+		# 	font  = "ComicShannsMono Nerd Font Bold";
+		# 	fontSize = "17";
+		# 	background = "${../wallpapers/inverted.png}";
+		# 	loginBackground = true;
+		# }
+		# )
 	];
 
 
@@ -132,14 +142,10 @@
 		  "ipsec.d/ipsec.nm-l2tp.secrets"
 		];
 	};
-  displayManager = {
-	sddm = {
-	  enable = true;
-	  theme = "catppuccin-mocha";
-	  package = pkgs.kdePackages.sddm;
-	};
-  };
     xserver = {
+	  displayManager = {
+		  startx.enable = true;
+	  };
       enable = true;
 	  xkb = {
 		  layout = "se";

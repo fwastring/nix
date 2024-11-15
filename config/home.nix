@@ -79,6 +79,8 @@
 	openssl
 
 	# Dev
+	kaggle
+	vscode
 	unstable.cargo
 	unstable.rustc
 	cargo-generate
