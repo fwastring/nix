@@ -10,6 +10,7 @@
 }: {
   imports = [
     ../shared/dwm.nix
+    ../shared/vscode.nix
     ../shared/dmenu.nix
 	../shared/rofi.nix
     ../shared/kitty.nix
@@ -80,7 +81,6 @@
 
 	# Dev
 	kaggle
-	vscode
 	unstable.cargo
 	unstable.rustc
 	cargo-generate
@@ -102,6 +102,7 @@
 	k9s
 	kubectl
 	ngrok
+	graphviz
 
 	#LSP
 	yaml-language-server
@@ -125,6 +126,8 @@
 	# UI
 	rofi-bluetooth
 	pastel
+	unstable.rmpc
+	mpd
 	imagemagick
 
     #VPN
