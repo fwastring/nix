@@ -76,6 +76,7 @@
 	eza
 	btop
 	xcolor
+	beets
 
 	# Dev
 	gleam
