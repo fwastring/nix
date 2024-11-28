@@ -48,7 +48,9 @@
 		  home="home-manager switch --flake $HM_DIR";
 		  reb="sudo nixos-rebuild switch --flake $SYSTEM_DIR";
 		  cam="jira issue create && jira issue assign && jira issue move";
-		  latest="git log | head -1 | awk '{print $2;}' | xsel -i";
+		  latest="git log | head -1 | awk '{print $2;}' | xsel -ib";
+		  vpnup="nmcli con up 'iFacts VPN'";
+		  vpndown="nmcli con down 'iFacts VPN'";
 	  };
 	  interactiveShellInit = ''
 		fish_vi_key_bindings

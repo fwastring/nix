@@ -19,15 +19,16 @@
         hostname = "login.student.lth.se";
         port = 22;
         user = "fr7658wa-s";
+        identityFile = "/home/fw/.ssh/id_rsa";
       };
       "dm2" = {
-        hostname = "docker-master2";
+        hostname = "192.168.0.190";
         port = 22;
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
       "ha1" = {
-        hostname = "hosted-agent-1";
+        hostname = "192.168.0.180";
         port = 22;
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
@@ -61,18 +62,6 @@
         port = 22;
         user = "github";
         identityFile = "/home/fw/.ssh/github-ssh-key";
-      };
-      "backup1" = {
-        hostname = "192.168.0.220";
-        port = 22;
-        user = "fw";
-        identityFile = "/home/fw/.ssh/fw-ssh-key";
-      };
-      "dashboard" = {
-        hostname = "192.168.0.159";
-        port = 22;
-        user = "fw";
-        identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
       "malmo" = {
         hostname = "192.168.0.138";

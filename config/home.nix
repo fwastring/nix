@@ -10,6 +10,7 @@
 }: {
   imports = [
     ../shared/dwm.nix
+    ../shared/vscode.nix
     ../shared/dmenu.nix
 	../shared/rofi.nix
     ../shared/kitty.nix
@@ -77,8 +78,14 @@
 	btop
 	xcolor
 	beets
+	openssl
 
 	# Dev
+	kaggle
+	unstable.cargo
+	unstable.rustc
+	cargo-generate
+	nodejs_22
 	gleam
 	gh-f
 	gh
@@ -94,16 +101,25 @@
 	ranger
 	tesseract4
 	k9s
+	kubectl
+	ngrok
+	graphviz
 
 	#LSP
+	yaml-language-server
     nil
 	jdt-language-server
 	texlab
 	marksman
 	nodePackages_latest.bash-language-server
+	typescript
+	nodePackages_latest.typescript-language-server
+	nodePackages_latest.vls
+	nodePackages_latest.volar
 	lua-language-server
 	tree-sitter
 	gopls
+	rust-analyzer
 
 	# Geography
 	geos
@@ -111,6 +127,8 @@
 	# UI
 	rofi-bluetooth
 	pastel
+	unstable.rmpc
+	mpd
 	imagemagick
 
     #VPN
@@ -134,6 +152,8 @@
 	poppler_utils
 
 	#Desktop
+	unstable.signal-desktop
+	kompare
 	pinta
     zathura
     firefox

@@ -67,6 +67,7 @@
     (nerdfonts.override { 
       fonts = [ 
         "FiraCode" 
+        "Iosevka" 
         "DroidSansMono" 
       ]; 
     })
@@ -86,11 +87,11 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  boot.loader.grub = {
-	enable = true;
-	device = "/dev/sdc";
-	useOSProber = true;
-  };
+ #  boot.loader.grub = {
+	# enable = true;
+	# device = "/dev/sdc";
+	# useOSProber = true;
+ #  };
 
   console.keyMap = "sv-latin1";
   programs.zsh.enable = true;
