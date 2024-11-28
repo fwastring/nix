@@ -133,6 +133,9 @@
 
   services = {
   	udev = {
+		extraRules = ''
+			KERNEL=="ttyACM0", MODE:="666"
+		'';
 		packages = with pkgs; [
 			vial
 			via
