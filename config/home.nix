@@ -80,6 +80,8 @@
 	openssl
 
 	# Dev
+	unstable.arduino-cli
+	conda
 	kaggle
 	unstable.cargo
 	unstable.rustc
@@ -102,9 +104,13 @@
 	k9s
 	kubectl
 	ngrok
+	zrok
 	graphviz
+	clang-tools
 
 	#LSP
+	python312Packages.python-lsp-server
+	arduino-language-server
 	yaml-language-server
     nil
 	jdt-language-server
@@ -124,6 +130,7 @@
 	geos
 
 	# UI
+	fooyin
 	rofi-bluetooth
 	pastel
 	unstable.rmpc
@@ -151,6 +158,7 @@
 	poppler_utils
 
 	#Desktop
+	libreoffice
 	unstable.signal-desktop
 	kompare
 	pinta
@@ -159,11 +167,12 @@
 	vial
     thunderbird
 	alacritty
-    unstable.neovim
+    neovim
     fastfetch
     lazygit
 	byzanz
     remmina
+	obsidian
 
 	# Utils
 	speedcrunch
