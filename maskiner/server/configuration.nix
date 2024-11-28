@@ -104,7 +104,7 @@
   };
     openssh = {
 		enable = true;
-		ports = [55502];
+		ports = [22];
 		settings = {
 			PermitRootLogin = "no";
 			PasswordAuthentication = false;

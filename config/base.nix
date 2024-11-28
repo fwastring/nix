@@ -103,6 +103,12 @@
   console.keyMap = "sv-latin1";
 
 	environment.systemPackages = with pkgs; [
+		vim
+		neovim
+		cvs
+		rcs
+		nano
+		git
 		openssh
 		(
 		catppuccin-sddm.override {
