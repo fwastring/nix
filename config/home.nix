@@ -81,6 +81,7 @@
 	openssl
 
 	# Dev
+	tinygo
 	unstable.arduino-cli
 	conda
 	kaggle
@@ -159,12 +160,14 @@
 	poppler_utils
 
 	#Desktop
+	freecad
+	unstable.google-chrome
+    firefox
 	libreoffice
 	unstable.signal-desktop
 	kompare
 	pinta
     zathura
-    firefox
 	vial
     thunderbird
 	alacritty

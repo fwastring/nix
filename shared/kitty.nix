@@ -4,11 +4,13 @@
     enable = true;
     font = if myhostname == "laptop" then {
       # name = "Iosevka Nerd Font Bold";
-      name = "ComicShannsMono Nerd Font Bold";
+      # name = "ComicShannsMono Nerd Font Bold";
+      name = "Hack Nerd Font Bold";
       size = 20;
     } else {
       # name = "Iosevka Nerd Font Bold";
-      name = "ComicShannsMono Nerd Font Bold";
+      # name = "ComicShannsMono Nerd Font Bold";
+      name = "Hack Nerd Font Bold";
       size = 13;
     };
     shellIntegration = {

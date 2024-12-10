@@ -77,6 +77,8 @@
     (nerdfonts.override { 
       fonts = [ 
         "ComicShannsMono" 
+        "SourceCodePro" 
+		"Hack"
         "FiraCode" 
 		"Iosevka"
       ]; 

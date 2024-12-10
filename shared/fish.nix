@@ -39,7 +39,7 @@
 	  ];
 	  shellAbbrs = {
 		  homec="nvim ~/nix/config/home.nix";
-		  ls="eza -l --no-time --no-permissions --no-user";
+		  n="eza -l --no-time --no-permissions --no-user";
 		  dev="nix develop --command fish";
 		  spot="steam-run ~/program/spotify_player";
 		  sc="sc-im";

@@ -25,7 +25,7 @@
 	overlay-unstable = final: prev: {
         unstable = import nixpkgs-unstable {
 			inherit system;
-          config.allowUnfree = false;
+          config.allowUnfree = true;
         };
       };
 	overlay-fw-pkgs = final: prev: {
