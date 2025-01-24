@@ -22,7 +22,6 @@
   nix.nixPath = ["/etc/nix/path"];
   users.defaultUserShell = pkgs.bash;
   documentation.man.generateCaches = false;
-  # systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
   programs.fish.enable = true;
 	programs.bash = {
 	interactiveShellInit = ''
@@ -76,11 +75,8 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { 
       fonts = [ 
-        "ComicShannsMono" 
-        "SourceCodePro" 
 		"Hack"
         "FiraCode" 
-		"Iosevka"
       ]; 
     })
   ];
@@ -99,8 +95,6 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
   boot.loader = {
 	  efi = {
 		canTouchEfiVariables = false;
@@ -121,15 +115,6 @@
 		nano
 		git
 		openssh
-		# (
-		# catppuccin-sddm.override {
-		# 	flavor = "mocha";
-		# 	font  = "ComicShannsMono Nerd Font Bold";
-		# 	fontSize = "17";
-		# 	background = "${../wallpapers/inverted.png}";
-		# 	loginBackground = true;
-		# }
-		# )
 	];
 
 

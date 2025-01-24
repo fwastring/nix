@@ -15,7 +15,7 @@
 	../shared/rofi.nix
     ../shared/kitty.nix
     ../shared/alacritty.nix
-    # ../shared/dunst.nix
+    ../shared/ranger.nix
     ../shared/tmux.nix
     ../shared/vim.nix
     ../shared/fish.nix 
@@ -24,26 +24,16 @@
     ../shared/firefox.nix
     ../shared/zathura.nix
     ../shared/lazygit.nix
-    # ../shared/spotifyd.nix
     ../shared/ssh.nix
     ../shared/aerc.nix
-    ../shared/rbw.nix
     ../shared/oh-my-posh.nix
-    ../shared/mpv.nix
   ];
 
   nixpkgs = {
     overlays = [];
     config = {
-      # allowUnfree = false;
-      # allowUnfreePredicate = _: false;
       allowUnfree = true;
       allowUnfreePredicate = _: true;
-      permittedInsecurePackages = [
-        "electron-25.9.0"
-		"electron-19.1.9"
-        "nix-2.16.2"
-      ];
     };
   };
 
@@ -67,52 +57,46 @@
     networkmanager
 	fd
 	bat
-	appimage-run
 	bluez
 	bluez-tools
-	betterlockscreen
+	unstable.betterlockscreen
 	tmux
-    yt-dlp
 	unstable.fzf
 	eza
 	btop
+	thttpd
 	xcolor
-	beets
 	openssl
+	dig
+	jq
 
 	# Dev
-	tinygo
-	unstable.arduino-cli
-	conda
-	kaggle
-	unstable.cargo
-	unstable.rustc
-	cargo-generate
+	unstable.deno
+	unstable.hugo
+	unstable.logstash
+	ngrok
+	tailwindcss
 	nodejs_22
-	gleam
 	gh-f
 	gh
 	yarn
 	plantuml
 	go
-	jq
+	dotnetCorePackages.sdk_8_0_3xx
+	templ
+
+	#Tools
 	qrencode
+	air
+	k9s
     git
 	lazydocker
-	air
-	templ
-	ranger
-	tesseract4
-	k9s
 	kubectl
-	ngrok
-	zrok
-	graphviz
-	clang-tools
 
 	#LSP
+	roslyn
+	roslyn-ls
 	python312Packages.python-lsp-server
-	arduino-language-server
 	yaml-language-server
     nil
 	jdt-language-server
@@ -128,15 +112,9 @@
 	gopls
 	rust-analyzer
 
-	# Geography
-	geos
-
 	# UI
-	fooyin
 	rofi-bluetooth
 	pastel
-	unstable.rmpc
-	mpd
 	imagemagick
 
     #VPN
@@ -152,7 +130,7 @@
     brightnessctl
     dunst
 
-	# Documentas
+	# Documents
 	ripgrep
 	grc
 	texliveFull
@@ -160,18 +138,16 @@
 	poppler_utils
 
 	#Desktop
-	freecad
-	unstable.google-chrome
+	unstable.feishin
     firefox
 	libreoffice
 	unstable.signal-desktop
-	kompare
 	pinta
     zathura
 	vial
     thunderbird
 	alacritty
-    neovim
+    unstable.neovim
     fastfetch
     lazygit
 	byzanz
@@ -180,7 +156,6 @@
 
 	# Utils
 	speedcrunch
-	termusic
 
 	#Unfree
     discord
