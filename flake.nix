@@ -72,6 +72,13 @@
 		};
         modules = [./maskiner/work-desktop/configuration.nix];
       };
+      lillen = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+			inherit inputs outputs;
+			myhostname = "lillen";
+		};
+        modules = [./maskiner/lillen/configuration.nix];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -120,6 +127,19 @@
         extraSpecialArgs = {
 			inherit inputs outputs;
 			myhostname = "work-desktop";
+		};
+        # > Our main home-manager configuration file <
+        modules = [
+			./config/home.nix
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-fw-pkgs ]; })
+		];
+      };
+      "fw@lillen" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+			inherit inputs outputs;
+			myhostname = "lillen";
 		};
         # > Our main home-manager configuration file <
         modules = [
