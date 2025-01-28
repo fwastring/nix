@@ -10,13 +10,10 @@
 }: {
   imports = [
     ../shared/dwm.nix
-    ../shared/vscode.nix
     ../shared/dmenu.nix
-	../shared/rofi.nix
     ../shared/kitty.nix
     ../shared/alacritty.nix
     ../shared/tmux.nix
-    ../shared/vim.nix
     ../shared/fish.nix 
     ../shared/git.nix
     ../shared/nixpkgs.nix
@@ -24,7 +21,6 @@
     ../shared/zathura.nix
     ../shared/lazygit.nix
     ../shared/ssh.nix
-    ../shared/aerc.nix
     ../shared/oh-my-posh.nix
   ];
 
@@ -70,24 +66,14 @@
 	jq
 
 	# Dev
-	unstable.deno
 	unstable.hugo
-	unstable.logstash
-	ngrok
 	tailwindcss
 	nodejs_22
-	gh-f
-	gh
-	yarn
-	plantuml
 	go
-	dotnetCorePackages.sdk_8_0_3xx
-	templ
 
 	#Tools
 	qrencode
 	air
-	k9s
     git
 	lazydocker
 	kubectl
@@ -112,7 +98,6 @@
 	rust-analyzer
 
 	# UI
-	rofi-bluetooth
 	pastel
 	imagemagick
 
@@ -132,18 +117,16 @@
 	# Documents
 	ripgrep
 	grc
-	texliveFull
+	# texliveFull
 	pandoc
 	poppler_utils
 
 	#Desktop
 	unstable.feishin
     firefox
-	libreoffice
 	unstable.signal-desktop
 	pinta
     zathura
-	vial
     thunderbird
 	alacritty
     unstable.neovim
@@ -151,14 +134,12 @@
     lazygit
 	byzanz
     remmina
-	obsidian
 
 	# Utils
 	speedcrunch
 
 	#Unfree
     discord
-    slack
   ];
   programs.home-manager.enable = true;
   programs.fish.enable = true;

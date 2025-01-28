@@ -15,6 +15,14 @@
 	../../config/users.nix
   ];
 
+  	environment.systemPackages = with pkgs; [
+		kubectl
+		azure-cli
+	];
+
+
+
+
   networking.hostName = myhostname;
 
   services.xserver.dpi = 140;
