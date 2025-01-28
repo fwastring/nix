@@ -81,7 +81,13 @@
 				{
 				  "foreground"= "p:mauve";
 				  "style"= "plain";
-				  "template"= "{{ .UserName }}@{{ .HostName }} ";
+				  "template"= "{{ .UserName }}@";
+				  "type"= "session";
+				}
+				{
+				  "foreground"= "p:peach";
+				  "style"= "plain";
+				  "template"= "{{ .HostName }}";
 				  "type"= "session";
 				}
 			  ];
