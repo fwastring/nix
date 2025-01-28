@@ -143,7 +143,7 @@
 		};
         # > Our main home-manager configuration file <
         modules = [
-			./config/home.nix
+			./config/lill-home.nix
 			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
 			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-fw-pkgs ]; })
 		];
