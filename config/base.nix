@@ -64,6 +64,12 @@
   };
 
   networking.networkmanager.enable = true;
+  networking.nameservers = [ "8.8.8.8"];
+  networking.resolvconf.enable = pkgs.lib.mkForce false;
+networking.dhcpcd.extraConfig = "nohook resolv.conf";
+networking.networkmanager.dns = "none";
+services.resolved.enable = false;
+
 
   environment.sessionVariables = {
     EDITOR  = "nvim";
