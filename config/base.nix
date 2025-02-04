@@ -8,7 +8,7 @@
   ...
 }: {
 	imports = [
-		../shared/vial.nix
+		# ../shared/vial.nix
 	];
   nixpkgs = {
     overlays = [
@@ -116,24 +116,21 @@ services.resolved.enable = false;
 	environment.systemPackages = with pkgs; [
 		vim
 		neovim
-		cvs
-		rcs
-		nano
 		git
 		openssh
 	];
 
 
   services = {
-  	udev = {
-		extraRules = ''
-			KERNEL=="ttyACM0", MODE:="666"
-		'';
-		packages = with pkgs; [
-			vial
-			via
-		];
-	};
+ #  	udev = {
+	# 	extraRules = ''
+	# 		KERNEL=="ttyACM0", MODE:="666"
+	# 	'';
+	# 	packages = with pkgs; [
+	# 		vial
+	# 		via
+	# 	];
+	# };
 	picom.enable = true;
     openssh = {
       enable = true;

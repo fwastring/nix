@@ -40,7 +40,7 @@
 	zip
     wget
     alsa-utils
-    upower
+    acpi
     gcc
     gnumake
 	cmake
@@ -59,11 +59,13 @@
 	unstable.fzf
 	eza
 	btop
-	thttpd
 	xcolor
 	openssl
 	dig
 	jq
+	rockbox-utility
+	rhythmbox
+	libgpod
 
 	# Dev
 	unstable.hugo
@@ -79,12 +81,9 @@
 	kubectl
 
 	#LSP
-	roslyn
-	roslyn-ls
 	python312Packages.python-lsp-server
 	yaml-language-server
     nil
-	jdt-language-server
 	texlab
 	marksman
 	nodePackages_latest.bash-language-server
@@ -133,13 +132,9 @@
     fastfetch
     lazygit
 	byzanz
-    remmina
 
 	# Utils
 	speedcrunch
-
-	#Unfree
-    discord
   ];
   programs.home-manager.enable = true;
   programs.fish.enable = true;
