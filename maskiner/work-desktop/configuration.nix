@@ -12,7 +12,8 @@
   imports = [
     ./hardware-configuration.nix
 	../../config/base.nix
-	../../config/users.nix
+	../../shared/openssh.nix
+	../../jobb/users.nix
   ];
 
   	environment.systemPackages = with pkgs; [

@@ -50,8 +50,19 @@
 	liveRestore = false;
   };
 
+	security.rtkit.enable = true;
+	services = {
+		pipewire = {
+			enable = true;
+			alsa.enable = true;
+			alsa.support32Bit = true;
+			pulse.enable = true;
+			# If you want to use JACK applications, uncomment this
+			jack.enable = true;
+		};
+	};
   hardware = {
-    pulseaudio.enable = true;
+    pulseaudio.enable = false;
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -64,12 +75,10 @@
   };
 
   networking.networkmanager.enable = true;
-  networking.nameservers = [ "8.8.8.8"];
-  networking.resolvconf.enable = pkgs.lib.mkForce false;
-networking.dhcpcd.extraConfig = "nohook resolv.conf";
-networking.networkmanager.dns = "none";
-services.resolved.enable = false;
-
+  networking.nameservers = [ "8.8.8.8" ];
+  # networking.resolvconf.enable = pkgs.lib.mkForce false;
+# networking.dhcpcd.extraConfig = "nohook resolv.conf";
+# networking.networkmanager.dns = "none";
 
   environment.sessionVariables = {
     EDITOR  = "nvim";
