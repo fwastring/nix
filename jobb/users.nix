@@ -35,6 +35,14 @@
           "docker"
         ];
       };
+      runner = {
+        initialPassword = "password";
+        isNormalUser = true;
+        description = "github runner";
+        extraGroups = [ 
+          "docker"
+        ];
+      };
     };
   };
 }

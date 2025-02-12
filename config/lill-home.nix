@@ -128,7 +128,7 @@
     zathura
     thunderbird
 	alacritty
-    unstable.neovim
+    neovim
     fastfetch
     lazygit
 	byzanz

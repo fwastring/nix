@@ -11,12 +11,12 @@
       # name = "Iosevka Nerd Font Bold";
       # name = "ComicShannsMono Nerd Font Bold";
       name = "Hack Nerd Font Mono Bold";
-      size = 13;
+      size = 12;
     };
     shellIntegration = {
       mode = "no-cursor";
     };
-    theme = "Catppuccin-Mocha";
+    themeFile = "Catppuccin-Mocha";
     settings = {
       confirm_os_window_close = 2;
       cursor_shape = "block";

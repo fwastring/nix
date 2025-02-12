@@ -11,8 +11,9 @@
   imports = [
     ../shared/dwm.nix
     ../shared/vscode.nix
-    ../shared/dmenu.nix
+    # ../shared/dmenu.nix
 	../shared/rofi.nix
+	../shared/mpv.nix
     ../shared/kitty.nix
     ../shared/alacritty.nix
     ../shared/tmux.nix
@@ -68,6 +69,7 @@
 	openssl
 	dig
 	jq
+	wireguard-tools
 
 	# Dev
 	unstable.deno
@@ -93,7 +95,7 @@
 	kubectl
 
 	#LSP
-	roslyn
+	# roslyn
 	roslyn-ls
 	python312Packages.python-lsp-server
 	yaml-language-server
@@ -101,13 +103,9 @@
 	jdt-language-server
 	texlab
 	marksman
-	nodePackages_latest.bash-language-server
-	typescript
-	nodePackages_latest.typescript-language-server
-	nodePackages_latest.vls
-	nodePackages_latest.volar
-	lua-language-server
 	tree-sitter
+	vue-language-server
+	nodePackages_latest.typescript-language-server
 	gopls
 	rust-analyzer
 
@@ -137,8 +135,8 @@
 	poppler_utils
 
 	#Desktop
+	fluent-reader
 	unstable.feishin
-    firefox
 	libreoffice
 	unstable.signal-desktop
 	pinta
@@ -146,7 +144,7 @@
 	vial
     thunderbird
 	alacritty
-    unstable.neovim
+    neovim
     fastfetch
     lazygit
 	byzanz

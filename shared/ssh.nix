@@ -86,6 +86,18 @@
         user = "fw";
         identityFile = "/home/fw/.ssh/id_rsa";
       };
+      "kube01" = {
+        hostname = "192.168.0.177";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
+      "runner01" = {
+        hostname = "192.168.0.205";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
     };
   };
 }
