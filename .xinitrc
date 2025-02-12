@@ -12,7 +12,7 @@ fi
 xrdb -merge ~/.Xresources
 setxkbmap -option caps:swapescape
 
-feh --bg-scale ~/nix/wallpapers/inverted.png
+feh --bg-scale ~/nix/wallpapers/blue.png
 
 dwmblocks &
 dunst &

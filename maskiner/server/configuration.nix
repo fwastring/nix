@@ -87,11 +87,11 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  boot.loader.grub = {
-	enable = true;
-	device = "/dev/sdc";
-	useOSProber = true;
-  };
+ #  boot.loader.grub = {
+	# enable = true;
+	# device = "/dev/sdc";
+	# useOSProber = true;
+ #  };
 
   console.keyMap = "sv-latin1";
   programs.zsh.enable = true;
@@ -105,7 +105,7 @@
   };
     openssh = {
 		enable = true;
-		ports = [55502];
+		ports = [22];
 		settings = {
 			PermitRootLogin = "no";
 			PasswordAuthentication = false;

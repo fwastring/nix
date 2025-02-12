@@ -8,7 +8,7 @@
   ...
 }: {
 	imports = [
-		../shared/vial.nix
+		# ../shared/vial.nix
 	];
   nixpkgs = {
     overlays = [
@@ -22,7 +22,6 @@
   nix.nixPath = ["/etc/nix/path"];
   users.defaultUserShell = pkgs.bash;
   documentation.man.generateCaches = false;
-  systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
   programs.fish.enable = true;
 	programs.bash = {
 	interactiveShellInit = ''
@@ -65,6 +64,12 @@
   };
 
   networking.networkmanager.enable = true;
+  networking.nameservers = [ "8.8.8.8"];
+  networking.resolvconf.enable = pkgs.lib.mkForce false;
+networking.dhcpcd.extraConfig = "nohook resolv.conf";
+networking.networkmanager.dns = "none";
+services.resolved.enable = false;
+
 
   environment.sessionVariables = {
     EDITOR  = "nvim";
@@ -76,9 +81,8 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { 
       fonts = [ 
-        "ComicShannsMono" 
+		"Hack"
         "FiraCode" 
-		"Iosevka"
       ]; 
     })
   ];
@@ -97,31 +101,36 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+	  efi = {
+		canTouchEfiVariables = false;
+	  };
+	  grub = {
+		 efiSupport = true;
+		 efiInstallAsRemovable = true;
+		 device = "nodev";
+	  };
+	};
   console.keyMap = "sv-latin1";
 
 	environment.systemPackages = with pkgs; [
+		vim
+		neovim
+		git
 		openssh
-		(
-		catppuccin-sddm.override {
-			flavor = "mocha";
-			font  = "ComicShannsMono Nerd Font Bold";
-			fontSize = "17";
-			background = "${../wallpapers/inverted.png}";
-			loginBackground = true;
-		}
-		)
 	];
 
 
   services = {
-  	udev = {
-		packages = with pkgs; [
-			vial
-			via
-		];
-	};
+ #  	udev = {
+	# 	extraRules = ''
+	# 		KERNEL=="ttyACM0", MODE:="666"
+	# 	'';
+	# 	packages = with pkgs; [
+	# 		vial
+	# 		via
+	# 	];
+	# };
 	picom.enable = true;
     openssh = {
       enable = true;
@@ -132,14 +141,10 @@
 		  "ipsec.d/ipsec.nm-l2tp.secrets"
 		];
 	};
-  displayManager = {
-	sddm = {
-	  enable = true;
-	  theme = "catppuccin-mocha";
-	  package = pkgs.kdePackages.sddm;
-	};
-  };
     xserver = {
+	  displayManager = {
+		  startx.enable = true;
+	  };
       enable = true;
 	  xkb = {
 		  layout = "se";

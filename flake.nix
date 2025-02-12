@@ -25,7 +25,7 @@
 	overlay-unstable = final: prev: {
         unstable = import nixpkgs-unstable {
 			inherit system;
-          config.allowUnfree = false;
+          config.allowUnfree = true;
         };
       };
 	overlay-fw-pkgs = final: prev: {
@@ -71,6 +71,13 @@
 			myhostname = "work-desktop";
 		};
         modules = [./maskiner/work-desktop/configuration.nix];
+      };
+      lillen = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+			inherit inputs outputs;
+			myhostname = "lillen";
+		};
+        modules = [./maskiner/lillen/configuration.nix];
       };
     };
 
@@ -124,6 +131,19 @@
         # > Our main home-manager configuration file <
         modules = [
 			./config/home.nix
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-fw-pkgs ]; })
+		];
+      };
+      "fw@lillen" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+			inherit inputs outputs;
+			myhostname = "lillen";
+		};
+        # > Our main home-manager configuration file <
+        modules = [
+			./config/lill-home.nix
 			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
 			({nixpkgs, ... }: { nixpkgs.overlays = [ overlay-fw-pkgs ]; })
 		];

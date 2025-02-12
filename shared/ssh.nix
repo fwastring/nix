@@ -19,6 +19,7 @@
         hostname = "login.student.lth.se";
         port = 22;
         user = "fr7658wa-s";
+        identityFile = "/home/fw/.ssh/id_rsa";
       };
       "dm2" = {
         hostname = "192.168.0.190";

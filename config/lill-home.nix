@@ -10,13 +10,10 @@
 }: {
   imports = [
     ../shared/dwm.nix
-    ../shared/vscode.nix
     ../shared/dmenu.nix
-	../shared/rofi.nix
     ../shared/kitty.nix
     ../shared/alacritty.nix
     ../shared/tmux.nix
-    ../shared/vim.nix
     ../shared/fish.nix 
     ../shared/git.nix
     ../shared/nixpkgs.nix
@@ -24,7 +21,6 @@
     ../shared/zathura.nix
     ../shared/lazygit.nix
     ../shared/ssh.nix
-    ../shared/aerc.nix
     ../shared/oh-my-posh.nix
   ];
 
@@ -44,7 +40,7 @@
 	zip
     wget
     alsa-utils
-    upower
+    acpi
     gcc
     gnumake
 	cmake
@@ -63,42 +59,31 @@
 	unstable.fzf
 	eza
 	btop
-	thttpd
 	xcolor
 	openssl
 	dig
 	jq
+	rockbox-utility
+	rhythmbox
+	libgpod
 
 	# Dev
-	unstable.deno
 	unstable.hugo
-	unstable.logstash
-	ngrok
 	tailwindcss
 	nodejs_22
-	gh-f
-	gh
-	yarn
-	plantuml
 	go
-	dotnetCorePackages.sdk_8_0_3xx
-	templ
 
 	#Tools
 	qrencode
 	air
-	k9s
     git
 	lazydocker
 	kubectl
 
 	#LSP
-	roslyn
-	roslyn-ls
 	python312Packages.python-lsp-server
 	yaml-language-server
     nil
-	jdt-language-server
 	texlab
 	marksman
 	nodePackages_latest.bash-language-server
@@ -112,7 +97,6 @@
 	rust-analyzer
 
 	# UI
-	rofi-bluetooth
 	pastel
 	imagemagick
 
@@ -132,33 +116,25 @@
 	# Documents
 	ripgrep
 	grc
-	texliveFull
+	# texliveFull
 	pandoc
 	poppler_utils
 
 	#Desktop
 	unstable.feishin
     firefox
-	libreoffice
 	unstable.signal-desktop
 	pinta
     zathura
-	vial
     thunderbird
 	alacritty
     unstable.neovim
     fastfetch
     lazygit
 	byzanz
-    remmina
-	obsidian
 
 	# Utils
 	speedcrunch
-
-	#Unfree
-    discord
-    slack
   ];
   programs.home-manager.enable = true;
   programs.fish.enable = true;

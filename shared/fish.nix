@@ -39,7 +39,8 @@
 	  ];
 	  shellAbbrs = {
 		  homec="nvim ~/nix/config/home.nix";
-		  ls="exa -l --no-time --no-permissions --no-user";
+		  n="eza -l --no-time --no-permissions --no-user";
+		  ls="eza -l --no-time --no-permissions --no-user";
 		  dev="nix develop --command fish";
 		  spot="steam-run ~/program/spotify_player";
 		  sc="sc-im";
@@ -49,6 +50,8 @@
 		  reb="sudo nixos-rebuild switch --flake $SYSTEM_DIR";
 		  cam="jira issue create && jira issue assign && jira issue move";
 		  latest="git log | head -1 | awk '{print $2;}' | xsel -ib";
+		  vpnup="nmcli con up 'iFacts VPN'";
+		  vpndown="nmcli con down 'iFacts VPN'";
 	  };
 	  interactiveShellInit = ''
 		fish_vi_key_bindings
