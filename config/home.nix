@@ -70,6 +70,7 @@
 	dig
 	jq
 	wireguard-tools
+	acpi
 
 	# Dev
 	unstable.deno
@@ -78,13 +79,12 @@
 	ngrok
 	tailwindcss
 	nodejs_22
-	gh-f
-	gh
 	yarn
 	plantuml
 	go
 	dotnetCorePackages.sdk_8_0_3xx
 	templ
+	goa
 
 	#Tools
 	qrencode
@@ -99,13 +99,15 @@
 	roslyn-ls
 	python312Packages.python-lsp-server
 	yaml-language-server
+	lua-language-server
+	typescript
     nil
 	jdt-language-server
 	texlab
 	marksman
 	tree-sitter
 	vue-language-server
-	nodePackages_latest.typescript-language-server
+	typescript-language-server
 	gopls
 	rust-analyzer
 

@@ -61,6 +61,8 @@
 		set SYSTEM_DIR "$FLAKE_DIR#jobb"
 		set -Ux FZF_CTRL_R_OPTS "--reverse"
 		set -Ux FZF_TMUX_OPTS "-p"
+		set -e GOROOT
+		set -e GOPATH
 
 		# Mocha
 		set -Ux FZF_DEFAULT_OPTS "\
