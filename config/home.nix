@@ -12,7 +12,7 @@
     ../shared/dwm.nix
     ../shared/vscode.nix
     # ../shared/dmenu.nix
-	../shared/rofi.nix
+	# ../shared/rofi.nix
 	../shared/mpv.nix
     ../shared/kitty.nix
     ../shared/alacritty.nix
@@ -71,6 +71,7 @@
 	jq
 	wireguard-tools
 	acpi
+	light
 
 	# Dev
 	unstable.deno
@@ -112,7 +113,7 @@
 	rust-analyzer
 
 	# UI
-	rofi-bluetooth
+	# rofi-bluetooth
 	pastel
 	imagemagick
 

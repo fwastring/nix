@@ -127,6 +127,7 @@
 		neovim
 		git
 		openssh
+		rofi
 	];
 
 
