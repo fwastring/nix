@@ -13,7 +13,7 @@
     ../shared/vscode.nix
     # ../shared/dmenu.nix
 	# ../shared/rofi.nix
-	../shared/mpv.nix
+	# ../shared/mpv.nix
     ../shared/kitty.nix
     ../shared/alacritty.nix
     ../shared/tmux.nix
@@ -60,8 +60,8 @@
 	bluez
 	bluez-tools
 	unstable.betterlockscreen
-	tmux
-	unstable.fzf
+	# tmux
+	fzf
 	eza
 	btop
 	thttpd
@@ -74,18 +74,23 @@
 	light
 
 	# Dev
+	gh
 	unstable.deno
 	unstable.hugo
 	unstable.logstash
 	ngrok
 	tailwindcss
-	nodejs_22
+	nodejs_23
 	yarn
 	plantuml
 	go
-	dotnetCorePackages.sdk_8_0_3xx
+	# dotnetCorePackages.sdk_8_0_3xx
+	dotnetCorePackages.sdk_9_0_1xx
 	templ
 	goa
+	azuredatastudio
+	mdbtools
+	prettierd
 
 	#Tools
 	qrencode
@@ -98,6 +103,9 @@
 	#LSP
 	# roslyn
 	roslyn-ls
+	dockerfile-language-server-nodejs
+	docker-compose-language-service
+	bash-language-server
 	python312Packages.python-lsp-server
 	yaml-language-server
 	lua-language-server
@@ -122,6 +130,7 @@
     networkmanagerapplet
     networkmanager-l2tp
     strongswan
+	networkmanager_strongswan
 
 	# Display
     scrot

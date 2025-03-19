@@ -27,41 +27,11 @@
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
-      "ha1" = {
-        hostname = "192.168.0.180";
-        port = 22;
-        user = "fw";
-        identityFile = "/home/fw/.ssh/fw-ssh-key";
-      };
-      "ha2" = {
-        hostname = "192.168.0.133";
-        port = 22;
-        user = "fw";
-        identityFile = "/home/fw/.ssh/fw-ssh-key";
-      };
-      "ha3" = {
-        hostname = "192.168.0.120";
-        port = 22;
-        user = "fw";
-        identityFile = "/home/fw/.ssh/fw-ssh-key";
-      };
-      "ha4" = {
-        hostname = "192.168.0.52";
-        port = 22;
-        user = "fw";
-        identityFile = "/home/fw/.ssh/fw-ssh-key";
-      };
       "mac" = {
         hostname = "192.168.0.149";
         port = 22;
         user = "ifacts";
         identityFile = "/home/fw/.ssh/ifacts-ssh-key";
-      };
-      "backups" = {
-        hostname = "192.168.0.120";
-        port = 22;
-        user = "github";
-        identityFile = "/home/fw/.ssh/github-ssh-key";
       };
       "malmo" = {
         hostname = "192.168.0.138";
@@ -93,7 +63,19 @@
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
       "runner01" = {
-        hostname = "192.168.0.205";
+        hostname = "192.168.0.184";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
+      "docker03" = {
+        hostname = "192.168.0.118";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
+      "table" = {
+        hostname = "192.168.0.157";
         port = 22;
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
