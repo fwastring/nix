@@ -74,6 +74,8 @@
 	light
 
 	# Dev
+	unstable.fluxcd
+	argocd
 	gh
 	unstable.deno
 	unstable.hugo
