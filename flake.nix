@@ -72,12 +72,12 @@
 		};
         modules = [./maskiner/work-desktop/configuration.nix];
       };
-      lillen = nixpkgs.lib.nixosSystem {
+      macmini = nixpkgs.lib.nixosSystem {
         specialArgs = {
 			inherit inputs outputs;
-			myhostname = "lillen";
+			myhostname = "macmini";
 		};
-        modules = [./maskiner/lillen/configuration.nix];
+        modules = [./maskiner/macmini/configuration.nix];
       };
     };
 
