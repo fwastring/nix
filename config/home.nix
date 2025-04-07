@@ -7,18 +7,19 @@
   pkgs,
   myhostname,
   ...
-}: {
+}:
+{
   imports = [
     ../shared/dwm.nix
     ../shared/vscode.nix
     # ../shared/dmenu.nix
-	# ../shared/rofi.nix
-	# ../shared/mpv.nix
+    # ../shared/rofi.nix
+    # ../shared/mpv.nix
     ../shared/kitty.nix
     ../shared/alacritty.nix
     ../shared/tmux.nix
     ../shared/vim.nix
-    ../shared/fish.nix 
+    ../shared/fish.nix
     ../shared/git.nix
     ../shared/nixpkgs.nix
     ../shared/firefox.nix
@@ -30,145 +31,142 @@
   ];
 
   nixpkgs = {
-    overlays = [];
+    overlays = [ ];
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
     };
   };
 
-
   home.packages = with pkgs; [
-	# System
+    # System
     xsel
     unzip
-	zip
+    zip
     wget
     alsa-utils
     upower
     gcc
     gnumake
-	cmake
-	arion
+    cmake
+    arion
     htop
     pavucontrol
-	procps
+    procps
     openssh
     networkmanager
-	fd
-	bat
-	bluez
-	bluez-tools
-	unstable.betterlockscreen
-	# tmux
-	fzf
-	eza
-	btop
-	thttpd
-	xcolor
-	openssl
-	dig
-	jq
-	wireguard-tools
-	acpi
-	light
+    fd
+    bat
+    bluez
+    bluez-tools
+    unstable.betterlockscreen
+    # tmux
+    fzf
+    eza
+    btop
+    thttpd
+    xcolor
+    openssl
+    dig
+    jq
+    wireguard-tools
+    acpi
+    light
 
-	# Dev
-	unstable.fluxcd
-	argocd
-	gh
-	unstable.deno
-	unstable.hugo
-	unstable.logstash
-	ngrok
-	tailwindcss
-	nodejs_23
-	yarn
-	plantuml
-	go
-	# dotnetCorePackages.sdk_8_0_3xx
-	dotnetCorePackages.sdk_9_0_1xx
-	templ
-	goa
-	azuredatastudio
-	mdbtools
-	prettierd
+    # Dev
+    unstable.fluxcd
+    argocd
+    gh
+    unstable.deno
+    unstable.hugo
+    unstable.logstash
+    ngrok
+    tailwindcss
+    nodejs_23
+    yarn
+    plantuml
+    go
+    templ
+    goa
+    azuredatastudio
+    mdbtools
+    prettierd
 
-	#Tools
-	qrencode
-	air
-	k9s
+    #Tools
+    qrencode
+    air
+    unstable.k9s
     git
-	lazydocker
-	kubectl
+    lazydocker
+    kubectl
 
-	#LSP
-	# roslyn
-	roslyn-ls
-	dockerfile-language-server-nodejs
-	docker-compose-language-service
-	bash-language-server
-	python312Packages.python-lsp-server
-	yaml-language-server
-	lua-language-server
-	typescript
+    #LSP
+    # roslyn
+    roslyn-ls
+    dockerfile-language-server-nodejs
+    docker-compose-language-service
+    bash-language-server
+    python312Packages.python-lsp-server
+    yaml-language-server
+    lua-language-server
+    typescript
     nil
-	jdt-language-server
-	texlab
-	marksman
-	tree-sitter
-	vue-language-server
-	typescript-language-server
-	gopls
-	rust-analyzer
+    jdt-language-server
+    texlab
+    marksman
+    tree-sitter
+    vue-language-server
+    typescript-language-server
+    gopls
+    rust-analyzer
 
-	# UI
-	# rofi-bluetooth
-	pastel
-	imagemagick
+    # UI
+    # rofi-bluetooth
+    pastel
+    imagemagick
 
     #VPN
     openvpn
     networkmanagerapplet
     networkmanager-l2tp
     strongswan
-	networkmanager_strongswan
+    networkmanager_strongswan
 
-	# Display
+    # Display
     scrot
     xbanish
     feh
     brightnessctl
     dunst
 
-	# Documents
-	ripgrep
-	grc
-	texliveFull
-	pandoc
-	poppler_utils
+    # Documents
+    ripgrep
+    grc
+    texliveFull
+    pandoc
+    poppler_utils
 
-	#Desktop
-	fluent-reader
-	unstable.feishin
-	libreoffice
-	unstable.signal-desktop
-	pinta
+    #Desktop
+    fluent-reader
+    unstable.feishin
+    libreoffice
+    unstable.signal-desktop
+    pinta
     zathura
-	vial
+    vial
     thunderbird
-	alacritty
+    alacritty
     neovim
     fastfetch
     lazygit
-	byzanz
+    byzanz
     remmina
-	obsidian
+    obsidian
 
-	# Utils
-	speedcrunch
+    # Utils
+    speedcrunch
 
-	#Unfree
+    #Unfree
     discord
     slack
   ];
@@ -177,7 +175,13 @@
   programs.man.generateCaches = false;
 
   xsession.enable = true;
-  xsession.windowManager.command = if myhostname == "laptop" then "/home/fw/nix/.xinitrc.laptop" else if myhostname == "jobb" then "/home/fw/nix/.xinitrc.jobb" else "/home/fw/nix/.xinitrc";
+  xsession.windowManager.command =
+    if myhostname == "laptop" then
+      "/home/fw/nix/.xinitrc.laptop"
+    else if myhostname == "jobb" then
+      "/home/fw/nix/.xinitrc.jobb"
+    else
+      "/home/fw/nix/.xinitrc";
 
   home.username = "fw";
   home.homeDirectory = "/home/fw";
