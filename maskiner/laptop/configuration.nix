@@ -7,48 +7,37 @@
   pkgs,
   myhostname,
   ...
-}: {
-	# You can import other NixOS modules here
-	imports = [
-	./hardware-configuration.nix
-	../../config/base.nix
-	../../config/users.nix
-	];
+}:
+{
+  # You can import other NixOS modules here
+  imports = [
+    ./hardware-configuration.nix
+    ../../config/base.nix
+    ../../config/users.nix
+  ];
 
-	networking.hostName = myhostname;
+  networking.hostName = myhostname;
 
-	environment.systemPackages = with pkgs; [
-		dotnet-sdk_8
-	];
+  environment.systemPackages = with pkgs; [
+    dotnet-sdk_8
+  ];
 
-	# boot.loader = {
-	# 	efi = {
-	# 		canTouchEfiVariables = true;
-	# 	};
-	# 	grub = {
-	# 		enable = true;
-	# 		efiSupport = true;
-	# 		useOSProber = true;
-	# 	};
-	# };
+  services.xserver.dpi = 140;
 
+  services = {
+    openssh = {
+      enable = true;
+      ports = [ 55504 ];
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = false;
+        X11Forwarding = true;
+      };
+      extraConfig = ''
+        			  AllowUsers fw
+        			'';
+    };
+  };
 
-	services.xserver.dpi = 140;
-
-	services = {
-		openssh = {
-			enable = true;
-			ports = [55504];
-			settings = {
-				PermitRootLogin = "no";
-				PasswordAuthentication = false;
-				X11Forwarding = true;
-			};
-			extraConfig = ''
-			  AllowUsers fw
-			'';
-		};
-	};
-
-	system.stateVersion = "23.11";
+  system.stateVersion = "23.11";
 }

@@ -1,18 +1,27 @@
-{ pkgs, lib, myhostname, ... }:
+{
+  pkgs,
+  lib,
+  myhostname,
+  ...
+}:
 {
   programs.kitty = {
     enable = true;
-    font = if myhostname == "laptop" then {
-      # name = "Iosevka Nerd Font Bold";
-      # name = "ComicShannsMono Nerd Font Bold";
-      name = "Hack Nerd Font Mono Bold";
-      size = 15;
-    } else {
-      # name = "Iosevka Nerd Font Bold";
-      # name = "ComicShannsMono Nerd Font Bold";
-      name = "Hack Nerd Font Mono Bold";
-      size = 12;
-    };
+    font =
+      if myhostname == "laptop" then
+        {
+          # name = "Iosevka Nerd Font Bold";
+          # name = "ComicShannsMono Nerd Font Bold";
+          name = "Hack Nerd Font Mono Bold";
+          size = 15;
+        }
+      else
+        {
+          # name = "Iosevka Nerd Font Bold";
+          # name = "ComicShannsMono Nerd Font Bold";
+          name = "Hack Nerd Font Mono Bold";
+          size = 12;
+        };
     shellIntegration = {
       mode = "no-cursor";
     };

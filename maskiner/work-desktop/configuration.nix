@@ -7,22 +7,31 @@
   pkgs,
   myhostname,
   ...
-}: {
+}:
+{
   # You can import other NixOS modules here
   imports = [
     ./hardware-configuration.nix
-	../../config/base.nix
-	../../shared/openssh.nix
-	../../jobb/users.nix
+    ../../config/base.nix
+    ../../shared/openssh.nix
+    ../../jobb/users.nix
   ];
 
-  	environment.systemPackages = with pkgs; [
-		kubectl
-		azure-cli
-	];
+  environment.systemPackages = with pkgs; [
+    kubectl
+    azure-cli
+    dotnetCorePackages.sdk_8_0_3xx
+    k3s
+    cifs-utils
+    nfs-utils
+  ];
 
+  services.k3s.enable = false;
 
-
+  services.openiscsi = {
+    enable = true;
+    name = "iqn.2016-04.com.open-iscsi:work-desktop";
+  };
 
   networking.hostName = myhostname;
 

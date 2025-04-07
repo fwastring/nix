@@ -38,7 +38,7 @@
         port = 22;
         user = "ifacts";
         identityFile = "/home/fw/.ssh/ifacts-ssh-key";
-	};
+      };
       "kobo" = {
         hostname = "192.168.1.192";
         port = 22;
@@ -58,6 +58,18 @@
       };
       "kube01" = {
         hostname = "192.168.0.177";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
+      "kube02" = {
+        hostname = "192.168.0.159";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/fw-ssh-key";
+      };
+      "kube03" = {
+        hostname = "192.168.0.182";
         port = 22;
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
