@@ -18,7 +18,10 @@
 	networking.hostName = myhostname;
 
 	environment.systemPackages = with pkgs; [
-		dotnet-sdk_8
+		qgis
+		koreader
+		foliate
+		k3sup
 	];
 
 	# boot.loader = {
