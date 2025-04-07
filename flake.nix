@@ -92,6 +92,13 @@
           };
           modules = [ ./maskiner/lillen/configuration.nix ];
         };
+        macmini = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+            myhostname = "macmini";
+          };
+          modules = [ ./maskiner/macmini/configuration.nix ];
+        };
       };
 
       # Standalone home-manager configuration entrypoint

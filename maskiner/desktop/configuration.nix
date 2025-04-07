@@ -21,26 +21,45 @@
 	];
 networking.firewall = {
   enable = true;
-  allowedTCPPorts = [ 80 443 3000 8384 22000];
+  allowedTCPPorts = [ 8384 22000];
   allowedUDPPortRanges = [
     { from = 4000; to = 4007; }
     { from = 8000; to = 8010; }
   ];
 };
 
+
+services.k3s = {
+		enable = true;
+		role = "server";
+		token = "supersupersecretkey";
+		extraFlags = toString ([
+			"--write-kubeconfig-mode \"0644\""
+			"--cluster-init"
+			"--disable local-storage"
+			"--disable traefik"
+		]);
+		clusterInit = true;
+	  };
+
+	  services.openiscsi = {
+		enable = true;
+		name = "iqn.2016-04.com.open-iscsi:desktop";
+	  };
+
    networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 
 	services = {
 		openssh = {
 			enable = true;
-			ports = [55502];
+			# ports = [55502];
 			settings = {
 				PermitRootLogin = "no";
 				PasswordAuthentication = false;
 				X11Forwarding = true;
 			};
 			extraConfig = ''
-			  AllowUsers fw ios
+			  AllowUsers fw ios jw
 			'';
 		};
 		syncthing = {
