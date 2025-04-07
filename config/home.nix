@@ -11,8 +11,9 @@
   imports = [
     ../shared/dwm.nix
     ../shared/vscode.nix
-    ../shared/dmenu.nix
-	../shared/rofi.nix
+    # ../shared/dmenu.nix
+	# ../shared/rofi.nix
+	# ../shared/mpv.nix
     ../shared/kitty.nix
     ../shared/alacritty.nix
     ../shared/tmux.nix
@@ -59,8 +60,8 @@
 	bluez
 	bluez-tools
 	unstable.betterlockscreen
-	tmux
-	unstable.fzf
+	# tmux
+	fzf
 	eza
 	btop
 	thttpd
@@ -68,21 +69,30 @@
 	openssl
 	dig
 	jq
+	wireguard-tools
+	acpi
+	light
 
 	# Dev
+	unstable.fluxcd
+	argocd
+	gh
 	unstable.deno
 	unstable.hugo
 	unstable.logstash
 	ngrok
 	tailwindcss
-	nodejs_22
-	gh-f
-	gh
+	nodejs_23
 	yarn
 	plantuml
 	go
-	dotnetCorePackages.sdk_8_0_3xx
+	# dotnetCorePackages.sdk_8_0_3xx
+	dotnetCorePackages.sdk_9_0_1xx
 	templ
+	goa
+	azuredatastudio
+	mdbtools
+	prettierd
 
 	#Tools
 	qrencode
@@ -93,26 +103,27 @@
 	kubectl
 
 	#LSP
-	roslyn
+	# roslyn
 	roslyn-ls
+	dockerfile-language-server-nodejs
+	docker-compose-language-service
+	bash-language-server
 	python312Packages.python-lsp-server
 	yaml-language-server
+	lua-language-server
+	typescript
     nil
 	jdt-language-server
 	texlab
 	marksman
-	nodePackages_latest.bash-language-server
-	typescript
-	nodePackages_latest.typescript-language-server
-	nodePackages_latest.vls
-	nodePackages_latest.volar
-	lua-language-server
 	tree-sitter
+	vue-language-server
+	typescript-language-server
 	gopls
 	rust-analyzer
 
 	# UI
-	rofi-bluetooth
+	# rofi-bluetooth
 	pastel
 	imagemagick
 
@@ -121,6 +132,7 @@
     networkmanagerapplet
     networkmanager-l2tp
     strongswan
+	networkmanager_strongswan
 
 	# Display
     scrot
@@ -137,8 +149,8 @@
 	poppler_utils
 
 	#Desktop
+	fluent-reader
 	unstable.feishin
-    firefox
 	libreoffice
 	unstable.signal-desktop
 	pinta
@@ -146,7 +158,7 @@
 	vial
     thunderbird
 	alacritty
-    unstable.neovim
+    neovim
     fastfetch
     lazygit
 	byzanz

@@ -50,8 +50,20 @@
 	liveRestore = false;
   };
 
+	  hardware.pulseaudio.enable = false;
+	security.rtkit.enable = true;
+	services = {
+		tailscale = {
+			enable = true;
+		};
+		pipewire = {
+			enable = true;
+			alsa.enable = true;
+			alsa.support32Bit = true;
+			pulse.enable = true;
+		};
+	};
   hardware = {
-    pulseaudio.enable = true;
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -64,12 +76,10 @@
   };
 
   networking.networkmanager.enable = true;
-  networking.nameservers = [ "8.8.8.8"];
-  networking.resolvconf.enable = pkgs.lib.mkForce false;
-networking.dhcpcd.extraConfig = "nohook resolv.conf";
-networking.networkmanager.dns = "none";
-services.resolved.enable = false;
-
+  networking.nameservers = [ "8.8.8.8" ];
+  # networking.resolvconf.enable = pkgs.lib.mkForce false;
+# networking.dhcpcd.extraConfig = "nohook resolv.conf";
+# networking.networkmanager.dns = "none";
 
   environment.sessionVariables = {
     EDITOR  = "nvim";
@@ -118,6 +128,7 @@ services.resolved.enable = false;
 		neovim
 		git
 		openssh
+		rofi
 	];
 
 

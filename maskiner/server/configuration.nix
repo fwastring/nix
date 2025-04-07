@@ -30,7 +30,7 @@
 	];
 	fileSystems."/data" = {
 	  fsType = "fuse.mergerfs";
-	  device = "/mnt/drive*";
+	  device = "/mnt/extern*";
 	  options = ["cache.files=partial" "dropcacheonclose=true" "category.create=mfs"];
 	};
 
@@ -96,7 +96,11 @@
   console.keyMap = "sv-latin1";
   programs.zsh.enable = true;
 
+	security.auditd.enable = true;
   services = {
+  	fail2ban = {
+		enable = true;
+	};
   xserver = {
 	enable = true;
 	displayManager = {
