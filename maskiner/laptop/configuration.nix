@@ -18,9 +18,12 @@
 
   networking.hostName = myhostname;
 
-  environment.systemPackages = with pkgs; [
-    dotnet-sdk_8
-  ];
+	environment.systemPackages = with pkgs; [
+		qgis
+		koreader
+		foliate
+		k3sup
+	];
 
   services.xserver.dpi = 140;
 
