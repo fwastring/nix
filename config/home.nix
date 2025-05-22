@@ -102,7 +102,7 @@
 
     #LSP
     # roslyn
-    roslyn-ls
+    # roslyn-ls
     dockerfile-language-server-nodejs
     docker-compose-language-service
     bash-language-server
@@ -156,7 +156,6 @@
     vial
     thunderbird
     alacritty
-    neovim
     fastfetch
     lazygit
     byzanz

@@ -124,7 +124,6 @@
 
   environment.systemPackages = with pkgs; [
     vim
-    neovim
     git
     openssh
     rofi
@@ -139,8 +138,12 @@
     k3sup
     nixfmt-rfc-style
     nixd
-    vault
+	unstable.neovim
+	omnisharp-roslyn
   ];
+
+systemd.services.NetworkManager-wait-online.enable = false;
+
 
   services = {
     picom.enable = true;

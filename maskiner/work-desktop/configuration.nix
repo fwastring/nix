@@ -24,7 +24,12 @@
     k3s
     cifs-utils
     nfs-utils
+    docker-slim
   ];
+
+  networking.firewall = {
+    allowedTCPPorts = [ 5173 ];
+  };
 
   services.k3s.enable = false;
 

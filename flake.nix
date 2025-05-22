@@ -83,7 +83,15 @@
             inherit inputs outputs;
             myhostname = "work-desktop";
           };
-          modules = [ ./maskiner/work-desktop/configuration.nix ];
+          modules = [ 
+            (
+              { nixpkgs, ... }:
+              {
+                nixpkgs.overlays = [ overlay-unstable ];
+              }
+            )
+			  ./maskiner/work-desktop/configuration.nix 
+		  ];
         };
         lillen = nixpkgs.lib.nixosSystem {
           specialArgs = {

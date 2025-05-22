@@ -6,29 +6,29 @@
 		settings = {
 		  "$schema"= "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json";
 		  # Macchiato
-		  "palette" =  {
-				"os"= "#ACB0BE";
-				"closer"= "p:os";
-				"pink"= "#F5BDE6";
-				"lavender"= "#B7BDF8";
-				"blue"=  "#8aadf4";
-				"peach" = "#f5a97f";
-				"red" = "#ed8796";
-				"green" = "#a6da95";
-				"mauve" = "#c6a0f6";
-		  };
-		  # Latte
 		  # "palette" =  {
 				# "os"= "#ACB0BE";
 				# "closer"= "p:os";
-				# "pink"= "#ea76cb";
+				# "pink"= "#F5BDE6";
 				# "lavender"= "#B7BDF8";
 				# "blue"=  "#8aadf4";
-				# "peach" = "#fe640b";
-				# "red" = "#d20f39";
-				# "green" = "#40a02b";
-				# "mauve" = "#8839ef";
+				# "peach" = "#f5a97f";
+				# "red" = "#ed8796";
+				# "green" = "#a6da95";
+				# "mauve" = "#c6a0f6";
 		  # };
+		  # Latte
+		  "palette" =  {
+				"os"= "#ACB0BE";
+				"closer"= "p:os";
+				"pink"= "#ea76cb";
+				"lavender"= "#B7BDF8";
+				"blue"=  "#8aadf4";
+				"peach" = "#fe640b";
+				"red" = "#d20f39";
+				"green" = "#40a02b";
+				"mauve" = "#8839ef";
+		  };
 		  "blocks"= [
 			{
 			  "alignment"= "left";
