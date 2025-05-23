@@ -4,8 +4,8 @@
     # Configure your nixpkgs instance
     config = {
       allowUnfree = true;
-	    permittedInsecurePackages = [
-        "electron-25.9.0"
+      permittedInsecurePackages = [
+        "electron-33.4.11"
       ];
     };
   };

@@ -140,6 +140,8 @@
     nixd
 	unstable.neovim
 	omnisharp-roslyn
+	nodePackages.vscode-json-languageserver
+	tailwindcss-language-server
   ];
 
 systemd.services.NetworkManager-wait-online.enable = false;
