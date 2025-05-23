@@ -76,7 +76,9 @@
   };
 
   networking.networkmanager.enable = true;
-  networking.nameservers = [ "8.8.8.8" ];
+  systemd.services.NetworkManager-wait-online.enable = false;
+
+  # networking.nameservers = [ "8.8.8.8" ];
   # networking.resolvconf.enable = pkgs.lib.mkForce false;
   # networking.dhcpcd.extraConfig = "nohook resolv.conf";
   # networking.networkmanager.dns = "none";
