@@ -76,7 +76,7 @@
   };
 
   networking.networkmanager.enable = true;
-  systemd.services.NetworkManager-wait-online.enable = false;
+  # systemd.services.NetworkManager-wait-online.enable = false;
 
   # networking.nameservers = [ "8.8.8.8" ];
   # networking.resolvconf.enable = pkgs.lib.mkForce false;
@@ -95,6 +95,7 @@
       fonts = [
         "Hack"
         "FiraCode"
+        "ComicShannsMono"
       ];
     })
   ];
@@ -144,9 +145,8 @@
 	omnisharp-roslyn
 	nodePackages.vscode-json-languageserver
 	tailwindcss-language-server
+	dmenu
   ];
-
-systemd.services.NetworkManager-wait-online.enable = false;
 
 
   services = {
@@ -169,11 +169,9 @@ systemd.services.NetworkManager-wait-online.enable = false;
         layout = "se";
         variant = "";
       };
-      windowManager = {
-        dwm = {
-          enable = true;
-        };
-      };
+	  windowManager.dwm = {
+      enable = true;
+		};
     };
     locate = {
       enable = true;
