@@ -8,7 +8,7 @@ let
   dwm = pkgs.dwm.overrideAttrs (old: {
     src = builtins.fetchGit {
       url = "https://github.com/FredzyW/dwm-conf.git";
-      rev = "66d578e8eaf4fb022137e6a9bbe118d53209b9b1";
+      rev = "f70f48bdb01df6bae9c63131a6c84e812141788c";
     };
     nativeBuildInputs = with pkgs; [
       xorg.libX11.dev
@@ -18,20 +18,12 @@ let
     ];
   });
   dwmblocks =
-    if myhostname == "desktop" then
       pkgs.dwmblocks.overrideAttrs (old: {
         src = builtins.fetchGit {
           url = "https://github.com/FredzyW/dwmblocks.git";
-          rev = "7c81c55390f2deec2a3804217abe80221ef6f46a";
+      rev = "d60ccc8c1180aa617fb1033bf1e44a2866647764";
         };
       })
-    else
-      pkgs.dwmblocks.overrideAttrs (old: {
-        src = builtins.fetchGit {
-          url = "https://github.com/FredzyW/dwmblocks.git";
-          rev = "ec1b1a61a80e0ba92842e5117736ff977bb6cfa5";
-        };
-      });
 in
 {
   home.packages = [
