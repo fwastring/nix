@@ -9,8 +9,11 @@
 }:
 {
   imports = [
-    # ../shared/vial.nix
-     # ../shared/st.nix
+    ./dev.nix
+    ./lsp.nix
+    ./network.nix
+    ./programs.nix
+    ./system.nix
   ];
   nixpkgs = {
     overlays = [
@@ -27,16 +30,6 @@
   users.defaultUserShell = pkgs.bash;
   documentation.man.generateCaches = false;
   programs.fish.enable = true;
-  programs.slock = {
-  	enable = true;
-	package = with pkgs; (slock.overrideAttrs (oldAttrs: rec {
-		src = builtins.fetchGit {
-			url = "https://github.com/fwastring/slock";
-      rev = "53ada91fefc22f6c9c76ef71b9741b385b6bedfb";
-		};
-		buildInputs = oldAttrs.buildInputs ++ [ xorg.libX11.dev xorg.libXft imlib2 xorg.libXinerama pkg-config xorg.libXrandr xorg.xrandr libxcrypt xorg.libXext xorg.xorgproto];
-	  }));
-  };
   programs.bash = {
     interactiveShellInit = ''
       		if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
@@ -61,7 +54,7 @@
     liveRestore = false;
   };
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services = {
     tailscale = {
@@ -87,12 +80,6 @@
   };
 
   networking.networkmanager.enable = true;
-  # systemd.services.NetworkManager-wait-online.enable = false;
-
-  # networking.nameservers = [ "8.8.8.8" ];
-  # networking.resolvconf.enable = pkgs.lib.mkForce false;
-  # networking.dhcpcd.extraConfig = "nohook resolv.conf";
-  # networking.networkmanager.dns = "none";
 
   environment.sessionVariables = {
     EDITOR = "nvim";
@@ -131,44 +118,8 @@
     };
   };
   console.keyMap = "sv-latin1";
-  console.font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
 
   environment.systemPackages = with pkgs; [
-  	lolcat
-	fortune
-	cowsay
-	pkg-config
-	xlsfonts
-	xorg.fontmiscmisc
-	xorg.mkfontdir
-  	xclip
-    vim
-    git
-    openssh
-    dysk
-	rsync
-	procs
-	dust
-    (wrapHelm kubernetes-helm {
-      plugins = with pkgs.kubernetes-helmPlugins; [
-        helm-secrets
-        helm-diff
-        helm-s3
-        helm-git
-      ];
-    })
-    k3sup
-    nixfmt-rfc-style
-
-	# LSPs
-    nixd
-	unstable.neovim
-	omnisharp-roslyn
-	nodePackages.vscode-json-languageserver
-	tailwindcss-language-server
-	dockerfile-language-server-nodejs
-	nodejs_22
-	bash-language-server
 	(st.overrideAttrs (oldAttrs: rec {
 		src = builtins.fetchGit {
 			url = "https://github.com/fwastring/st";
@@ -184,6 +135,17 @@
 		buildInputs = oldAttrs.buildInputs ++ [ xorg.libX11.dev xorg.libXft imlib2 xorg.libXinerama pkg-config];
 	  }))
   ];
+
+  programs.slock = {
+  	enable = true;
+	package = with pkgs; (slock.overrideAttrs (oldAttrs: rec {
+		src = builtins.fetchGit {
+			url = "https://github.com/fwastring/slock";
+      rev = "53ada91fefc22f6c9c76ef71b9741b385b6bedfb";
+		};
+		buildInputs = oldAttrs.buildInputs ++ [ xorg.libX11.dev xorg.libXft imlib2 xorg.libXinerama pkg-config xorg.libXrandr xorg.xrandr libxcrypt xorg.libXext xorg.xorgproto];
+	  }));
+  };
 
 
   services = {
