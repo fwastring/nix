@@ -7,6 +7,8 @@
       tmuxPlugins.sensible
       tmuxPlugins.pain-control
       tmuxPlugins.sessionist
+      tmuxPlugins.yank
+      # tmuxPlugins.copycat
       {
         plugin = tmuxPlugins.continuum;
         extraConfig = ''
@@ -23,14 +25,17 @@
 
     ];
     prefix = "C-a";
-    terminal = "alacritty";
+    terminal = "st";
     keyMode = "vi";
     escapeTime = 0;
     extraConfig = ''
+			set -g set-clipboard on
+			set -g @yank_selection_mouse 'clipboard'
       		set -g base-index 1
+      		set -g status-keys 'vi'
       		setw -g pane-base-index 1
-      		set -g default-terminal "xterm-kitty"                                                                    
-      		set -g terminal-overrides "xterm-kitty"                                                                                             
+      		set -g default-terminal "st-256color"                                                                    
+      		set -g terminal-overrides "st-256color"                                                                                             
       		# true colours support                                                                                                              
       		# set -ga terminal-overrides ",*256col*:Tc"                                                                              
       		set -ga terminal-overrides ",xterm-256color:Tc"                                                                         

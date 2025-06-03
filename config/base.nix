@@ -10,6 +10,7 @@
 {
   imports = [
     # ../shared/vial.nix
+     # ../shared/st.nix
   ];
   nixpkgs = {
     overlays = [
@@ -26,6 +27,16 @@
   users.defaultUserShell = pkgs.bash;
   documentation.man.generateCaches = false;
   programs.fish.enable = true;
+  programs.slock = {
+  	enable = true;
+	package = with pkgs; (slock.overrideAttrs (oldAttrs: rec {
+		src = builtins.fetchGit {
+			url = "https://github.com/fwastring/slock";
+      rev = "53ada91fefc22f6c9c76ef71b9741b385b6bedfb";
+		};
+		buildInputs = oldAttrs.buildInputs ++ [ xorg.libX11.dev xorg.libXft imlib2 xorg.libXinerama pkg-config xorg.libXrandr xorg.xrandr libxcrypt xorg.libXext xorg.xorgproto];
+	  }));
+  };
   programs.bash = {
     interactiveShellInit = ''
       		if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
@@ -85,19 +96,15 @@
 
   environment.sessionVariables = {
     EDITOR = "nvim";
+    VISUAL = "nvim";
     TERM = "xterm-256color";
   };
 
   time.timeZone = "Europe/Stockholm";
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "Hack"
-        "FiraCode"
-        "ComicShannsMono"
-      ];
-    })
+    nerd-fonts.comic-shanns-mono
+	nerd-fonts.fira-code
   ];
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -124,12 +131,24 @@
     };
   };
   console.keyMap = "sv-latin1";
+  console.font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
 
   environment.systemPackages = with pkgs; [
+  	lolcat
+	fortune
+	cowsay
+	pkg-config
+	xlsfonts
+	xorg.fontmiscmisc
+	xorg.mkfontdir
+  	xclip
     vim
     git
     openssh
-    rofi
+    dysk
+	rsync
+	procs
+	dust
     (wrapHelm kubernetes-helm {
       plugins = with pkgs.kubernetes-helmPlugins; [
         helm-secrets
@@ -140,17 +159,36 @@
     })
     k3sup
     nixfmt-rfc-style
+
+	# LSPs
     nixd
 	unstable.neovim
 	omnisharp-roslyn
 	nodePackages.vscode-json-languageserver
 	tailwindcss-language-server
-	dmenu
+	dockerfile-language-server-nodejs
+	nodejs_22
+	bash-language-server
+	(st.overrideAttrs (oldAttrs: rec {
+		src = builtins.fetchGit {
+			url = "https://github.com/fwastring/st";
+      rev = "9b95aafa2bcb3f4f991a5fc2c7cb939ce3f550b2";
+		};
+		buildInputs = oldAttrs.buildInputs ++ [ xorg.libX11.dev xorg.libXft imlib2 xorg.libXinerama pkg-config];
+	  }))
+	(dmenu.overrideAttrs (oldAttrs: rec {
+		src = builtins.fetchGit {
+			url = "https://github.com/fwastring/dmenu";
+      rev = "2f09f9ead8c2736dbca838393f97e5a0e4e55a2e";
+		};
+		buildInputs = oldAttrs.buildInputs ++ [ xorg.libX11.dev xorg.libXft imlib2 xorg.libXinerama pkg-config];
+	  }))
   ];
 
 
   services = {
     picom.enable = true;
+	clipmenu.enable = true;
     openssh = {
       enable = true;
     };
@@ -172,11 +210,6 @@
 	  windowManager.dwm = {
       enable = true;
 		};
-    };
-    locate = {
-      enable = true;
-      package = pkgs.mlocate;
-      localuser = null;
     };
     blueman = {
       enable = true;

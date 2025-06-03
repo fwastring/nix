@@ -29,16 +29,13 @@
         src = pkgs.fishPlugins.done.src;
       }
       {
-        name = "sponge";
-        src = pkgs.fishPlugins.sponge.src;
-      }
-      {
         name = "grc";
         src = pkgs.fishPlugins.grc.src;
       }
     ];
     shellAbbrs = {
       homec = "nvim ~/nix/config/home.nix";
+      cat = "bat";
       n = "eza -l --no-time --no-permissions --no-user";
       ls = "eza -l --no-time --no-permissions --no-user";
       dev = "nix develop --command fish";

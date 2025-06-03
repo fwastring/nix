@@ -59,7 +59,6 @@
     bat
     bluez
     bluez-tools
-    unstable.betterlockscreen
     # tmux
     fzf
     eza
@@ -72,24 +71,18 @@
     wireguard-tools
     acpi
     light
+	# dmenu-rs-enable-plugins
 
     # Dev
-    unstable.fluxcd
     argocd
     gh
-    unstable.deno
-    unstable.hugo
-    unstable.logstash
     ngrok
     tailwindcss
-    nodejs_23
     yarn
     plantuml
     go
     templ
     goa
-    azuredatastudio
-    mdbtools
     prettierd
 
     #Tools
@@ -100,28 +93,7 @@
     lazydocker
     kubectl
 
-    #LSP
-    # roslyn
-    # roslyn-ls
-    dockerfile-language-server-nodejs
-    docker-compose-language-service
-    bash-language-server
-    python312Packages.python-lsp-server
-    yaml-language-server
-    lua-language-server
-    typescript
-    nil
-    jdt-language-server
-    texlab
-    marksman
-    tree-sitter
-    vue-language-server
-    typescript-language-server
-    gopls
-    rust-analyzer
-
     # UI
-    # rofi-bluetooth
     pastel
     imagemagick
 
@@ -147,7 +119,6 @@
     poppler_utils
 
     #Desktop
-    fluent-reader
     unstable.feishin
     libreoffice
     unstable.signal-desktop

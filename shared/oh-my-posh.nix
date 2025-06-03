@@ -105,7 +105,7 @@
 						"{{if gt .Code 0}}p:red{{end}}"
 						"{{if eq .Code 0}}p:green{{end}}"
 					];
-					"template"= "";
+					"template"= ">";
 				}
 			  ];
 			}
@@ -118,7 +118,7 @@
 					"{{if gt .Code 0}}p:red{{end}}"
 					"{{if eq .Code 0}}p:green{{end}}"
 				];
-				"template"= " ";
+				"template"= ">";
 			};
 		  "secondary_prompt"= {
 				"background"= "transparent";
@@ -126,7 +126,7 @@
 					"{{if gt .Code 0}}p:red{{end}}"
 					"{{if eq .Code 0}}p:green{{end}}"
 				];
-				"template"= " ";
+				"template"= ">";
 			};
 		};
 	};
