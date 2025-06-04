@@ -14,6 +14,7 @@
     ./network.nix
     ./programs.nix
     ./system.nix
+	../shared/dunst/default.nix
   ];
   nixpkgs = {
     overlays = [
