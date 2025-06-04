@@ -21,9 +21,9 @@
 		  "palette" =  {
 				"os"= "#ACB0BE";
 				"closer"= "p:os";
-				"pink"= "#ea76cb";
-				"lavender"= "#B7BDF8";
-				"blue"=  "#8aadf4";
+				"pink" = "#ea76cb";
+				"lavender" = "#7287FD";
+				"blue" =  "#1e66f5";
 				"peach" = "#fe640b";
 				"red" = "#d20f39";
 				"green" = "#40a02b";

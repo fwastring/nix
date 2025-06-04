@@ -34,19 +34,11 @@
       }
     ];
     shellAbbrs = {
-      homec = "nvim ~/nix/config/home.nix";
       cat = "bat";
-      n = "eza -l --no-time --no-permissions --no-user";
       ls = "eza -l --no-time --no-permissions --no-user";
-      dev = "nix develop --command fish";
       k = "kubectl";
       ka = "kubectl apply -f";
-      spot = "steam-run ~/program/spotify_player";
-      sc = "sc-im";
       e = "nvim";
-      c = "ssh";
-      home = "home-manager switch --flake $HM_DIR";
-      reb = "sudo nixos-rebuild switch --flake $SYSTEM_DIR";
       cam = "jira issue create && jira issue assign && jira issue move";
       latest = "git log | head -1 | awk '{print $2;}' | xsel -ib";
       vpnup = "nmcli con up 'iFacts VPN'";
