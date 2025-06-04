@@ -39,6 +39,7 @@
       k = "kubectl";
       ka = "kubectl apply -f";
       e = "nvim";
+      t = "timew";
       cam = "jira issue create && jira issue assign && jira issue move";
       latest = "git log | head -1 | awk '{print $2;}' | xsel -ib";
       vpnup = "nmcli con up 'iFacts VPN'";
