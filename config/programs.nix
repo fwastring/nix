@@ -18,8 +18,6 @@
 		zathura
 		vial
 		thunderbird
-		alacritty
-		fastfetch
 		lazygit
 		byzanz
 		remmina
@@ -28,8 +26,7 @@
 		discord
 		slack
 		feh
-		imagemagick
-		pandoc
-		texliveFull
+		pavucontrol
+		scrot
 	];
 }

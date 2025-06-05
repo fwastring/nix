@@ -12,13 +12,13 @@
   	environment.systemPackages = with pkgs; [
 		# System
 		xsel
+		xbanish
 		unzip
 		zip
 		wget
 		alsa-utils
 		upower
 		htop
-		pavucontrol
 		procps
 		fzf
 		eza
@@ -29,8 +29,6 @@
 		rsync
 		procs
 		dust
-		scrot
-		xbanish
 		brightnessctl
 		lolcat
 		fortune
@@ -46,5 +44,9 @@
 		bluez
 		bluez-tools
 		openssl
+		imagemagick
+		pandoc
+		texliveFull
+		fastfetch
 	];
 }
