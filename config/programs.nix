@@ -31,5 +31,6 @@
 		imagemagick
 		pandoc
 		texliveFull
+		mpv
 	];
 }
