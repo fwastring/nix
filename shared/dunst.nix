@@ -8,6 +8,7 @@
       global = {
         width = 300;
         height = 300;
+		follow = "keyboard";
         offset = "30x50";
         origin = "top-right";
         transparency = 5;

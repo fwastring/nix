@@ -6,6 +6,7 @@
     settings = {
       AuthenticationMethods = "publickey password";
       TrustedUserCAKeys = "/etc/ssh/ssh_ca.pub";
+	  X11Forwarding = true;
       Banner = "none";
       PasswordAuthentication = true;
       # PasswordAuthentication = false;

@@ -28,5 +28,9 @@
 		feh
 		pavucontrol
 		scrot
+		imagemagick
+		pandoc
+		texliveFull
+		mpv
 	];
 }

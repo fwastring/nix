@@ -12,6 +12,11 @@
   	environment.systemPackages = with pkgs; [
 		timewarrior
 
+		kubectl
+		azure-cli
+		dotnetCorePackages.sdk_8_0_3xx
+		docker-slim
+
 		sqlc
 		postgresql
 		argocd
@@ -29,7 +34,6 @@
 		unstable.k9s
 		git
 		lazydocker
-		kubectl
 		gcc
 		gnumake
 		cmake
