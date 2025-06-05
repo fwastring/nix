@@ -12,6 +12,8 @@
   	environment.systemPackages = with pkgs; [
 		timewarrior
 
+		sqlc
+		postgresql
 		argocd
 		gh
 		ngrok

@@ -11,6 +11,7 @@
 
   	environment.systemPackages = with pkgs; [
 		nixd
+		gopls
 		unstable.neovim
 		omnisharp-roslyn
 		nodePackages.vscode-json-languageserver
