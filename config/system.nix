@@ -59,6 +59,7 @@
 		(pass.withExtensions (ext: with ext; [
 			pass-import
 			pass-genphrase
+			pass-update
 		]))
 	];
 }

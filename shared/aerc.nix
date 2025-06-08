@@ -4,8 +4,12 @@
 	programs.aerc = {
 		enable = true;
 		extraConfig = {
+			general = {
+				"pgp-provider" = "gpg";
+				"log-file" = "~/.config/aerc/messages.log";
+			};
 			filters = {
-				"text/plain"="colorize";
+				"text/plain"="bat";
 				"text/calendar"="calendar";
 				"message/delivery-status"="colorize";
 				"message/rfc822"="colorize";
@@ -17,57 +21,16 @@
 				"border-char-vertical"="│";
 				"border-char-horizontal"="─";
 				"styleset-name"="catppuccin-latte";
+				"icon-unencrypted" = "🔓";
+				"icon-encrypted" = "🔒";
+				"icon-signed" = "✔";
+				"icon-signed-encrypted" = "✅";
+			};
+			templates = {
+				"new-message" = "signature.txt";
 			};
 		};
 		stylesets = {
-			# catppuccin-macchiato = {
-			# 	"*.default"="true";
-			# 	"*.normal"="true";
-			#
-			# 	"default.fg"="#cad3f5";
-			#
-			# 	"error.fg"="#ed8796";
-			# 	"warning.fg"="#f5a97f";
-			# 	"success.fg"="#a6da95";
-			#
-			# 	"tab.fg"="#6e738d";
-			# 	"tab.bg"="#1e2030";
-			# 	"tab.selected.fg"="#cad3f5";
-			# 	"tab.selected.bg"="#24273a";
-			# 	"tab.selected.bold"="true";
-			#
-			# 	"border.fg"="#181926";
-			# 	"border.bold"="true";
-			#
-			# 	"msglist_unread.bold"="true";
-			# 	"msglist_flagged.fg"="#eed49f";
-			# 	"msglist_flagged.bold"="true";
-			# 	"msglist_result.fg"="#8aadf4";
-			# 	"msglist_result.bold"="true";
-			# 	"msglist_*.selected.bold"="true";
-			# 	"msglist_*.selected.bg"="#363a4f";
-			#
-			# 	"dirlist_*.selected.bold"="true";
-			# 	"dirlist_*.selected.bg"="#363a4f";
-			#
-			# 	"statusline_default.fg"="#939ab7";
-			# 	"statusline_default.bg"="#363a4f";
-			# 	"statusline_error.bold"="true";
-			# 	"statusline_success.bold"="true";
-			# 	"[viewer]" \n;
-			# 	"url.fg"="#8aadf4";
-			# 	"url.underline"="true";
-			# 	"header.bold"="true";
-			# 	"signature.dim"="true";
-			# 	"diff_meta.bold"="true";
-			# 	"diff_chunk.fg"="#8aadf4";
-			# 	"diff_chunk_func.fg"="#8aadf4";
-			# 	"diff_chunk_func.bold"="true";
-			# 	"diff_add.fg"="#a6da95";
-			# 	"diff_del.fg"="#ed8796";
-			# 	"quote_*.fg"="#6e738d";
-			# 	"quote_1.fg"="#939ab7";
-			# };
 			catppuccin-latte = ''
 				*.default=true
 				*.normal=true
@@ -104,6 +67,7 @@
 				statusline_success.bold=true
 
 				completion_default.selected.bg=#ccd0da
+
 
 				[viewer]
 				url.fg=#1e66f5
