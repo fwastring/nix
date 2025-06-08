@@ -8,6 +8,15 @@
   myhostname,
   ...
 }: {
+	services.udev = {
+		extraRules = ''
+			KERNEL=="ttyACM0", MODE:="666"
+		'';
+		packages = with pkgs; [
+			vial
+			via
+		];
+	};
 
   	environment.systemPackages = with pkgs; [
 		unstable.feishin
@@ -16,7 +25,6 @@
 		unstable.signal-desktop
 		pinta
 		zathura
-		vial
 		thunderbird
 		lazygit
 		byzanz
@@ -32,5 +40,9 @@
 		pandoc
 		texliveFull
 		mpv
+		qutebrowser
+		bitwarden-cli
+		rofi
+		bitwarden-menu
 	];
 }

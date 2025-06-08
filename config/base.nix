@@ -123,7 +123,7 @@
 	(st.overrideAttrs (oldAttrs: rec {
 		src = builtins.fetchGit {
 			url = "https://github.com/fwastring/st";
-      rev = "de286ce570c23e037a0e5fb7d84ac7226aef1259";
+      rev = "0ce5cc9c342d02668b25b83099feb95bfc865b47";
 		};
 		buildInputs = oldAttrs.buildInputs ++ [ xorg.libX11.dev xorg.libXft imlib2 xorg.libXinerama pkg-config];
 	  }))

@@ -9,22 +9,28 @@
   ...
 }: {
 
+	services.pcscd.enable = true;
+	programs.gnupg.agent = {
+	   enable = true;
+	   enableSSHSupport = true;
+	};
+
+
   	environment.systemPackages = with pkgs; [
 		# System
 		libnotify
+		lf
 		xsel
 		xbanish
 		unzip
 		zip
 		wget
 		alsa-utils
-		upower
 		htop
 		procps
 		fzf
 		eza
 		btop
-		acpi
 		xclip
 		dysk
 		rsync
@@ -41,7 +47,6 @@
 		vim
 		bat
 		fd
-		arion
 		bluez
 		bluez-tools
 		openssl
@@ -49,5 +54,11 @@
 		pandoc
 		texliveFull
 		fastfetch
+		keyutils
+		pinentry-all
+		(pass.withExtensions (ext: with ext; [
+			pass-import
+			pass-genphrase
+		]))
 	];
 }
