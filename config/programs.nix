@@ -11,6 +11,7 @@
 	services.udev = {
 		extraRules = ''
 			KERNEL=="ttyACM0", MODE:="666"
+			ACTION=="add", KERNEL=="sd[a-e][0-9]", ENV{ID_FS_UUID}=="3039-3932", RUN+="${pkgs.systemd}/bin/systemd-mount --no-block -A -G -o gid=users,fmask=113,dmask=002 /dev/%k /mnt/sdcard"
 		'';
 		packages = with pkgs; [
 			vial
@@ -19,30 +20,43 @@
 	};
 
   	environment.systemPackages = with pkgs; [
+		# GUI
 		unstable.feishin
-		pastel
-		libreoffice
 		unstable.signal-desktop
-		pinta
-		zathura
 		thunderbird
-		lazygit
-		byzanz
-		remmina
+		libreoffice
 		obsidian
-		speedcrunch
 		discord
 		slack
-		feh
-		pavucontrol
+		speedcrunch
+		remmina
+		# Browsers
+		librewolf
+		unstable.qutebrowser
+
+		# Capturing
+		byzanz
 		scrot
+
+		# Displaying
+		zathura
+		feh
+		mpv
+
+		# System
+		pavucontrol
+		pulseaudio
+		devour # Swallow windows
+		caligula # Burn ISOs
+		texliveFull
+
+		# Transforms
+		yt-dlp
 		imagemagick
 		pandoc
-		texliveFull
-		mpv
-		qutebrowser
-		bitwarden-cli
-		rofi
-		bitwarden-menu
+		pinta
+		pastel
+		ffmpeg
+		darktable
 	];
 }
