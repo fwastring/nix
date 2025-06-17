@@ -61,5 +61,6 @@
 			pass-genphrase
 			pass-update
 		]))
+		lazygit
 	];
 }
