@@ -21,6 +21,9 @@ in
 		dotnetCorePackages.sdk_8_0_3xx
 		docker-slim
 
+		awscli
+		unstable.minio-client
+		hugo
 		sqlc
 		postgresql
 		go-migrate-pg

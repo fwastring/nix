@@ -62,5 +62,13 @@
 			pass-update
 		]))
 		lazygit
+
+		# Typesetting
+		typst
+		typstyle
+		tinymist
+		websocat
+		nix-search-cli
+		libsixel
 	];
 }

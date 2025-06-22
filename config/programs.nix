@@ -12,6 +12,7 @@
 		extraRules = ''
 			KERNEL=="ttyACM0", MODE:="666"
 			ACTION=="add", KERNEL=="sd[a-e][0-9]", ENV{ID_FS_UUID}=="3039-3932", RUN+="${pkgs.systemd}/bin/systemd-mount --no-block -A -G -o gid=users,fmask=113,dmask=002 /dev/%k /mnt/sdcard"
+			ACTION=="add", KERNEL=="sd[a-e]", ENV{ID_FS_UUID}=="66BA-4EBA", RUN+="${pkgs.systemd}/bin/systemd-mount --no-block -A -G -o gid=users,fmask=113,dmask=002 /dev/%k /mnt/kobo"
 		'';
 		packages = with pkgs; [
 			vial
@@ -30,9 +31,12 @@
 		slack
 		speedcrunch
 		remmina
+
 		# Browsers
 		librewolf
 		unstable.qutebrowser
+		jan
+		chawan
 
 		# Capturing
 		byzanz

@@ -43,11 +43,18 @@
       cam = "jira issue create && jira issue assign && jira issue move";
       latest = "git log | head -1 | awk '{print $2;}' | xsel -ib";
       vpnup = "nmcli con up 'iFacts VPN'";
-      vpndown = "nmcli con down 'iFacts VPN'";
-		dl = {
-			setCursor = "&";
-			expansion = "yt-dlp -o \"~/videor/%(title)s - %(uploader)s\" \"&\"";
-		};
+      s = {
+		  setCursor = "%";
+		  expansion = "cha https://search.wastring.com/search?q=%";
+	  };
+      vpndown = {
+		  setCursor = "%";
+		  expansion = "nmcli con down 'iFacts VPN'";
+	  };
+	  dl = {
+	  	setCursor = "&";
+		expansion = "yt-dlp -o \"~/videor/%(title)s - %(uploader)s\" \"&\"";
+	};
     };
     interactiveShellInit = ''
       		fish_vi_key_bindings
