@@ -14,6 +14,7 @@
     ../shared/tmux.nix
     ../shared/fish.nix
     ../shared/git.nix
+	../shared/kitty.nix
     ../shared/dunst.nix
     ../shared/nixpkgs.nix
     ../shared/firefox.nix
