@@ -20,6 +20,11 @@ in
 		azure-cli
 		dotnetCorePackages.sdk_8_0_3xx
 		docker-slim
+		dive
+		buildkit
+		containerd
+		cri-tools
+		yq
 
 		awscli
 		unstable.minio-client
