@@ -19,5 +19,6 @@
 		networkmanager
 		openssh
 		dig
+		netbird
 	];
 }

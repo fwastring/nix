@@ -16,15 +16,19 @@ in
   	environment.systemPackages = with pkgs; [
 		timewarrior
 
+		# Containers
 		kubectl
-		azure-cli
-		dotnetCorePackages.sdk_8_0_3xx
 		docker-slim
 		dive
 		buildkit
 		containerd
 		cri-tools
 		yq
+		skopeo
+		umoci
+
+		azure-cli
+		dotnetCorePackages.sdk_8_0_3xx
 
 		awscli
 		unstable.minio-client
