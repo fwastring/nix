@@ -31,6 +31,8 @@
 		slack
 		speedcrunch
 		remmina
+		vial
+		via
 
 		# Browsers
 		librewolf
