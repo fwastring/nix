@@ -31,6 +31,7 @@
 		slack
 		speedcrunch
 		remmina
+		netbird-ui
 
 		# Browsers
 		librewolf
