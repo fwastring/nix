@@ -32,6 +32,8 @@
 		speedcrunch
 		remmina
 		netbird-ui
+		vial
+		via
 
 		# Browsers
 		librewolf

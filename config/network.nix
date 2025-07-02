@@ -9,6 +9,8 @@
   ...
 }: {
 
+	services.netbird.enable = true;
+
   	environment.systemPackages = with pkgs; [
 		openvpn
 		networkmanagerapplet
@@ -19,6 +21,5 @@
 		networkmanager
 		openssh
 		dig
-		netbird
 	];
 }
