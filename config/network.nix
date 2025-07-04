@@ -9,7 +9,10 @@
   ...
 }: {
 
-	services.netbird.enable = true;
+	services.netbird = {
+		enable = true;
+		ui.enable = true;
+	};
 
   	environment.systemPackages = with pkgs; [
 		openvpn

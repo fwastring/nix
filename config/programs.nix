@@ -31,7 +31,6 @@
 		slack
 		speedcrunch
 		remmina
-		netbird-ui
 		vial
 		via
 
