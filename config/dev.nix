@@ -29,6 +29,7 @@ in
 
 		azure-cli
 		dotnetCorePackages.sdk_8_0_3xx
+		google-cloud-sdk
 
 		awscli
 		unstable.minio-client
