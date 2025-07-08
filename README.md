@@ -1,8 +1,10 @@
 # NixOS
 
-Ett repo för att hantera konfigurationsfiler för mina datorer.
-
+@Wastring
 - laptop (Acer Swift 3)
-- desktop/server (Lenovo ThinkCentre)
+- desktop (ThinkCentre)
+- macmini (2014 MacMini)
+
+@iFACTS
 - jobb (Dell Laptop)
-- work-desktop (Lenovo ThinkCentre)
+- work-desktop (VM @ Proxmox)
