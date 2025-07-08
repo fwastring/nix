@@ -189,7 +189,7 @@
           };
           # > Our main home-manager configuration file <
           modules = [
-            ./config/home.nix
+            ./config/headless-home.nix
             (
               { nixpkgs, ... }:
               {
