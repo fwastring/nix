@@ -58,13 +58,6 @@
     liveRestore = false;
   };
 
-  security.rtkit.enable = true;
-  services = {
-    tailscale = {
-      enable = true;
-    };
-  };
-
   networking.networkmanager.enable = true;
 
   environment.sessionVariables = {
@@ -93,30 +86,15 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = false;
-    };
-    grub = {
-      efiSupport = true;
-      efiInstallAsRemovable = true;
-      device = "nodev";
-    };
-  };
   console.keyMap = "sv-latin1";
+boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
 
-  services = {
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "se";
-        variant = "";
-      };
-    };
-  };
+
   networking.hostName = myhostname;
 
   services.xserver.dpi = 140;
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "25.05";
 }

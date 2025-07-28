@@ -34,7 +34,6 @@
       }
     ];
     shellAbbrs = {
-      cat = "bat";
       ls = "eza -l --no-time --no-permissions --no-user";
       k = "kubectl";
       ka = "kubectl apply -f";

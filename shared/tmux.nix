@@ -32,10 +32,10 @@
 			bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 			bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
 
-      		# set -g default-terminal "st-256color"                                                                    
-      		# set -g terminal-overrides "st-256color"                                                                                             
-			set -g default-terminal "xterm-kitty"                                                                    
-      		set -g terminal-overrides "xterm-kitty"
+      		set -g default-terminal "st-256color"                                                                    
+      		set -g terminal-overrides "st-256color"                                                                                             
+			# set -g default-terminal "xterm-kitty"                                                                    
+      		# set -g terminal-overrides "xterm-kitty"
 
       		set -ga terminal-overrides ",xterm-256color:Tc"                                                                         
       		set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'                                                   

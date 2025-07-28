@@ -19,5 +19,12 @@
 		dockerfile-language-server-nodejs
 		nodejs_22
 		bash-language-server
+		helm-ls
+		yaml-language-server
+		vue-language-server
+		vtsls
+		typescript
+		typescript-language-server
+		lua-language-server
 	];
 }

@@ -62,6 +62,7 @@
 			pass-update
 		]))
 		lazygit
+		chawan
 
 		# Typesetting
 		typst

@@ -54,7 +54,7 @@
 		pulseaudio
 		devour # Swallow windows
 		caligula # Burn ISOs
-		texliveFull
+		ptouch-print
 
 		# Transforms
 		yt-dlp
