@@ -30,6 +30,9 @@ in
 		azure-cli
 		dotnetCorePackages.sdk_8_0_3xx
 		google-cloud-sdk
+		jira-cli-go
+		gh
+		allure
 
 		awscli
 		unstable.minio-client
@@ -38,7 +41,6 @@ in
 		postgresql
 		go-migrate-pg
 		argocd
-		gh
 		ngrok
 		tailwindcss
 		yarn
