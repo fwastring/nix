@@ -7,6 +7,9 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     fw-pkgs.url = "github:fwastring/fwpkgs/main";
 
+	# Neovim
+	neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
