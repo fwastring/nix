@@ -34,21 +34,19 @@
       }
     ];
     shellAbbrs = {
-      ls = "eza -l --no-time --no-permissions --no-user";
-      k = "kubectl";
+      ls = "eza -l";
       ka = "kubectl apply -f";
-      e = "nvim";
       t = "timew";
+	  todo = "jira issue list -a 'Fredrik Wastring' -s ~Done -s ~Closed -s ~Released --plain";
       cam = "jira issue create && jira issue assign && jira issue move";
-      latest = "git log | head -1 | awk '{print $2;}' | xsel -ib";
-      vpnup = "nmcli con up 'iFacts VPN'";
+      e = "kubectx";
       s = {
 		  setCursor = "%";
 		  expansion = "cha https://search.wastring.com/search?q=%";
 	  };
-      vpndown = {
+      c = {
 		  setCursor = "%";
-		  expansion = "nmcli con down 'iFacts VPN'";
+		  expansion = "ssh 'fw:%@gateway.internalifacts.se' -p 2222";
 	  };
 	  dl = {
 	  	setCursor = "&";
@@ -65,6 +63,8 @@
       		set -Ux FZF_TMUX_OPTS "-p"
       		set -e GOROOT
       		set -e GOPATH
+			gh completion -s fish > ~/.config/fish/completions/gh.fish
+			set -gx PATH $PATH $HOME/.krew/bin
 
       		# Mocha
       		set -Ux FZF_DEFAULT_OPTS "\

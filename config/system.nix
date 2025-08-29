@@ -63,6 +63,10 @@
 		]))
 		lazygit
 		chawan
+		go-passbolt-cli
+		waypipe
+		wl-clipboard
+		smartmontools
 
 		# Typesetting
 		typst
