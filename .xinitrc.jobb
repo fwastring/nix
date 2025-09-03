@@ -12,13 +12,12 @@ fi
 xrdb -merge ~/.Xresources
 setxkbmap -option caps:swapescape
 
-feh --bg-scale ~/nix/wallpapers/inverted.png
+feh --bg-scale ~/nix/wallpapers/blue.png
 
 dwmblocks &
 dunst &
 xbanish &
 
-xrandr --output "DP-1-1" --auto --same-as "eDP-1"
+# xrandr --output eDP-1 --mode 1920x1080 --pos 3840x1080 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-1-1 --off --output DP-1-2 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output DP-1-3 --off
 
 exec dwm
-

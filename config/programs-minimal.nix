@@ -15,6 +15,9 @@
 		slack
 		speedcrunch
 		remmina
+		thunderbird
+		drawio
+		freecad-wayland
 
 		# Capturing
 		byzanz

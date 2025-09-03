@@ -9,6 +9,12 @@
         user = "fr7658wa-s";
         identityFile = "/home/fw/.ssh/id_rsa";
       };
+      "git.wastring.com" = {
+        hostname = "git.wastring.com";
+        port = 80;
+        user = "git";
+        identityFile = "/home/fw/.ssh/id_ed25519";
+      };
       "dm2" = {
         hostname = "192.168.0.190";
         port = 22;

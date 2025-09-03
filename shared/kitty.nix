@@ -8,15 +8,9 @@
   programs.kitty = {
     enable = true;
     font =
-      if myhostname == "laptop" then
         {
           name = "ComicShannsMono Nerd Font";
-          size = 18;
-        }
-      else
-        {
-          name = "ComicShannsMono Nerd Font";
-          size = 12;
+          size = 22;
         };
     shellIntegration = {
       mode = "no-cursor";

@@ -26,18 +26,18 @@
 		unstable.signal-desktop
 		thunderbird
 		libreoffice
-		obsidian
 		discord
 		slack
 		speedcrunch
 		remmina
 		vial
 		via
+		drawio
+		freecad-wayland
+		ghostty
 
 		# Browsers
 		librewolf
-		unstable.qutebrowser
-		jan
 		chawan
 
 		# Capturing

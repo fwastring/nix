@@ -38,13 +38,7 @@
   programs.man.generateCaches = false;
 
   xsession.enable = true;
-  xsession.windowManager.command =
-    if myhostname == "laptop" then
-      "/home/fw/nix/.xinitrc.laptop"
-    else if myhostname == "jobb" then
-      "/home/fw/nix/.xinitrc.jobb"
-    else
-      "/home/fw/nix/.xinitrc";
+  xsession.windowManager.command = "xrandr --output eDP-1 --mode 1920x1080 --pos 0x1080 --rotate normal --output DP-1 --off --output HDMI-1 --primary --mode 3840x2160 --pos 1920x0 --rotate normal --output DP-2 --off --output HDMI-2 --off";
 
   home.username = "fw";
   home.homeDirectory = "/home/fw";

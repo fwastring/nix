@@ -12,9 +12,13 @@ let
 	});
 in
 {
+	nix.settings.trusted-users = [ "root" "fw" ];
 
   	environment.systemPackages = with pkgs; [
 		timewarrior
+
+		devenv
+
 
 		# Containers
 		kubectl
