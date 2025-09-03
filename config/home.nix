@@ -23,6 +23,7 @@
     ../shared/ssh.nix
     ../shared/aerc.nix
     ../shared/oh-my-posh.nix
+	../shared/gtk.nix
   ];
 
   nixpkgs = {

@@ -99,7 +99,7 @@ fonts.packages = with pkgs; [
 
 
 services = {
-	tailscale.enable = true;
+	#tailscale.enable = true;
     picom.enable = true;
     openssh = {
       enable = true;
@@ -143,7 +143,7 @@ services = {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  services.xserver.dpi = 180;
+  services.xserver.dpi = 140;
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }

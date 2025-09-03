@@ -35,6 +35,7 @@
 		drawio
 		freecad-wayland
 		ghostty
+		kdePackages.okular
 
 		# Browsers
 		librewolf
