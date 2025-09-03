@@ -14,6 +14,7 @@
     ./network.nix
     ./programs.nix
     ./system.nix
+	./sway.nix
   ];
   nixpkgs = {
     overlays = [
@@ -49,9 +50,20 @@
     auto-optimise-store = true;
   };
 
-  virtualisation.docker = {
-    enable = true;
-    liveRestore = false;
+  virtualisation = {
+  podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  	docker = {
+		enable = true;
+		liveRestore = false;
+	  };
   };
 
   services.pulseaudio.enable = false;
@@ -120,6 +132,7 @@
   console.keyMap = "sv-latin1";
 
   environment.systemPackages = with pkgs; [
+  	waypipe
 	(st.overrideAttrs (oldAttrs: rec {
 		src = builtins.fetchGit {
 			url = "https://github.com/fwastring/st";
@@ -160,19 +173,19 @@
         "ipsec.d/ipsec.nm-l2tp.secrets"
       ];
     };
-    xserver = {
-      displayManager = {
-        startx.enable = true;
-      };
-      enable = true;
-      xkb = {
-        layout = "se";
-        variant = "";
-      };
-	  windowManager.dwm = {
-      enable = true;
-		};
-    };
+		#   xserver = {
+		#     displayManager = {
+		#       startx.enable = true;
+		#     };
+		#     enable = true;
+		#     xkb = {
+		#       layout = "se";
+		#       variant = "";
+		#     };
+		#  windowManager.dwm = {
+		#     enable = true;
+		# };
+		#   };
     blueman = {
       enable = true;
     };

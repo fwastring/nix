@@ -30,13 +30,17 @@ in
 		yq
 		skopeo
 		umoci
+		velero
+		podman-tui
 
 		azure-cli
-		dotnetCorePackages.sdk_8_0_3xx
+		dotnetCorePackages.dotnet_9.sdk
 		google-cloud-sdk
 		jira-cli-go
 		gh
 		allure
+		kubectx
+		python314
 
 		awscli
 		unstable.minio-client

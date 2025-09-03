@@ -18,6 +18,7 @@
     ../../config/lsp.nix
     ../../config/network.nix
     ../../config/system.nix
+    ../../config/k3s.nix
   ];
   nixpkgs = {
     overlays = [
@@ -53,9 +54,23 @@
     auto-optimise-store = true;
   };
 
-  virtualisation.docker = {
-    enable = true;
-    liveRestore = false;
+
+
+  # virtualisation.containers.enable = true;
+  virtualisation = {
+  # podman = {
+  #     enable = true;
+  #
+  #     # Create a `docker` alias for podman, to use it as a drop-in replacement
+  #     dockerCompat = true;
+  #
+  #     # Required for containers under podman-compose to be able to talk to each other.
+  #     defaultNetwork.settings.dns_enabled = true;
+  #   };
+			docker = {
+		enable = true;
+		liveRestore = false;
+		 };
   };
 
   networking.networkmanager.enable = true;
