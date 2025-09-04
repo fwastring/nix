@@ -10,7 +10,7 @@
     font =
         {
           name = "ComicShannsMono Nerd Font";
-          size = 22;
+          size = 12;
         };
     shellIntegration = {
       mode = "no-cursor";

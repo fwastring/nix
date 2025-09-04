@@ -13,6 +13,14 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+	nvim-config = {
+      url = "github:fwastring/nvim?exportIgnore=1";
+      flake = false;
+    };
+	k9s-config = {
+      url = "github:fwastring/k9s?exportIgnore=1";
+      flake = false;
+    };
   };
 
   outputs =

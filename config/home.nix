@@ -25,6 +25,7 @@
     ../shared/oh-my-posh.nix
 	../shared/gtk.nix
 	../shared/neovim.nix
+	../shared/k9s.nix
 	# ../shared/hyprland.nix
   ];
 

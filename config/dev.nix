@@ -59,7 +59,6 @@ in
 		prettierd
 		qrencode
 		air
-		unstable.k9s
 		git
 		lazydocker
 		gcc
