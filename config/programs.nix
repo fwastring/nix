@@ -36,6 +36,7 @@
 		freecad-wayland
 		ghostty
 		kdePackages.okular
+		xdg-user-dirs
 
 		# Browsers
 		librewolf

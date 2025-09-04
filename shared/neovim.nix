@@ -2,11 +2,13 @@
 
 let
   # Replace with the URL of your Neovim configuration GitHub repository
-  neovimConfig = builtins.fetchGit {
-    url = "https://github.com/fwastring/nvim.git";
-    # Optional: specify a specific branch, tag, or commit hash
-    ref = "main";
-  };
+	nvim-config = {
+      url = "github:fwastring/nvim?exportIgnore=1";
+      # Use a specific, locked commit hash here
+      # You can get this by running 'nix flake lock'
+      # after adding the input
+      flake = false; # Tell Nix this is not a flake
+    };
 
 in
 {
@@ -14,7 +16,7 @@ in
   # programs.neovim.enable = true;
 
   # Create a symlink from the Nix store to the Neovim config directory
-  xdg.configFile."nvim".source = neovimConfig;
+  xdg.configFile."nvim".source = nvim-config;
 
   # Other Home Manager options...
 }
