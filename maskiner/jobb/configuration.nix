@@ -9,7 +9,11 @@
   pkgs,
   myhostname,
   ...
-}: {
+}: 
+let
+  btusb = pkgs.callPackage ../../config/btusb.nix { inherit (config.boot.kernelPackages) kernel; };
+in
+{
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -22,19 +26,18 @@
 	../../config/sway.nix
     ];
 
-	#  services.greetd = {                                                      
-	#  enable = true;                                                         
-	#  settings = {                                                           
-	# 	default_session = {                                                  
-	# 	 command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland";
-	# 	 user = "greeter";                                                  
-	# 	};                                                                   
-	#  };                                                                     
-	# };
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  hardware.enableRedistributableFirmware = true;
+	 boot.extraModulePackages = [
+	(btusb.overrideAttrs (_: {
+	   patches = [ ../../config/btusb-add-mt7925.patch ];
+	   }))
+
+	 ];
+
 
 fonts.packages = with pkgs; [
     nerd-fonts.comic-shanns-mono
