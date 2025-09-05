@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "btusb-mt7925": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1756988929,
+        "narHash": "sha256-JBLlF5+4F/cRhG9NEXHRuRnpUjZ2lXvrZbcxgID46Jc=",
+        "owner": "fwastring",
+        "repo": "btusb-mt7925",
+        "rev": "0dc5d50b767db061c69efd805c28ebf86bb2776c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fwastring",
+        "repo": "btusb-mt7925",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -178,6 +194,22 @@
         "type": "github"
       }
     },
+    "k9s-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1756976593,
+        "narHash": "sha256-yE1S4hsfy8NlPRZKuezgHyHqZo5nIqf6y42us6vcA4Y=",
+        "owner": "fwastring",
+        "repo": "k9s",
+        "rev": "21df095f01accd28ae1bf86b997b47301096f580",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fwastring",
+        "repo": "k9s",
+        "type": "github"
+      }
+    },
     "neovim-nightly-overlay": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -266,13 +298,32 @@
         "type": "github"
       }
     },
+    "nvim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1756970481,
+        "narHash": "sha256-mfUYGgb81Lw18h5mvlyv0eAUe8Zoj0dKsXqHodKgBsE=",
+        "owner": "fwastring",
+        "repo": "nvim",
+        "rev": "e8fe294a0c3f16a2cb898e4bec6ef34998e14424",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fwastring",
+        "repo": "nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "btusb-mt7925": "btusb-mt7925",
         "fw-pkgs": "fw-pkgs",
         "home-manager": "home-manager",
+        "k9s-config": "k9s-config",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "nvim-config": "nvim-config"
       }
     },
     "treefmt-nix": {

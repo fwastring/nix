@@ -1,10 +1,10 @@
-# NixOS
+# min nix config :)
 
-@Wastring
-- laptop (Acer Swift 3)
+@ Wastring
+- laptop (Acer Swift 3) † 2025-08-05
 - desktop (ThinkCentre)
 - macmini (2014 MacMini)
 
-@iFACTS
-- jobb (Dell Laptop)
+@ iFACTS Office
+- jobb (MinisForum AI X1 Pro)
 - work-desktop (VM @ Proxmox)
