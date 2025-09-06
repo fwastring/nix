@@ -18,7 +18,6 @@
 		../moduler/zathura.nix
 		../moduler/lazygit.nix
 		../moduler/ssh.nix
-		../moduler/aerc.nix
 		../moduler/oh-my-posh.nix
 		../moduler/gtk.nix
 		# ../moduler/neovim.nix

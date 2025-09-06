@@ -27,7 +27,6 @@ in
     ../../moduler/system.nix
     ../../moduler/dev.nix
     ../../moduler/lsp.nix
-    ../../moduler/sway.nix
     ../../moduler/hyprland.nix
     ../../moduler/sound.nix
   ];

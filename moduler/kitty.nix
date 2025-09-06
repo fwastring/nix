@@ -7,11 +7,10 @@
 {
   programs.kitty = {
     enable = true;
-    font =
-        {
-          name = "ComicShannsMono Nerd Font";
-          size = 12;
-        };
+    font = {
+      name = "ComicShannsMono Nerd Font";
+      size = 12;
+    };
     shellIntegration = {
       mode = "no-cursor";
     };
@@ -21,6 +20,7 @@
       cursor_shape = "block";
       cursor_blink_interval = 0;
       enable_audio_bell = false;
+	  window_padding_width = 5;
     };
   };
 }
