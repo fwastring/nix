@@ -17,6 +17,7 @@ in
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+	  inputs.home-manager.nixosModules.home-manager
 	../../config/users.nix
 	../../config/network.nix
 	../../config/programs.nix
@@ -24,7 +25,15 @@ in
 	../../config/dev.nix
 	../../config/lsp.nix
 	../../config/sway.nix
+	../../config/hyprland.nix
     ];
+
+home-manager.extraSpecialArgs = { inherit inputs; };
+	home-manager.users.fw = {
+    imports = [
+      ./../../config/home.nix
+    ];
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -54,6 +63,11 @@ fonts.packages = with pkgs; [
         };
       };
     };
+  };
+
+  environment.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 
 

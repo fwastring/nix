@@ -12,6 +12,7 @@
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.05";
+    hyprland.url = "github:hyprwm/Hyprland";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 	nvim-config = {
       url = "github:fwastring/nvim?exportIgnore=1";
@@ -91,7 +92,7 @@
             (
               { nixpkgs, ... }:
               {
-                nixpkgs.overlays = [ overlay-unstable ];
+                nixpkgs.overlays = [ overlay-unstable overlay-fw-pkgs ];
               }
             )
 			  ./maskiner/jobb/configuration.nix 
@@ -118,102 +119,6 @@
             myhostname = "macmini";
           };
           modules = [ ./maskiner/macmini/configuration.nix ];
-        };
-      };
-
-      # Standalone home-manager configuration entrypoint
-      # Available through 'home-manager --flake .#your-username@your-hostname'
-      homeConfigurations = {
-        "fw@laptop" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = {
-            inherit inputs outputs;
-            myhostname = "laptop";
-          };
-          modules = [
-            ./config/home.nix
-            (
-              { nixpkgs, ... }:
-              {
-                nixpkgs.overlays = [ overlay-unstable ];
-              }
-            )
-            (
-              { nixpkgs, ... }:
-              {
-                nixpkgs.overlays = [ overlay-fw-pkgs ];
-              }
-            )
-          ];
-        };
-        "fw@desktop" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = {
-            inherit inputs outputs;
-            myhostname = "desktop";
-          };
-          # > Our main home-manager configuration file <
-          modules = [
-            ./config/home.nix
-            (
-              { nixpkgs, ... }:
-              {
-                nixpkgs.overlays = [ overlay-unstable ];
-              }
-            )
-            (
-              { nixpkgs, ... }:
-              {
-                nixpkgs.overlays = [ overlay-fw-pkgs ];
-              }
-            )
-          ];
-        };
-        "fw@jobb" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = {
-            inherit inputs outputs;
-            myhostname = "jobb";
-          };
-          # > Our main home-manager configuration file <
-          modules = [
-            ./config/home.nix
-            (
-              { nixpkgs, ... }:
-              {
-                nixpkgs.overlays = [ overlay-unstable ];
-              }
-            )
-            (
-              { nixpkgs, ... }:
-              {
-                nixpkgs.overlays = [ overlay-fw-pkgs ];
-              }
-            )
-          ];
-        };
-        "fw@work-desktop" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = {
-            inherit inputs outputs;
-            myhostname = "work-desktop";
-          };
-          # > Our main home-manager configuration file <
-          modules = [
-            ./config/headless-home.nix
-            (
-              { nixpkgs, ... }:
-              {
-                nixpkgs.overlays = [ overlay-unstable ];
-              }
-            )
-            (
-              { nixpkgs, ... }:
-              {
-                nixpkgs.overlays = [ overlay-fw-pkgs ];
-              }
-            )
-          ];
         };
       };
     };

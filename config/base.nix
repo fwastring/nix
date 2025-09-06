@@ -131,6 +131,7 @@
   };
   console.keyMap = "sv-latin1";
 
+
   environment.systemPackages = with pkgs; [
   	waypipe
 	(st.overrideAttrs (oldAttrs: rec {
