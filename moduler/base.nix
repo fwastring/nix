@@ -8,14 +8,6 @@
   ...
 }:
 {
-  imports = [
-    ./dev.nix
-    ./lsp.nix
-    ./network.nix
-    ./programs.nix
-    ./system.nix
-	./sway.nix
-  ];
   nixpkgs = {
     overlays = [
     ];
@@ -51,43 +43,9 @@
   };
 
   virtualisation = {
-  podman = {
+    docker = {
       enable = true;
-
-      # Create a `docker` alias for podman, to use it as a drop-in replacement
-      dockerCompat = true;
-
-      # Required for containers under podman-compose to be able to talk to each other.
-      defaultNetwork.settings.dns_enabled = true;
-    };
-  	docker = {
-		enable = true;
-		liveRestore = false;
-	  };
-  };
-
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services = {
-    tailscale = {
-      enable = true;
-    };
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-  };
-  hardware = {
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-      settings = {
-        General = {
-          Disable = "Headset";
-        };
-      };
+      liveRestore = false;
     };
   };
 
@@ -103,7 +61,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.comic-shanns-mono
-	nerd-fonts.fira-code
+    nerd-fonts.fira-code
   ];
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -119,74 +77,30 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = false;
-    };
-    grub = {
-      efiSupport = true;
-      efiInstallAsRemovable = true;
-      device = "nodev";
+  boot = {
+    loader = {
+      efi = {
+        canTouchEfiVariables = true;
+      };
+	  systemd-boot.enable = true;
+      grub = {
+        efiSupport = true;
+        efiInstallAsRemovable = true;
+        device = "nodev";
+      };
     };
   };
   console.keyMap = "sv-latin1";
 
-
   environment.systemPackages = with pkgs; [
-  	waypipe
-	(st.overrideAttrs (oldAttrs: rec {
-		src = builtins.fetchGit {
-			url = "https://github.com/fwastring/st";
-      rev = "0ce5cc9c342d02668b25b83099feb95bfc865b47";
-		};
-		buildInputs = oldAttrs.buildInputs ++ [ xorg.libX11.dev xorg.libXft imlib2 xorg.libXinerama pkg-config];
-	  }))
-	(dmenu.overrideAttrs (oldAttrs: rec {
-		src = builtins.fetchGit {
-			url = "https://github.com/fwastring/dmenu";
-      rev = "2f09f9ead8c2736dbca838393f97e5a0e4e55a2e";
-		};
-		buildInputs = oldAttrs.buildInputs ++ [ xorg.libX11.dev xorg.libXft imlib2 xorg.libXinerama pkg-config];
-	  }))
+    waypipe
   ];
 
-  programs.slock = {
-  	enable = true;
-	package = with pkgs; (slock.overrideAttrs (oldAttrs: rec {
-		src = builtins.fetchGit {
-			url = "https://github.com/fwastring/slock";
-      rev = "53ada91fefc22f6c9c76ef71b9741b385b6bedfb";
-		};
-		buildInputs = oldAttrs.buildInputs ++ [ xorg.libX11.dev xorg.libXft imlib2 xorg.libXinerama pkg-config xorg.libXrandr xorg.xrandr libxcrypt xorg.libXext xorg.xorgproto];
-	  }));
-  };
-
-
   services = {
-    picom.enable = true;
-	clipmenu.enable = true;
+    clipmenu.enable = true;
     openssh = {
       enable = true;
     };
-    strongswan = {
-      enable = true;
-      secrets = [
-        "ipsec.d/ipsec.nm-l2tp.secrets"
-      ];
-    };
-		#   xserver = {
-		#     displayManager = {
-		#       startx.enable = true;
-		#     };
-		#     enable = true;
-		#     xkb = {
-		#       layout = "se";
-		#       variant = "";
-		#     };
-		#  windowManager.dwm = {
-		#     enable = true;
-		# };
-		#   };
     blueman = {
       enable = true;
     };

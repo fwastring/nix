@@ -8,33 +8,31 @@
 }:
 {
 	  imports = [
-		../shared/dwm.nix
-		../shared/tmux.nix
-		../shared/fish.nix
-		../shared/git.nix
-		../shared/kitty.nix
-		../shared/dunst.nix
-		../shared/nixpkgs.nix
-		../shared/firefox.nix
-		../shared/zathura.nix
-		../shared/lazygit.nix
-		../shared/ssh.nix
-		../shared/aerc.nix
-		../shared/oh-my-posh.nix
-		../shared/gtk.nix
-		../shared/neovim.nix
-		../shared/k9s.nix
+		../moduler/tmux.nix
+		../moduler/fish.nix
+		../moduler/git.nix
+		../moduler/kitty.nix
+		../moduler/dunst.nix
+		../moduler/nixpkgs.nix
+		../moduler/firefox.nix
+		../moduler/zathura.nix
+		../moduler/lazygit.nix
+		../moduler/ssh.nix
+		../moduler/aerc.nix
+		../moduler/oh-my-posh.nix
+		../moduler/gtk.nix
+		# ../moduler/neovim.nix
+		../moduler/k9s.nix
 	  ];
 
 	  programs.home-manager.enable = true;
 	  programs.fish.enable = true;
 	  programs.man.generateCaches = false;
 
-
 	  home.username = "fw";
 	  home.homeDirectory = "/home/fw";
 
-	  home.stateVersion = "25.05"; # Did you read the comment?
+	  home.stateVersion = "25.05";
 
 	  systemd.user.startServices = "sd-switch";
 }
