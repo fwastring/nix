@@ -12,13 +12,13 @@
   # You can import other NixOS modules here
   imports = [
     ./hardware-configuration.nix
-    ../../shared/openssh.nix
-	../../config/users.nix
-    ../../config/dev.nix
-    ../../config/lsp.nix
-    ../../config/network.nix
-    ../../config/system.nix
-    ../../config/k3s.nix
+    ../../moduler/openssh.nix
+	../../moduler/users.nix
+    ../../moduler/dev.nix
+    ../../moduler/lsp.nix
+    ../../moduler/network.nix
+    ../../moduler/system.nix
+    ../../moduler/k3s.nix
   ];
   nixpkgs = {
     overlays = [

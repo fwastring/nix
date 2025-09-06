@@ -7,7 +7,7 @@ let
     #   imlib2
     #   xorg.libXinerama
     # ];
-	patches = [ ../config/dmenu-center.diff ];
+	patches = [ ../moduler/dmenu-center.diff ];
   });
 in
 {

@@ -80,7 +80,7 @@ in
             };
 
             decoration = {
-              rounding = 15;
+              rounding = 0;
               active_opacity = 0.9;
               inactive_opacity = 0.8;
               fullscreen_opacity = 0.9;
@@ -102,7 +102,7 @@ in
             };
 
             animations = {
-              enabled = true;
+              enabled = false;
               bezier = [
                 "linear, 0, 0, 1, 1"
                 "md3_standard, 0.2, 0, 0, 1"
@@ -201,7 +201,7 @@ in
 
               # Applications
               "$mod, q, exec, ${pkgs.firefox}/bin/firefox"
-              "$mod, d, exec, ${pkgs.wmenu}/bin/wmenu-run"
+              "$mod, d, exec, ${pkgs.rofi}/bin/rofi"
 
 
               # Screencapture

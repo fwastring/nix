@@ -12,8 +12,8 @@
   # You can import other NixOS modules here
   imports = [
     ./hardware-configuration.nix
-    ../../config/base.nix
-    ../../config/users.nix
+    ../../moduler/base.nix
+    ../../moduler/users.nix
   ];
 
   networking.hostName = myhostname;

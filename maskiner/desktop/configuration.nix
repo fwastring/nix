@@ -11,9 +11,9 @@
   # You can import other NixOS modules here
   imports = [
     ./hardware-configuration.nix
-	../../config/base.nix
-	../../config/users.nix
-	../../shared/nginx.nix
+	../../moduler/base.nix
+	../../moduler/users.nix
+	../../moduler/nginx.nix
   ];
 
 	environment.systemPackages = with pkgs; [

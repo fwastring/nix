@@ -11,24 +11,24 @@
   ...
 }: 
 let
-  btusb = pkgs.callPackage ../../config/btusb.nix { inherit (config.boot.kernelPackages) kernel; };
+  btusb = pkgs.callPackage ../../moduler/btusb.nix { inherit (config.boot.kernelPackages) kernel; };
 in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 	  inputs.home-manager.nixosModules.home-manager
-	../../config/users.nix
-	../../config/network.nix
-	../../config/programs.nix
-	../../config/system.nix
-	../../config/dev.nix
-	../../config/lsp.nix
-	../../config/sway.nix
-	../../config/hyprland.nix
+	../../moduler/users.nix
+	../../moduler/network.nix
+	../../moduler/programs.nix
+	../../moduler/system.nix
+	../../moduler/dev.nix
+	../../moduler/lsp.nix
+	../../moduler/sway.nix
+	../../moduler/hyprland.nix
     ];
 
-home-manager.extraSpecialArgs = { inherit inputs; };
+home-manager.extraSpecialArgs = { inherit inputs pkgs; };
 	home-manager.users.fw = {
     imports = [
       ./../../config/home.nix

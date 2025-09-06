@@ -12,7 +12,7 @@
   # You can import other NixOS modules here
   imports = [
     ./hardware-configuration.nix
-    ../../config/users.nix
+    ../../moduler/users.nix
   ];
 
   environment.systemPackages = with pkgs; [
