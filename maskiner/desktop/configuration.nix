@@ -20,9 +20,11 @@
 
   environment.systemPackages = with pkgs; [
     unstable.lego
+	neovim
+
   ];
 
   networking.hostName = myhostname;
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "25.05";
 }

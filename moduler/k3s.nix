@@ -19,18 +19,6 @@ in
       8384
       22000
     ];
-    allowedUDPPortRanges = [
-      {
-        from = 4000;
-        to = 4007;
-      }
-      {
-        from = 8000;
-        to = 8010;
-      }
-      22000
-      21027
-    ];
   };
   services.k3s = {
     enable = true;
