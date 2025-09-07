@@ -9,21 +9,38 @@
 let
 in
 {
-  networking.firewall.allowedTCPPorts = [
-    6443
-	5173
-	8080
-	3000
-  ];
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [
+      6443
+      5173
+      8080
+      3000
+      8384
+      22000
+    ];
+    allowedUDPPortRanges = [
+      {
+        from = 4000;
+        to = 4007;
+      }
+      {
+        from = 8000;
+        to = 8010;
+      }
+      22000
+      21027
+    ];
+  };
   services.k3s = {
     enable = true;
     role = "server";
     extraFlags = toString ([
-	    "--write-kubeconfig-mode \"0644\""
-	    "--cluster-init"
-	    "--disable servicelb"
-	    "--disable traefik"
-	    "--disable local-storage"
+      "--write-kubeconfig-mode \"0644\""
+      "--cluster-init"
+      # "--disable servicelb"
+      "--disable traefik"
+      "--disable local-storage"
     ]);
     clusterInit = true;
   };
@@ -38,9 +55,9 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-     k3s
-     cifs-utils
-     nfs-utils
-     git
+    k3s
+    cifs-utils
+    nfs-utils
+    git
   ];
 }

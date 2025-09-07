@@ -20,6 +20,7 @@ in
     waypipe
   ];
 
+
   services = {
     gnome.gnome-keyring.enable = true;
     greetd = {
@@ -260,7 +261,7 @@ in
 
             # Applications
             "$mod, q, exec, ${pkgs.firefox}/bin/firefox"
-            "$mod, d, exec, ${pkgs.rofi}/bin/rofi"
+            "$mod, d, exec, ${pkgs.rofi}/bin/rofi -show run"
 
             # Screencapture
             "$mod, S, exec, ${pkgs.grim}/bin/grim | wl-copy"

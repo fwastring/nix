@@ -1,5 +1,3 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
   inputs,
   lib,
@@ -9,8 +7,6 @@
 }:
 {
   nixpkgs = {
-    overlays = [
-    ];
     config = {
       allowUnfree = true;
     };
@@ -92,19 +88,10 @@
   };
   console.keyMap = "sv-latin1";
 
-  environment.systemPackages = with pkgs; [
-    waypipe
-  ];
-
   services = {
     clipmenu.enable = true;
     openssh = {
       enable = true;
     };
-    blueman = {
-      enable = true;
-    };
   };
-
-  system.stateVersion = "25.05";
 }

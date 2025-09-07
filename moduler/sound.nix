@@ -9,6 +9,7 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+	blueman.enable = true;
   };
   hardware = {
     bluetooth = {

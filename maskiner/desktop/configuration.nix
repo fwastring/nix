@@ -7,89 +7,22 @@
   pkgs,
   myhostname,
   ...
-}: {
+}:
+{
   # You can import other NixOS modules here
   imports = [
     ./hardware-configuration.nix
-	../../moduler/base.nix
-	../../moduler/users.nix
-	../../moduler/nginx.nix
+    ../../moduler/base.nix
+    ../../moduler/users.nix
+    ../../moduler/nginx.nix
+    ../../moduler/k3s.nix
   ];
 
-	environment.systemPackages = with pkgs; [
-		unstable.lego
-	];
-networking.firewall = {
-  enable = true;
-  allowedTCPPorts = [ 8384 22000];
-  allowedUDPPortRanges = [
-    { from = 4000; to = 4007; }
-    { from = 8000; to = 8010; }
+  environment.systemPackages = with pkgs; [
+    unstable.lego
   ];
-};
 
-
-services.k3s = {
-		enable = true;
-		role = "server";
-		token = "supersupersecretkey";
-		extraFlags = toString ([
-			"--write-kubeconfig-mode \"0644\""
-			"--cluster-init"
-			"--disable local-storage"
-			"--disable traefik"
-		]);
-		clusterInit = true;
-	  };
-
-	  services.openiscsi = {
-		enable = true;
-		name = "iqn.2016-04.com.open-iscsi:desktop";
-	  };
-
-   networking.firewall.allowedUDPPorts = [ 22000 21027 ];
-
-	services = {
-		openssh = {
-			enable = true;
-			# ports = [55502];
-			settings = {
-				PermitRootLogin = "no";
-				PasswordAuthentication = false;
-				X11Forwarding = true;
-			};
-			extraConfig = ''
-			  AllowUsers fw ios jw
-			'';
-		};
-		syncthing = {
-			enable = true;
-			user = "fw";
-			dataDir = "/home/fw/syncthing";
-			configDir = "/home/fw/.config/syncthing";
-			overrideDevices = true;     # overrides any devices added or deleted through the WebUI
-			overrideFolders = true;     # overrides any folders added or deleted through the WebUI
-		  guiAddress = "0.0.0.0:8384";
-			settings = {
-			  devices = {
-				"laptop" = { id = "2VEN7O3-PB3G2MK-XJI7R5Z-6MHTNN2-WMXERIX-6G7QWSK-VKSWOSH-Q5WFDAI"; };
-				"jobb" = { id = "XRKVC74-UNJDQSW-4G3RHC3-5I4W5UT-D2MRMBZ-R4A4MMT-4XB4W47-LFLFBAV"; };
-			  };
-			  folders = {
-				"Documents" = {         # Name of folder in Syncthing, also the folder ID
-				  path = "/home/fw/docs";    # Which folder to add to Syncthing
-				  devices = [ "laptop" ];      # Which devices to share the folder with
-				};
-			  };
-			};
-	  };
-	};
-
-
-  security.rtkit.enable = true;
   networking.hostName = myhostname;
-
-  services.xserver.dpi = 100;
 
   system.stateVersion = "23.11";
 }
