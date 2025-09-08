@@ -9,6 +9,7 @@
     certs."pass.wastring.com" = {
       dnsProvider = "gandiv5";
       environmentFile = /run/secrets/gandi_key;
+      webroot = null;
     };
   };
   services.nginx = {
