@@ -4,7 +4,6 @@
 
 {
   inputs,
-  lib,
   config,
   pkgs,
   myhostname,
@@ -15,7 +14,6 @@ let
 in
 {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
     ../../moduler/base.nix
@@ -38,7 +36,6 @@ in
     ];
   };
 
-  # Bootloader.
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.extraModulePackages = [
     (btusb.overrideAttrs (_: {
@@ -47,25 +44,27 @@ in
   ];
   hardware.enableRedistributableFirmware = true;
 
-  networking.hostName = myhostname; # Define your hostname.
+  networking.hostName = myhostname;
 
+  environment.systemPackages = with pkgs; [
+    gonic
+  ];
 
   services = {
-    #tailscale.enable = true;
-    picom.enable = true;
-    openssh = {
+    tailscale = {
       enable = true;
+      package = pkgs.unstable.tailscale;
     };
-    blueman = {
+    searx = {
       enable = true;
+      redisCreateLocally = true;
+      settings.server = {
+        bind_address = "::1";
+        port = 8000;
+        secret_key = "alsjdioefj.asdi";
+      };
     };
-	printing.enable = true;
   };
 
-  # Configure console keymap
-  console.keyMap = "sv-latin1";
-
-  services.xserver.dpi = 140;
-
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.05";
 }
