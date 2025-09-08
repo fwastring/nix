@@ -8,8 +8,9 @@
     defaults.email = "fredrik@wastring.com";
     certs."pass.wastring.com" = {
       dnsProvider = "gandiv5";
-      environmentFile = /run/secrets/gandi_key;
       webroot = null;
+	  credentialsFile = /run/secrets/gandi_key;
+		dnsPropagationCheck = true;
     };
   };
   services.nginx = {
