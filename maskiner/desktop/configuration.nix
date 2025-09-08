@@ -15,7 +15,7 @@
     ../../moduler/base.nix
     ../../moduler/users.nix
     #../../moduler/nginx.nix
-    ../../moduler/k3s.nix
+    #../../moduler/k3s.nix
     ../../moduler/vaultwarden.nix
     #../../moduler/lsp.nix
   ];
