@@ -6,7 +6,7 @@
   security.acme = {
     acceptTerms = true;
     defaults.email = "fredrik@wastring.com";
-    certs."*.wastring.com" = {
+    certs."pass.wastring.com" = {
       dnsProvider = "gandiv5";
       environmentFile = /run/secrets/gandi_key;
     };
