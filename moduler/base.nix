@@ -89,6 +89,7 @@
   console.keyMap = "sv-latin1";
 
   services = {
+  	printing.enable = true;
     clipmenu.enable = true;
     openssh = {
       enable = true;

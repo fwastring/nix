@@ -18,6 +18,7 @@ in
     hyprpolkitagent
     hyprland-qtutils
     waypipe
+	wmenu
   ];
 
 
@@ -109,7 +110,8 @@ in
           "$mod" = "ALT";
 
           monitor = [
-            "DP-1, 1920x1080@144, 0x0, 1"
+            "desc: ASUSTek COMPUTER INC ASUS PA279CV S4LMTF159462 (DP-1), 3840x2160@60, 0x0, 1.5"
+            "desc: ASUSTek COMPUTER INC VG279 JBLMQS021792 (DP-1), 1920x1080@144, 0x0, 1"
             ",prefered,auto,1"
           ];
 
@@ -208,6 +210,8 @@ in
           misc = {
             disable_hyprland_logo = true;
             disable_splash_rendering = true;
+			enable_swallow = true;
+			swallow_regex = "^(kitty)$";
           };
 
           bind = [
@@ -215,6 +219,7 @@ in
             "$mod, return, exec, $terminal"
             "$mod SHIFT, q, killactive"
             "$mod SHIFT, e, exit"
+            "$mod SHIFT, d, exec, /home/fw/scripts/dmenu_sys"
             "$mod SHIFT, x, exec, ${pkgs.hyprlock}/bin/hyprlock"
 
             # Screen focus

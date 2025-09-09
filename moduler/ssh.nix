@@ -68,6 +68,12 @@
         user = "fw";
         identityFile = "/home/fw/.ssh/fw-ssh-key";
       };
+      "desktop" = {
+        hostname = "192.168.1.227";
+        port = 22;
+        user = "fw";
+        identityFile = "/home/fw/.ssh/id_rsa";
+      };
     };
   };
 }
