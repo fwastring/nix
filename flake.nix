@@ -62,7 +62,7 @@
             (
               { nixpkgs, ... }:
               {
-                nixpkgs.overlays = [ overlay-unstable ];
+                nixpkgs.overlays = [ overlay-unstable overlay-fw-pkgs ];
               }
             )
             ./maskiner/laptop/configuration.nix

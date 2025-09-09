@@ -1,59 +1,60 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
 {
   inputs,
-  lib,
   config,
   pkgs,
   myhostname,
   ...
 }:
+let
+in
 {
-  # You can import other NixOS modules here
   imports = [
     ./hardware-configuration.nix
+
     ../../moduler/base.nix
+
+    inputs.home-manager.nixosModules.home-manager
     ../../moduler/users.nix
+    ../../moduler/network.nix
+    ../../moduler/programs.nix
+    ../../moduler/system.nix
+    ../../moduler/dev.nix
+    ../../moduler/lsp.nix
+    ../../moduler/hyprland.nix
+    ../../moduler/sound.nix
   ];
+
+  home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+  home-manager.users.fw = {
+    imports = [
+      ./../../moduler/home.nix
+    ];
+  };
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = myhostname;
 
-  services.xserver.dpi = 140;
 
   services = {
-    openssh = {
+    tailscale = {
       enable = true;
-      ports = [ 55504 ];
-      settings = {
-        PermitRootLogin = "no";
-        PasswordAuthentication = false;
-        X11Forwarding = true;
+      package = pkgs.unstable.tailscale;
+    };
+    searx = {
+      enable = true;
+      redisCreateLocally = true;
+      settings.server = {
+        bind_address = "::1";
+        port = 8000;
+        secret_key = "alsjdioefj.asdi";
       };
-      extraConfig = ''
-        			  AllowUsers fw
-        			'';
     };
   };
-  services.syncthing = {
-	  enable = true;
-	  user = "fw";
-	  openDefaultPorts = true; # Open ports in the firewall for Syncthing
-	  dataDir = "/home/fw";  # default location for new folders
-		configDir = "/home/fw/.config/syncthing";
-	  settings = {
-		  devices = {
-			  "laptop" = { id = "SCW3Z3J-NQHIKXZ-T4MR7JR-YE2VL4S-RDZ7W4F-PMSPWCQ-SGF2XLQ-CDQ3SQT"; };
-			  "fw-iphone" = { id = "CWKHS4T-PTMW6A7-EBKRQJW-YOLUWIX-CC5IBYD-Z4LDXTO-MMRHXYM-A2FA2AQ"; };
-			};
-		  folders = {
-			  "vaults" = {
-				path = "/home/fw/vaults";
-				devices = [ "laptop" "fw-iphone" ];
-				ignorePerms = false; # Enable file permission syncing
-			  };
-			};
-		};
-	};
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "25.05";
 }
