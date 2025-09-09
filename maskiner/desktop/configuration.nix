@@ -28,11 +28,6 @@
 	git
   ];
 
-  # services.kitchenowl = {
-  #   enable = true;
-  #   hostName = "shop.wastring.com";
-  # };
-
     security.acme = {
     acceptTerms = true;
     defaults.email = "fredrik@wastring.com";
