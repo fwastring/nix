@@ -3,14 +3,17 @@
 }:
 {
 
+	networking.firewall = {
+	allowedTCPPorts = [ 80 443 ];
+	};
   security.acme = {
     acceptTerms = true;
     defaults.email = "fredrik@wastring.com";
     certs."pass.wastring.com" = {
       dnsProvider = "gandiv5";
       webroot = null;
-	  credentialsFile = /run/secrets/gandi_key;
-		dnsPropagationCheck = true;
+   credentialsFile = /run/secrets/gandi_key;
+  dnsPropagationCheck = true;
     };
   };
   services.nginx = {
@@ -42,7 +45,6 @@
       ROCKET_PORT = 8222;
       DOMAIN = "https://pass.wastring.com";
       SIGNUPS_ALLOWED = true;
-      LOG_FILE = "/var/lib/bitwarden_rs/access.log";
     };
   };
 }

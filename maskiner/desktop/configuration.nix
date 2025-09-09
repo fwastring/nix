@@ -14,6 +14,7 @@
     ./hardware-configuration.nix
     ../../moduler/base.nix
     ../../moduler/users.nix
+    ../../moduler/kitchenowl.nix
     #../../moduler/nginx.nix
     #../../moduler/k3s.nix
     ../../moduler/vaultwarden.nix
@@ -22,12 +23,50 @@
 
   environment.systemPackages = with pkgs; [
     unstable.lego
-k9s
-neovim
+	k9s
+	neovim
+	git
   ];
 
-  services.tailscale.enable = true;
-  services.tailscale.package = pkgs.unstable.tailscale;
+  services.kitchenowl = {
+    enable = true;
+    hostName = "shop.wastring.com";
+  };
+
+    security.acme = {
+    acceptTerms = true;
+    defaults.email = "fredrik@wastring.com";
+    certs."shop.wastring.com" = {
+      dnsProvider = "gandiv5";
+      webroot = null;
+   credentialsFile = /run/secrets/gandi_key;
+  dnsPropagationCheck = true;
+    };
+  };
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
+    # other Nginx options
+    virtualHosts."shop.wastring.com" = {
+      enableACME = true;
+      forceSSL = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8080";
+        proxyWebsockets = true; # needed if you need to use WebSocket
+        extraConfig =
+          # required when the target is also TLS server with multiple hosts
+          "proxy_ssl_server_name on;"
+          +
+            # required when the server wants to use HTTP Authentication
+            "proxy_pass_header Authorization;";
+      };
+    };
+  };
+
+
+  # services.tailscale.enable = true;
+  # services.tailscale.package = pkgs.unstable.tailscale;
 
   networking.hostName = myhostname;
 
