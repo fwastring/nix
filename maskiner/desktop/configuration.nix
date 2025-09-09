@@ -28,10 +28,10 @@
 	git
   ];
 
-  services.kitchenowl = {
-    enable = true;
-    hostName = "shop.wastring.com";
-  };
+  # services.kitchenowl = {
+  #   enable = true;
+  #   hostName = "shop.wastring.com";
+  # };
 
     security.acme = {
     acceptTerms = true;

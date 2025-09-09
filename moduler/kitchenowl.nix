@@ -1,7 +1,27 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   cfg = config.services.kitchenowl;
-in 
+in
 {
+  virtualisation.oci-containers = {
+    backend = "podman";
+	containers = {
+		kitchenowl = {
+			image = "tombursch/kitchenowl:latest";
+			volumes = [
+			  "${cfg.datadir}:/data"
+			];
+			ports = [ "127.0.0.1:8080:8080" ];
+			environment = {
+			  JWT_SECRET_KEY = "jkdlaksjdljlkjlq";
+			}
+			;
+		};
+	};
+  };
 }
-
