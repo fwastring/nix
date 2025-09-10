@@ -42,6 +42,8 @@ in
 		lazygit.enable = false;
 		fish.enable = false;
 		kitty.enable = false;
+		waybar.enable = false;
+		tmux.enable = false;
 	};
   };
 
