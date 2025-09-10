@@ -12,12 +12,12 @@
       tmuxPlugins.sensible
       tmuxPlugins.pain-control
       tmuxPlugins.sessionist
-      {
-        plugin = fw-pkgs.tmuxPlugins.minimal;
-        extraConfig = ''
-			bind-key b set-option status
-		'';
-      }
+		#     {
+		#       plugin = fw-pkgs.tmuxPlugins.minimal;
+		#       extraConfig = ''
+		# 	bind-key b set-option status
+		# '';
+		#     }
 
     ];
     extraConfig = ''

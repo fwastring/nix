@@ -3,25 +3,21 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    fw-pkgs.url = "github:fwastring/fwpkgs/main";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # fw-pkgs.url = "github:fwastring/fwpkgs/main";
 
-	# Neovim
-	neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # Neovim
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
-    hyprland.url = "github:hyprwm/Hyprland";
+	home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-	nvim-config = {
-      url = "github:fwastring/nvim?exportIgnore=1";
-      flake = false;
-    };
-	k9s-config = {
-      url = "github:fwastring/k9s?exportIgnore=1";
-      flake = false;
-    };
+
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs =
@@ -29,25 +25,18 @@
       self,
       nixpkgs,
       home-manager,
-      nixpkgs-unstable,
-      fw-pkgs,
+      stylix,
       ...
     }@inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
-      overlay-unstable = final: prev: {
-        unstable = import nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      };
-      overlay-fw-pkgs = final: prev: {
-        fw-pkgs = import fw-pkgs {
-          inherit system;
-          config.allowUnfree = false;
-        };
-      };
+      # overlay-fw-pkgs = final: prev: {
+      #   fw-pkgs = import fw-pkgs {
+      #     inherit system;
+      #     config.allowUnfree = false;
+      #   };
+      # };
     in
     {
       # NixOS configuration entrypoint
@@ -59,12 +48,6 @@
             myhostname = "laptop";
           };
           modules = [
-            (
-              { nixpkgs, ... }:
-              {
-                nixpkgs.overlays = [ overlay-unstable ];
-              }
-            )
             ./maskiner/laptop/configuration.nix
           ];
         };
@@ -74,12 +57,6 @@
             myhostname = "desktop";
           };
           modules = [
-            (
-              { nixpkgs, ... }:
-              {
-                nixpkgs.overlays = [ overlay-unstable ];
-              }
-            )
             ./maskiner/desktop/configuration.nix
           ];
         };
@@ -88,30 +65,20 @@
             inherit inputs outputs;
             myhostname = "jobb";
           };
-          modules = [ 
-            (
-              { nixpkgs, ... }:
-              {
-                nixpkgs.overlays = [ overlay-unstable overlay-fw-pkgs ];
-              }
-            )
-			  ./maskiner/jobb/configuration.nix 
-		  ];
+          modules = [
+            ./maskiner/jobb/configuration.nix
+            stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
+          ];
         };
         work-desktop = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
             myhostname = "work-desktop";
           };
-          modules = [ 
-            (
-              { nixpkgs, ... }:
-              {
-                nixpkgs.overlays = [ overlay-unstable ];
-              }
-            )
-			  ./maskiner/work-desktop/configuration.nix 
-		  ];
+          modules = [
+            ./maskiner/work-desktop/configuration.nix
+          ];
         };
         macmini = nixpkgs.lib.nixosSystem {
           specialArgs = {
