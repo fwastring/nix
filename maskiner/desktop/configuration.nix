@@ -23,7 +23,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    unstable.lego
     k9s
     neovim
     git
@@ -58,9 +57,6 @@
       };
     };
   };
-
-  # services.tailscale.enable = true;
-  # services.tailscale.package = pkgs.unstable.tailscale;
 
   networking.hostName = myhostname;
 
