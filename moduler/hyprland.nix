@@ -94,6 +94,7 @@ in
 
             wallpaper = [
               "DP-1,/home/fw/nix/wallpapers/blue.png"
+              "eDP-1,/home/fw/nix/wallpapers/blue.png"
             ];
           };
         };
