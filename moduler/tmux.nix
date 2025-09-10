@@ -11,7 +11,6 @@
     plugins = with pkgs; [
       tmuxPlugins.sensible
       tmuxPlugins.pain-control
-      tmuxPlugins.sessionist
 	  { plugin = inputs.minimal-tmux.packages.${pkgs.system}.default; }
     ];
     extraConfig = ''

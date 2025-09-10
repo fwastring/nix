@@ -44,6 +44,7 @@ in
 		kitty.enable = false;
 		waybar.enable = false;
 		tmux.enable = false;
+		k9s.enable = false;
 	};
   };
 
