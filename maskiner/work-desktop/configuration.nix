@@ -33,7 +33,6 @@
   );
   nix.nixPath = [ "/etc/nix/path" ];
   users.defaultUserShell = pkgs.bash;
-  documentation.man.generateCaches = false;
   programs.fish.enable = true;
   programs.bash = {
     interactiveShellInit = ''

@@ -17,7 +17,6 @@
   );
   nix.nixPath = [ "/etc/nix/path" ];
   users.defaultUserShell = pkgs.bash;
-  documentation.man.generateCaches = false;
   programs.fish.enable = true;
   programs.bash = {
     interactiveShellInit = ''
@@ -78,7 +77,7 @@
       efi = {
         canTouchEfiVariables = true;
       };
-	  systemd-boot.enable = true;
+      systemd-boot.enable = true;
       grub = {
         efiSupport = true;
         efiInstallAsRemovable = true;
@@ -88,8 +87,12 @@
   };
   console.keyMap = "sv-latin1";
 
+  programs.bat = {
+    enable = true;
+  };
+
   services = {
-  	printing.enable = true;
+    printing.enable = true;
     clipmenu.enable = true;
     openssh = {
       enable = true;

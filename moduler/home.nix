@@ -26,7 +26,6 @@
 
 	  programs.home-manager.enable = true;
 	  programs.fish.enable = true;
-	  programs.man.generateCaches = false;
 
 	  home.username = "fw";
 	  home.homeDirectory = "/home/fw";
