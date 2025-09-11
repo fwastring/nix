@@ -33,6 +33,16 @@ in
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
   };
 
+  programs.ssh.knownHosts = {
+	  desktop = {
+	    extraHostNames = [ "192.168.1.227" ];
+	    publicKeyFile = ../../keys/desktop_rsa_pubkey;
+	  };
+	  "192.168.1.227" = {
+	    publicKeyFile = ../../keys/desktop_rsa_pubkey;
+	  };
+	};
+
   home-manager.extraSpecialArgs = { inherit inputs pkgs; };
   home-manager.users.fw = {
     imports = [

@@ -19,6 +19,7 @@
     #../../moduler/nginx.nix
     #../../moduler/k3s.nix
     ../../moduler/vaultwarden.nix
+    ../../moduler/wastring.nix
     #../../moduler/lsp.nix
   ];
 

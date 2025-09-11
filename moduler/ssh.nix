@@ -2,13 +2,6 @@
 {
   programs.ssh = {
     enable = true;
-	knownHosts = {
-	  desktop = {
-	    extraHostNames = [ "192.168.1.227" ];
-	    publicKeyFile = ./pubkeys/myhost_ssh_host_dsa_key.pub;
-	  };
-	}
-	;
     matchBlocks = {
       "lth" = {
         hostname = "login.student.lth.se";
