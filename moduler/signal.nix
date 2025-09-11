@@ -7,6 +7,9 @@
 let
 in
 {
+  networking.firewall.allowedTCPPorts = [ 8081 ];
+
+  # See this for docs on endpoints and more https://github.com/bbernhard/signal-cli-rest-api
   virtualisation.oci-containers = {
     backend = "podman";
 	containers = {
@@ -15,9 +18,10 @@ in
 			volumes = [
 			  "/var/signal:/home/.local/share/signal-cli"
 			];
-			ports = [ "127.0.0.1:8000:8080" ];
+			ports = [ "192.168.1.227:8081:8080" ];
 			environment = {
 			  MODE = "native";
+			  PORT = "8080";
 			}
 			;
 		};

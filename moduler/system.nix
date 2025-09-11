@@ -55,7 +55,6 @@
     grc
     pkg-config
     vim
-    bat
     fd
     bluez
     bluez-tools
