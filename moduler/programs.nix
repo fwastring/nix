@@ -22,8 +22,8 @@
 
   	environment.systemPackages = with pkgs; [
 		# GUI
-		unstable.feishin
-		unstable.signal-desktop
+		feishin
+		signal-desktop
 		thunderbird
 		libreoffice
 		discord

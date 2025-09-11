@@ -10,7 +10,7 @@
 }: {
 
   	environment.systemPackages = with pkgs; [
-		unstable.nixd
+		nixd
 		gopls
 		inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
 		omnisharp-roslyn

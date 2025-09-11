@@ -46,7 +46,7 @@ in
     python314
 
     awscli
-    unstable.minio-client
+    minio-client
     hugo
     sqlc
     postgresql

@@ -9,7 +9,7 @@
     enable = true;
     font = {
       name = "ComicShannsMono Nerd Font";
-      size = 12;
+      size = 14;
     };
     shellIntegration = {
       mode = "no-cursor";
@@ -20,7 +20,7 @@
       cursor_shape = "block";
       cursor_blink_interval = 0;
       enable_audio_bell = false;
-	  window_padding_width = 5;
+	  window_padding_width = 10;
     };
   };
 }

@@ -23,8 +23,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    unstable.lego
-    k9s
     neovim
     git
   ];
@@ -75,9 +73,6 @@ users.users.root.openssh.authorizedKeys.keys = [
       };
     };
   };
-
-  # services.tailscale.enable = true;
-  # services.tailscale.package = pkgs.unstable.tailscale;
 
   networking.hostName = myhostname;
 

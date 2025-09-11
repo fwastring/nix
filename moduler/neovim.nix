@@ -7,7 +7,7 @@ in
   # programs.neovim.enable = true;
 
   # Create a symlink from the Nix store to the Neovim config directory
-  xdg.configFile."nvim".source = inputs.nvim-config;
+  # xdg.configFile."nvim".source = inputs.nvim-config;
 
   # Other Home Manager options...
 }

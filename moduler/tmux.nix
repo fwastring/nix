@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   programs.tmux = {
     enable = true;
@@ -11,14 +11,7 @@
     plugins = with pkgs; [
       tmuxPlugins.sensible
       tmuxPlugins.pain-control
-      tmuxPlugins.sessionist
-      {
-        plugin = fw-pkgs.tmuxPlugins.minimal;
-        extraConfig = ''
-			bind-key b set-option status
-		'';
-      }
-
+	  { plugin = inputs.minimal-tmux.packages.${pkgs.system}.default; }
     ];
     extraConfig = ''
 			set -g set-clipboard on

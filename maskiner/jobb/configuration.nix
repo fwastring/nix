@@ -18,7 +18,6 @@ in
 
     ../../moduler/base.nix
 
-    inputs.home-manager.nixosModules.home-manager
     ../../moduler/users.nix
     ../../moduler/network.nix
     ../../moduler/programs.nix
@@ -29,11 +28,25 @@ in
     ../../moduler/sound.nix
   ];
 
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
+  };
+
   home-manager.extraSpecialArgs = { inherit inputs pkgs; };
   home-manager.users.fw = {
     imports = [
       ./../../moduler/home.nix
     ];
+    programs.ranger.enable = true;
+    stylix.targets = {
+      lazygit.enable = false;
+      fish.enable = false;
+      kitty.enable = false;
+      waybar.enable = false;
+      tmux.enable = false;
+      k9s.enable = false;
+    };
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -42,27 +55,12 @@ in
       patches = [ ../../moduler/btusb-add-mt7925.patch ];
     }))
   ];
-  hardware.enableRedistributableFirmware = true;
 
   networking.hostName = myhostname;
-
-  environment.systemPackages = with pkgs; [
-    gonic
-  ];
 
   services = {
     tailscale = {
       enable = true;
-      package = pkgs.unstable.tailscale;
-    };
-    searx = {
-      enable = true;
-      redisCreateLocally = true;
-      settings.server = {
-        bind_address = "::1";
-        port = 8000;
-        secret_key = "alsjdioefj.asdi";
-      };
     };
   };
 

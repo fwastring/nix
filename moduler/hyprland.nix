@@ -1,6 +1,7 @@
 {
   host,
   config,
+  lib,
   pkgs,
   inputs,
   ...
@@ -18,12 +19,10 @@ in
     hyprpolkitagent
     hyprland-qtutils
     waypipe
-	wmenu
+    wmenu
   ];
 
-
   services = {
-    gnome.gnome-keyring.enable = true;
     greetd = {
       enable = true;
       settings = {
@@ -49,12 +48,145 @@ in
   home-manager.users.fw =
     { pkgs, ... }:
     {
-      imports = [
-        ./waybar.nix
-      ];
       programs = {
         hyprlock = {
           enable = true;
+        };
+        rofi = {
+          enable = true;
+		  font = lib.mkForce "ComicShannsMono Nerd Font 18";
+        };
+        waybar = {
+          enable = true;
+          systemd = {
+            enable = true;
+          };
+          settings = {
+            mainBar = {
+              modules-left = [
+                "hyprland/workspaces"
+              ];
+              modules-right = [
+                "tray"
+                "clock"
+              ];
+              "custom/arrow1" = {
+                format = "";
+
+              };
+              tray = {
+                format = "<span>{icon}</span>";
+                "icon-size" = 14;
+                spacing = 5;
+              };
+
+              clock = {
+                format = "<span> </span><span>{:%c}</span>";
+              };
+            };
+          };
+          style = ''
+            				@define-color bg #eff1f5;
+            				@define-color fg #4c4f69;
+            				@define-color lbg #e6e9ef;
+            				@define-color yellow #df8e1d;
+            				@define-color lavender #7287fd;
+            				@define-color peach #fe640b;
+            				@define-color red #d20f39;
+            				@define-color green #40a02b;
+            				@define-color blue #1e66f5;
+            				@define-color border #dce0e8;
+
+                            * {
+                              min-height: 0;
+                              margin: 0px 0px 0px 0px;
+                              padding: 0;
+                              border-radius: 7px;
+                              font-family: "ComicShannsMono Nerd Font";
+                              font-size: 14pt;
+                              font-weight: 700;
+                              padding-bottom: 0px;
+                            }
+
+                            tooltip {
+                              background: @bg;
+                              border-radius: 7px;
+                              border: 2px solid @border;
+                            }
+
+                            #window {
+                              margin: 0px 0px 0px 0px;
+                              padding-left: 10px;
+                              padding-right: 7px;
+                              border-radius: 3px;
+                              border-color: @lbg;
+                              background-color: @yellow;
+                              color: @bg;
+                            }
+
+                            window#waybar.empty #window {
+                              background-color: @bg;
+                              border-bottom: none;
+                              border-right: none;
+                            }
+
+                            window#waybar {
+                              background-color: @bg;
+                              color: @lavender;
+                            }
+
+                            /* Workspaces */
+                            @keyframes button_activate {
+                              from { opacity: .3 }
+                              to { opacity: 1.; }
+                            }
+
+                            #workspaces {
+                              margin: 0px 0px 0px 0px;
+                              border-radius: 3px;
+                              padding: 1px;
+                              background-color: @bg;
+                              color: @bg;
+                            }
+
+                            #workspaces button {
+                              margin: 0px 0px 0px 0px;
+                              border-radius: 3px;
+                              padding-left: 3px;
+                              padding-right: 9px;
+                              background-color: @bg;
+                              color: @fg;
+                            }
+
+                            #workspaces button.active {
+                              background-color:@blue;
+                              color: @bg;
+                            }
+
+                            #workspaces button.urgent {
+                              color: #F38BA8;
+                            }
+
+                            #workspaces button:hover {
+                              border: solid transparent;
+                            }
+                            #tray {
+                              margin: 0px 0px 0px 0px;
+                              border-radius: 3px;
+                              padding-left: 10px;
+                              padding-right: 10px;
+                              background-color: @bg;
+                              color: @fg;
+                            }
+                            #clock {
+                              margin: 0px 0px 0px 0px;
+                              padding-left: 10px;
+                              padding-right: 10px;
+                              border-radius: 3px;
+                              color: @bg;
+                              background-color: @green;
+                            }
+          '';
         };
       };
       services = {
@@ -211,8 +343,8 @@ in
           misc = {
             disable_hyprland_logo = true;
             disable_splash_rendering = true;
-			enable_swallow = true;
-			swallow_regex = "^(kitty)$";
+            enable_swallow = true;
+            swallow_regex = "^(kitty)$";
           };
 
           bind = [
@@ -267,7 +399,7 @@ in
 
             # Applications
             "$mod, q, exec, ${pkgs.firefox}/bin/firefox"
-            "$mod, d, exec, ${pkgs.rofi}/bin/rofi -show run"
+            "$mod, d, exec, ${pkgs.rofi}/bin/rofi -show drun"
 
             # Screencapture
             "$mod, S, exec, ${pkgs.grim}/bin/grim | wl-copy"

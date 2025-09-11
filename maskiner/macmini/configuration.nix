@@ -16,7 +16,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    unstable.lego
+    lego
   ];
   networking.firewall = {
     enable = true;
