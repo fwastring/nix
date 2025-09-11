@@ -36,10 +36,10 @@ in
   programs.ssh.knownHosts = {
 	  desktop = {
 	    extraHostNames = [ "192.168.1.227" ];
-	    publicKeyFile = ../../keys/desktop_rsa_pubkey;
+	    publicKeyFile = ../../keys/rsa_pubkey;
 	  };
 	  "192.168.1.227" = {
-	    publicKeyFile = ../../keys/desktop_rsa_pubkey;
+	    publicKeyFile = ../../keys/rsa_pubkey;
 	  };
 	};
 
