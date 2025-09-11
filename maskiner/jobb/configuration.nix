@@ -38,14 +38,15 @@ in
     imports = [
       ./../../moduler/home.nix
     ];
-	stylix.targets = {
-		lazygit.enable = false;
-		fish.enable = false;
-		kitty.enable = false;
-		waybar.enable = false;
-		tmux.enable = false;
-		k9s.enable = false;
-	};
+    programs.ranger.enable = true;
+    stylix.targets = {
+      lazygit.enable = false;
+      fish.enable = false;
+      kitty.enable = false;
+      waybar.enable = false;
+      tmux.enable = false;
+      k9s.enable = false;
+    };
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -61,15 +62,6 @@ in
     tailscale = {
       enable = true;
     };
-    # searx = {
-    #   enable = true;
-    #   redisCreateLocally = true;
-    #   settings.server = {
-    #     bind_address = "::1";
-    #     port = 8000;
-    #     secret_key = "alsjdioefj.asdi";
-    #   };
-    # };
   };
 
   system.stateVersion = "25.05";
