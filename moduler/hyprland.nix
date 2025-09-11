@@ -354,6 +354,7 @@ in
             "$mod SHIFT, e, exit"
             "$mod SHIFT, d, exec, /home/fw/scripts/dmenu_sys"
             "$mod SHIFT, x, exec, ${pkgs.hyprlock}/bin/hyprlock"
+            "$mod SHIFT, w, exec, /home/fw/scripts/watch"
 
             # Screen focus
             "$mod, v, togglefloating"
