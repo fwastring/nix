@@ -7,7 +7,7 @@ in
     certs."wastring.com" = {
       dnsProvider = "gandiv5";
       webroot = null;
-      credentialsFile = /run/secrets/gandi_key;
+      credentialsFile = config.sops.secrets.gandi_key.path;
       dnsPropagationCheck = true;
     };
   };

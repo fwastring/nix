@@ -21,7 +21,7 @@
 		../moduler/oh-my-posh.nix
 		../moduler/gtk.nix
 		# ../moduler/neovim.nix
-		../moduler/k9s
+		../moduler/programs/k9s
 	  ];
 
 	  programs.home-manager.enable = true;

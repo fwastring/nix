@@ -18,65 +18,55 @@ in
   ];
 
   environment.systemPackages = with pkgs; [
-    timewarrior
+  	# Neovim
+	inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
 
+  	# Nix
     devenv
     nixfmt-rfc-style
 
-    # Containers
-    kubectl
-    docker-slim
+	# Docker
     dive
-    buildkit
-    containerd
-    cri-tools
-    yq
-    skopeo
-    umoci
-    velero
-    podman-tui
+    lazydocker
 
+	# Jobb
     azure-cli
     dotnetCorePackages.dotnet_9.sdk
-    google-cloud-sdk
     jira-cli-go
     gh
-    allure
-    kubectx
-    python314
 
+	# Minio
     awscli
     minio-client
+
+	# Blogging
     hugo
+
+	# System Design
     sqlc
     postgresql
-    go-migrate-pg
-    argocd
-    ngrok
-    tailwindcss
-    yarn
     plantuml
+
+	# Web Dev
+    tailwindcss
+    prettierd
+
+	# Go
+    air
     go
     templ
-    goa
-    prettierd
-    qrencode
-    air
+    go-migrate-pg
+
+	# Build
     git
-    lazydocker
     gcc
     gnumake
     cmake
+
+	# System Tools
+    yq
     jq
     git
-    (wrapHelm kubernetes-helm {
-      plugins = with pkgs.kubernetes-helmPlugins; [
-        helm-secrets
-        helm-diff
-        helm-s3
-        helm-git
-      ];
-    })
-    k3sup
+    qrencode
   ];
 }

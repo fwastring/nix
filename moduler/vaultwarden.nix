@@ -1,4 +1,5 @@
 {
+config,
   ...
 }:
 {
@@ -15,7 +16,7 @@
     certs."pass.wastring.com" = {
       dnsProvider = "gandiv5";
       webroot = null;
-      credentialsFile = /run/secrets/gandi_key;
+      credentialsFile = config.sops.secrets.gandi_key.path;
       dnsPropagationCheck = true;
     };
   };
@@ -23,19 +24,14 @@
     enable = true;
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
-    # other Nginx options
     virtualHosts."pass.wastring.com" = {
       enableACME = true;
       forceSSL = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:8222";
-        proxyWebsockets = true; # needed if you need to use WebSocket
+        proxyWebsockets = true;
         extraConfig =
-          # required when the target is also TLS server with multiple hosts
-          "proxy_ssl_server_name on;"
-          +
-            # required when the server wants to use HTTP Authentication
-            "proxy_pass_header Authorization;";
+          "proxy_ssl_server_name on;" + "proxy_pass_header Authorization;";
       };
     };
   };

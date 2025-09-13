@@ -12,7 +12,6 @@
   	environment.systemPackages = with pkgs; [
 		nixd
 		gopls
-		inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
 		omnisharp-roslyn
 		nodePackages.vscode-json-languageserver
 		tailwindcss-language-server

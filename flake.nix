@@ -8,7 +8,10 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # fw-pkgs.url = "github:fwastring/fwpkgs/main";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Neovim
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
@@ -31,17 +34,12 @@
       nixpkgs,
       home-manager,
       stylix,
+	  sops-nix,
       ...
     }@inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
-      # overlay-fw-pkgs = final: prev: {
-      #   fw-pkgs = import fw-pkgs {
-      #     inherit system;
-      #     config.allowUnfree = false;
-      #   };
-      # };
     in
     {
       # NixOS configuration entrypoint
@@ -63,6 +61,7 @@
           };
           modules = [
             ./maskiner/desktop/configuration.nix
+			sops-nix.nixosModules.sops
           ];
         };
         jobb = nixpkgs.lib.nixosSystem {
@@ -74,6 +73,7 @@
             ./maskiner/jobb/configuration.nix
             stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
+			sops-nix.nixosModules.sops
           ];
         };
         work-desktop = nixpkgs.lib.nixosSystem {

@@ -26,7 +26,19 @@ in
     ../../moduler/lsp.nix
     ../../moduler/hyprland.nix
     ../../moduler/sound.nix
+	../../moduler/programs/kubernetes-tools.nix
   ];
+
+  kubernetes-tools.enable = true;
+
+  sops.defaultSopsFile = ../../secrets/sops.yaml;
+  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  sops.secrets.gandi_key = {
+    # This path is where the *decrypted* secret will be placed at runtime
+    path = "/run/secrets/gandi_key";
+    owner = "root";
+    mode = "0440";
+  };
 
   stylix = {
     enable = true;

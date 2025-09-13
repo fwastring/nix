@@ -400,11 +400,11 @@ in
 
             # Applications
             "$mod, q, exec, ${pkgs.firefox}/bin/firefox"
-            "$mod, d, exec, ${pkgs.rofi}/bin/rofi -show drun"
+            "$mod, d, exec, ${pkgs.rofi}/bin/rofi -show drun -p 'Run: '"
 
             # Screencapture
             "$mod, S, exec, ${pkgs.grim}/bin/grim | wl-copy"
-            "$mod SHIFT+ALT, S, exec, ${pkgs.grim}/bin/grim -g \"$(slurp)\" - | ${pkgs.swappy}/bin/swappy -f -"
+            "$mod SHIFT+ALT, S, exec, ${pkgs.grim}/bin/grim -g \"$(slurp)\" ~/$(date +%Y-%m-%d-%H%M%S).png"
           ];
 
           bindm = [

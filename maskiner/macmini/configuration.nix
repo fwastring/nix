@@ -14,30 +14,17 @@
     ./hardware-configuration.nix
     ../../moduler/users.nix
     ../../moduler/base.nix
+    ../../moduler/services/monitoring
   ];
+
+  alloy = {
+	enable = true;
+	configPath = ./alloy-systemd.yaml;
+  };
 
   nixpkgs.config.permittedInsecurePackages = [
     "broadcom-sta-6.30.223.271-57-6.12.45"
   ];
-
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [
-      80
-      443
-      3000
-      8384
-      8008
-      8009
-      22000
-    ];
-    allowedUDPPortRanges = [
-      {
-        from = 1;
-        to = 65535;
-      }
-    ];
-  };
 
   nix.settings = {
     trusted-public-keys = [

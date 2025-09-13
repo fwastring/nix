@@ -55,10 +55,9 @@
     };
     interactiveShellInit = ''
       		fish_vi_key_bindings
-      		set fish_greeting # Disable greeting
+      		set fish_greeting
       		set FLAKE_DIR "/home/fw/nix"
-      		set HM_DIR "$FLAKE_DIR#fw@jobb"
-      		set SYSTEM_DIR "$FLAKE_DIR#jobb"
+			set JIRA_API_TOKEN ATATT3xFfGF0_fkpGB1ne-QOSJzFVG0yH31j2CRtdNqbePCyEm9enpnA2uA3go75_GQwZPFX_IO9tf10ALJWvDLjsuHl8MSOUkNd703Vqr4uuGLAbHY73Z_b9fDJVrfodTrGAN9sZ5Sp75opCVkXB7MVXSAIvlWimRdwe-tqDPH4vhwY9Hqcs6M=0510D6CD
       		set -Ux FZF_CTRL_R_OPTS "--reverse"
       		set -Ux FZF_TMUX_OPTS "-p"
       		set -e GOROOT

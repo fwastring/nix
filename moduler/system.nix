@@ -24,68 +24,37 @@
   };
 
   environment.systemPackages = with pkgs; [
-	# Build
-	just
+	# Bluetooth
+    bluez
+    bluez-tools
+
+	# Zathura
+    poppler_utils
+
+	# Transform
+    imagemagick
+    pandoc
+
+	# Sound
+    alsa-utils
+
+	# Monitor
+    brightnessctl
   	
     # System
+	sops
     libnotify
-    lf
-    xsel
-    xbanish
     unzip
     zip
     wget
-    alsa-utils
     htop
     procps
-    fzf
-    eza
     btop
-    xclip
-    dysk
-    rsync
     procs
-    dust
-    brightnessctl
-    lolcat
-    fortune
-    cowsay
-    ripgrep
-    poppler_utils
+    dysk
     grc
-    pkg-config
     vim
-    fd
-    bluez
-    bluez-tools
-    openssl
-    imagemagick
-    pandoc
-    texliveFull
     fastfetch
-    keyutils
-    pinentry-all
-    (pass.withExtensions (
-      ext: with ext; [
-        pass-import
-        pass-genphrase
-        pass-update
-      ]
-    ))
-    lazygit
-    chawan
-    go-passbolt-cli
-    waypipe
-    wl-clipboard
-    smartmontools
-
-    # Typesetting
-    typst
-    typstyle
-    tinymist
-    websocat
-    nix-search-cli
-    libsixel
 
     # system call monitoring
     strace # system call monitoring
@@ -98,6 +67,37 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
+	# Files
+    fzf
+    eza
+    rsync
+    dust
+    ripgrep
+    fd
+
+	# Misc
+    lolcat
+    fortune
+    cowsay
+
+	# Security
+    openssl
+
+	# Git
+    lazygit
+
+	# Terminal Stuff
+    chawan
+    go-passbolt-cli
+
+    # Typesetting
+    typst
+    typstyle
+    tinymist
+    websocat
+    nix-search-cli
+    libsixel
 
     (
       let

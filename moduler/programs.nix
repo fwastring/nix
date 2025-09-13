@@ -37,14 +37,11 @@
 		ghostty
 		kdePackages.okular
 		xdg-user-dirs
+		angryipscanner
 
 		# Browsers
 		librewolf
 		chawan
-
-		# Capturing
-		byzanz
-		scrot
 
 		# Displaying
 		zathura

@@ -19,9 +19,38 @@
     ../../moduler/vaultwarden.nix
     ../../moduler/signal.nix
     ../../moduler/uptime-kuma.nix
+    ../../moduler/services/monitoring
+    ../../moduler/services/wireguard-server
     # ../../moduler/wastring.nix
   ];
 
+  sops.defaultSopsFile = ../../secrets/sops.yaml;
+  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  sops.secrets.gandi_key = {
+    path = "/run/secrets/gandi_key";
+    owner = "root";
+    mode = "0440";
+  };
+
+  grafana = {
+    enable = true;
+    host = "127.0.0.1";
+    domain = "grafana.wastring.com";
+  };
+
+  prometheus = {
+    enable = true;
+	exporters.enable = true;
+  };
+
+  loki = {
+	enable = true;
+  };
+
+  alloy = {
+	enable = true;
+	configPath = ./alloy-systemd.yaml;
+  };
 
   nix.settings = {
     trusted-public-keys = [
@@ -44,7 +73,7 @@
     certs."shop.wastring.com" = {
       dnsProvider = "gandiv5";
       webroot = null;
-      credentialsFile = /run/secrets/gandi_key;
+      credentialsFile = config.sops.secrets.gandi_key.path;
       dnsPropagationCheck = true;
     };
   };
