@@ -18,12 +18,12 @@
   ];
 
   alloy = {
-	enable = true;
-	configPath = ./alloy-systemd.yaml;
+    enable = true;
+    configPath = ./alloy-systemd.yaml;
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.45"
+    "broadcom-sta-6.30.223.271-57-6.12.47"
   ];
 
   nix.settings = {

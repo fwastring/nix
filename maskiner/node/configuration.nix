@@ -20,7 +20,7 @@
     ../../moduler/signal.nix
     ../../moduler/uptime-kuma.nix
     ../../moduler/services/monitoring
-    ../../moduler/services/wireguard-server
+    ../../moduler/services/headscale
     # ../../moduler/wastring.nix
   ];
 
@@ -38,18 +38,22 @@
     domain = "grafana.wastring.com";
   };
 
+  headscale = {
+    enable = true;
+  };
+
   prometheus = {
     enable = true;
-	exporters.enable = true;
+    exporters.enable = true;
   };
 
   loki = {
-	enable = true;
+    enable = true;
   };
 
   alloy = {
-	enable = true;
-	configPath = ./alloy-systemd.yaml;
+    enable = true;
+    configPath = ./alloy-systemd.yaml;
   };
 
   nix.settings = {

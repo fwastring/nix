@@ -92,6 +92,13 @@
     enable = true;
   };
 
+  services.tailscale.enable = true;
+  networking.firewall = {
+    checkReversePath = "loose";
+    trustedInterfaces = [ "tailscale0" ];
+    allowedUDPPorts = [ config.services.tailscale.port ];
+  };
+
   services = {
     printing.enable = true;
     clipmenu.enable = true;

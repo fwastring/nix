@@ -45,52 +45,43 @@
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
+        legacy = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
-            myhostname = "laptop";
+            myhostname = "legacy";
           };
           modules = [
-            ./maskiner/laptop/configuration.nix
+            ./maskiner/legacy/configuration.nix
           ];
         };
-        desktop = nixpkgs.lib.nixosSystem {
+        node = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
-            myhostname = "desktop";
+            myhostname = "node";
           };
           modules = [
-            ./maskiner/desktop/configuration.nix
+            ./maskiner/node/configuration.nix
 			sops-nix.nixosModules.sops
           ];
         };
-        jobb = nixpkgs.lib.nixosSystem {
+        core = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
-            myhostname = "jobb";
+            myhostname = "core";
           };
           modules = [
-            ./maskiner/jobb/configuration.nix
+            ./maskiner/core/configuration.nix
             stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
 			sops-nix.nixosModules.sops
           ];
         };
-        work-desktop = nixpkgs.lib.nixosSystem {
+        archive = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
-            myhostname = "work-desktop";
+            myhostname = "archive";
           };
-          modules = [
-            ./maskiner/work-desktop/configuration.nix
-          ];
-        };
-        macmini = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs;
-            myhostname = "macmini";
-          };
-          modules = [ ./maskiner/macmini/configuration.nix ];
+          modules = [ ./maskiner/archive/configuration.nix ];
         };
       };
     };

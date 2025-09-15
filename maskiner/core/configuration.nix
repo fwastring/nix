@@ -26,10 +26,11 @@ in
     ../../moduler/lsp.nix
     ../../moduler/hyprland.nix
     ../../moduler/sound.nix
-	../../moduler/programs/kubernetes-tools.nix
+    ../../moduler/programs/kubernetes-tools.nix
   ];
 
   kubernetes-tools.enable = true;
+
 
   sops.defaultSopsFile = ../../secrets/sops.yaml;
   sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
@@ -46,14 +47,14 @@ in
   };
 
   programs.ssh.knownHosts = {
-	  desktop = {
-	    extraHostNames = [ "192.168.1.227" ];
-	    publicKeyFile = ../../keys/rsa_pubkey;
-	  };
-	  "192.168.1.227" = {
-	    publicKeyFile = ../../keys/rsa_pubkey;
-	  };
-	};
+    desktop = {
+      extraHostNames = [ "192.168.1.227" ];
+      publicKeyFile = ../../keys/rsa_pubkey;
+    };
+    "192.168.1.227" = {
+      publicKeyFile = ../../keys/rsa_pubkey;
+    };
+  };
 
   home-manager.extraSpecialArgs = { inherit inputs pkgs; };
   home-manager.users.fw = {
