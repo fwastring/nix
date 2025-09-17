@@ -44,6 +44,10 @@
 		  setCursor = "%";
 		  expansion = "cha https://search.wastring.com/search?q=%";
 	  };
+      tw = {
+		  setCursor = "%";
+		  expansion = "typst watch % --open zathura /tmp/zathura.pdf";
+	  };
       c = {
 		  setCursor = "%";
 		  expansion = "ssh 'fw:%@gateway.internalifacts.se' -p 2222";
