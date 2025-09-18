@@ -14,7 +14,7 @@ in
       enable = true;
       settings = {
         PORT = "4000";
-        HOST = "192.168.1.227";
+        HOST = "100.64.0.4";
       };
     };
   };
