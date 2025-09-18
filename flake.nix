@@ -51,7 +51,9 @@
             myhostname = "legacy";
           };
           modules = [
+            stylix.nixosModules.stylix
             ./maskiner/legacy/configuration.nix
+			sops-nix.nixosModules.sops
           ];
         };
         node = nixpkgs.lib.nixosSystem {

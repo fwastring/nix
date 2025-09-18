@@ -2,6 +2,7 @@ keys:
   - &admin_fw age1jeyw96795qu52swmtkjqgr2w3g4vxc43ckc5r4hlwpje23ptnfwsheah0s
   - &server_desktop age106ml0ssx0p24dvfamp322myzka4wzeze9yhzyvtptp9c6fmmru6slswh2x
   - &server_macmini age1dql5lwetk39a9y8ummfgjx3aym02yn205lxk389k6q0tu9y3ff4s94l66t
+  - &server_legacy age1kf93dpuqhu0a90s49sszgw64mn32hwgrm8suv799ca4ngrkecpqs8ljzk8
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
