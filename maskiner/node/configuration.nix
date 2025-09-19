@@ -22,6 +22,7 @@
     ../../moduler/services/monitoring
     ../../moduler/services/headscale
     # ../../moduler/wastring.nix
+     ../../moduler/wedding.nix
   ];
 
   sops.defaultSopsFile = ../../secrets/sops.yaml;

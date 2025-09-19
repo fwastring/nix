@@ -28,11 +28,27 @@ in
     ../../moduler/sound.nix
   ];
 
+  sops.defaultSopsFile = ../../secrets/sops.yaml;
+  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
+  };
+
   home-manager.extraSpecialArgs = { inherit inputs pkgs; };
   home-manager.users.fw = {
     imports = [
       ./../../moduler/home.nix
     ];
+    stylix.targets = {
+      lazygit.enable = false;
+      fish.enable = false;
+      kitty.enable = false;
+      waybar.enable = false;
+      tmux.enable = false;
+      k9s.enable = false;
+    };
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
