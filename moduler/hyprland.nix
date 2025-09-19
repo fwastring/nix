@@ -54,7 +54,7 @@ in
         };
         rofi = {
           enable = true;
-		  font = lib.mkForce "ComicShannsMono Nerd Font 18";
+          font = lib.mkForce "ComicShannsMono Nerd Font 18";
         };
         waybar = {
           enable = true;
@@ -315,17 +315,17 @@ in
               "md2, 0.4, 0, 0.2, 1"
             ];
             animation = [
-              "windows, 1, 1, md3_decel, popin 60%"
-              "windowsIn, 1, 1, md3_decel, popin 60%"
-              "windowsOut, 1, 1, md3_accel, popin 60%"
+              "windows, 1, 1.2, md3_decel, popin 60%"
+              "windowsIn, 1, 1.2, md3_decel, popin 60%"
+              "windowsOut, 1, 1.2, md3_accel, popin 60%"
               "border, 1, 2, default"
-              "fade, 1, 1, md3_decel"
-              "layersIn, 1, 1, menu_decel, slide"
-              "layersOut, 1, 1, menu_accel"
-              "fadeLayersIn, 1, 1, menu_decel"
-              "fadeLayersOut, 1, 1, menu_accel"
+              "fade, 1, 1.2, md3_decel"
+              "layersIn, 1, 1.2, menu_decel, slide"
+              "layersOut, 1, 1.2, menu_accel"
+              "fadeLayersIn, 1, 1.2, menu_decel"
+              "fadeLayersOut, 1, 1.2, menu_accel"
               "workspaces, 1, 2, menu_decel, slide"
-              "specialWorkspace, 1, 1, md3_decel, slidevert"
+              "specialWorkspace, 1, 1.2, md3_decel, slidevert"
             ];
           };
 
