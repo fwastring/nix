@@ -4,6 +4,7 @@
   lib,
   pkgs,
   inputs,
+  myhostname,
   ...
 }:
 let
@@ -245,6 +246,7 @@ in
           monitor = [
             "desc: ASUSTek COMPUTER INC ASUS PA279CV S4LMTF159462 (DP-1), 3840x2160@60, 0x0, 1.5"
             "desc: ASUSTek COMPUTER INC VG279 JBLMQS021792 (DP-1), 1920x1080@144, 0x0, 1"
+            "eDP-1, 1920x1080@60, 0x0, 1, transform, 2"
             ",prefered,auto,1"
           ];
 
@@ -296,8 +298,8 @@ in
             };
           };
 
-          animations = {
-            enabled = true;
+          animations =  {
+		  	enabled = false;
             bezier = [
               "linear, 0, 0, 1, 1"
               "md3_standard, 0.2, 0, 0, 1"
