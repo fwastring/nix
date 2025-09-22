@@ -58,6 +58,7 @@
   fonts.packages = with pkgs; [
     nerd-fonts.comic-shanns-mono
     nerd-fonts.fira-code
+	garamond-libre
   ];
 
   i18n.defaultLocale = "en_US.UTF-8";

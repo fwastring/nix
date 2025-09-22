@@ -86,6 +86,7 @@
 
 	# Git
     lazygit
+	hyprpicker	
 
 	# Terminal Stuff
     chawan
@@ -95,6 +96,7 @@
     typst
     typstyle
     tinymist
+	typstfmt
     websocat
     nix-search-cli
     libsixel
