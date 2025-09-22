@@ -10,7 +10,6 @@
 	  imports = [
 		../moduler/tmux.nix
 		../moduler/fish.nix
-		../moduler/git.nix
 		../moduler/kitty.nix
 		../moduler/dunst.nix
 		../moduler/nixpkgs.nix

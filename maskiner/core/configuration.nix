@@ -19,6 +19,7 @@ in
     ../../moduler/base.nix
 
     ../../moduler/users.nix
+	../../moduler/git.nix
     ../../moduler/network.nix
     ../../moduler/programs.nix
     ../../moduler/system.nix

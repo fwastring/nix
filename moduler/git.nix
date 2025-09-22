@@ -2,9 +2,14 @@
 {
   programs.git = {
     enable = true;
-    userName = "fwastring";
-    userEmail = "fredrik@wastring.com";
-	extraConfig = {
+	config = {
+		user = {
+			name = "fwastring";
+			email = "fredrik@wastring.com";
+		};
+		pull = {
+			rebase = false;
+		};
 		url."git@github.com:".insteadOf = "https://github.com/";
 	};
   };
