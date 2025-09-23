@@ -9,8 +9,7 @@ let
 in
 {
   programs.k9s = {
-    # enable = true;
-    enable = false;
+    enable = true;
 	settings = {
 		k9s.ui.skin = "catppuccin-latte";
 	};

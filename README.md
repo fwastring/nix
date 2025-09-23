@@ -1,10 +1,12 @@
 # min nix config :)
 
 @ Wastring
-- laptop (Acer Swift 3) † 2025-08-05
-- desktop (ThinkCentre)
-- macmini (2014 MacMini)
+- legacy (Lenovo Yoga)
+- node (Lenovo ThinkCentre)
+- archive (2014 MacMini)
 
 @ iFACTS Office
-- jobb (MinisForum AI X1 Pro)
-- work-desktop (VM @ Proxmox)
+- core (MinisForum AI X1 Pro)
+
+@ Old Computers
+- laptop (Acer Swift 3) † 2025-08-05

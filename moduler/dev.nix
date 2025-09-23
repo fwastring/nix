@@ -41,6 +41,7 @@ in
 
 	# Blogging
     hugo
+	zola
 
 	# System Design
     sqlc

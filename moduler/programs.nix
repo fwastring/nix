@@ -4,8 +4,7 @@
   inputs,
   lib,
   config,
-  pkgs,
-  myhostname,
+  pkgs, myhostname,
   ...
 }: {
 	services.udev = {
@@ -38,6 +37,9 @@
 		kdePackages.okular
 		xdg-user-dirs
 		angryipscanner
+
+		# TUI
+		gurk-rs
 
 		# Browsers
 		librewolf

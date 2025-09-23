@@ -12,6 +12,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    typsite = {
+      url = "github:Glomzzz/typsite";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Neovim
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
@@ -34,7 +38,8 @@
       nixpkgs,
       home-manager,
       stylix,
-	  sops-nix,
+      sops-nix,
+      typsite,
       ...
     }@inputs:
     let
@@ -53,7 +58,7 @@
           modules = [
             stylix.nixosModules.stylix
             ./maskiner/legacy/configuration.nix
-			sops-nix.nixosModules.sops
+            sops-nix.nixosModules.sops
           ];
         };
         node = nixpkgs.lib.nixosSystem {
@@ -63,7 +68,7 @@
           };
           modules = [
             ./maskiner/node/configuration.nix
-			sops-nix.nixosModules.sops
+            sops-nix.nixosModules.sops
           ];
         };
         core = nixpkgs.lib.nixosSystem {
@@ -75,7 +80,7 @@
             ./maskiner/core/configuration.nix
             stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
-			sops-nix.nixosModules.sops
+            sops-nix.nixosModules.sops
           ];
         };
         archive = nixpkgs.lib.nixosSystem {
