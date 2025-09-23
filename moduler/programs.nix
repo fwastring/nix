@@ -33,9 +33,7 @@
 		via
 		drawio
 		freecad-wayland
-		ghostty
 		kdePackages.okular
-		xdg-user-dirs
 		angryipscanner
 
 		# TUI
